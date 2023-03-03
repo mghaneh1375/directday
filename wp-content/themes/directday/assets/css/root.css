@@ -67,6 +67,8 @@
   --directday-placeholder-color: #717171;
   --global--color-black: #000;
   --global--color-black-with-opacity: rgba(0, 0, 0, 0.8);
+  --global--color-black-with-low-opacity: rgba(0, 0, 0, 0.66);
+  --global--color-black-with-very-opacity: rgba(0, 0, 0, 0.33);
   --global--color-dark-gray: #28303d;
   --global--color-gray: #39414d;
   --global--color-light-gray: #f0f0f0;

@@ -686,6 +686,19 @@ template {
   border-radius: 20px;
   box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.04);
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.directday-recent-article-card div:first-child {
+  width: 100%;
+}
+
+.directday-recent-article-card .author {
+  color: var(--global--color-black-with-very-opacity);
 }
 
 .directday-recent-article-card img {
@@ -698,7 +711,7 @@ template {
 
 .directday-recent-article-card .date {
   font-size: var(--directday--font-size-sm);
-  color: var(--direct-theme-silver);
+  color: var(--global--color-black-with-very-opacity);
   text-align: center;
   margin: 24px 0;
 }
@@ -952,8 +965,6 @@ template {
   opacity: 0.66;
   z-index: 1;
   border-radius: 50%;
-  /* -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px); */
 }
 
 .EPOS .cards {
@@ -966,26 +977,120 @@ template {
   z-index: 2;
 }
 
-.EPOS .card {
+.customer-card-section {
+  gap: 40px;
+}
+
+.customer-card-section .card > div:first-child,
+.others-card-section .card > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-card-section .card,
+.others-card-section .card {
+  height: 446px;
+  padding: 32px 70px 32px;
+  border-radius: 20px;
+  box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+}
+
+.others-card-section {
+  gap: 20px;
+}
+
+.others-card-section .card {
+  padding: 32px 20px 32px;
+}
+
+.others-card-section .card img {
+  height: unset !important;
+  width: unset !important;
+  max-width: unset !important;
+}
+
+.others-card-section .card:first-child img {
+  margin-top: -30px;
+}
+
+.customer-card-section .card img {
+  height: 171px !important;
+}
+
+.EPOS .card,
+.regular-card-section .card {
   height: 420px;
   width: 300px;
   padding: 12px 14px 32px 10px;
   border-radius: 20px;
   box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
 }
 
-.EPOS .card .title {
+.regular-card-section {
+  gap: 24px;
+}
+
+.regular-card-section .card {
+  background-color: white;
+  justify-content: space-between;
+  padding-bottom: 12px;
+}
+
+.regular-card-section .card .title,
+.customer-card-section .card .title,
+.others-card-section .card .title {
+  text-transform: uppercase;
+}
+
+.regular-card-section .directday-silver-button {
+  text-transform: uppercase;
+  max-width: 155px;
+  margin: 0 auto;
+}
+
+.EPOS .card .title,
+.regular-card-section .card .title,
+.customer-card-section .card .title,
+.others-card-section .card .title {
   font-weight: bold;
-  color: var(--global--color-black-with-opacity);
+  color: var(--global--color-black-with-low-opacity);
   padding-left: 10px;
   margin-top: 20px;
 }
 
-.EPOS .card .desc {
+.EPOS .card .desc,
+.regular-card-section .card .desc,
+.customer-card-section .card .desc,
+.others-card-section .card .desc {
   color: var(--global--color-black-with-opacity);
   font-size: var(--directday--font-size-sm);
   margin: 12px 37px 0 12px;
   line-height: 1.43;
+}
+
+.customer-card-section .card .title {
+  font-size: 20px;
+}
+
+.customer-card-section .card .desc,
+.others-card-section .card .desc {
+  text-align: center;
+}
+
+.others-card-section .card .desc {
+  margin-top: 24px;
+  line-height: 22px;
+  max-height: 60px;
+  overflow: hidden;
 }
 
 .EPOS .card .desc ul {
@@ -993,8 +1098,10 @@ template {
   padding-top: 10px;
 }
 
-.EPOS .card img {
+.EPOS .card img,
+.regular-card-section .card img {
   height: 184px !important;
+  max-width: none !important;
 }
 
 .EPOS .card:nth-child(2) {
@@ -1215,6 +1322,29 @@ template {
   right: 5px !important;
 }
 
+.payment-solution {
+  background-color: var(--directday-blue-very-low-opacity);
+  border-radius: var(--global--border-radius);
+  height: 420px;
+}
+
+.payment-solution h2 {
+  color: var(--global--color-black-with-low-opacity);
+  font-weight: bold;
+  font-size: var(--directday--font-size-lg);
+}
+
+.payment-solution p {
+  color: var(--global--color-black-with-opacity);
+  line-height: 22px;
+  margin-top: 10px;
+}
+
+.payment-solution .directday-button {
+  color: white;
+  margin-top: 40px;
+}
+
 /**
  * Add the correct display in IE 10.
  */
@@ -1372,7 +1502,6 @@ template {
  * - Set vertical padding and horizontal margins
  */
 .site-header,
-.site-main,
 .widget-area,
 .site-footer {
   padding-top: var(--global--spacing-vertical);
@@ -1433,6 +1562,14 @@ template {
   margin-right: auto;
   margin-bottom: var(--global--spacing-vertical);
   margin-left: auto;
+}
+
+.entry-content {
+  margin-top: 0 !important;
+}
+
+#primary > #main > .page > h1 {
+  display: none !important;
 }
 
 /*

@@ -364,6 +364,7 @@ function twenty_twenty_one_widgets_init() {
 add_action( 'widgets_init', 'twenty_twenty_one_widgets_init' );
 
 include('homepage-shortcode.php');
+include('product-shortcode.php');
 include('articles-shortcode.php');
 
 /**

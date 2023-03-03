@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer directday-component-gap">
 	<?php the_custom_logo(); ?>
 	<span class="title">DIRECTDAY</span>
 	<div class="directday-text-input">
