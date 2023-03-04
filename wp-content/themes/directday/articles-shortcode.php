@@ -2,7 +2,17 @@
 
 function create_articles_cats() {
 
-    $posts = get_posts(['post_status' => 'publish']);
+    $args = array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'category_name' => 'blog',
+        'posts_per_page'   => 12,
+    );
+
+    $query = new WP_Query( $args );
+    $posts = $query->posts;
 
     $all_cats = [];
 
@@ -73,20 +83,31 @@ function recent_posts() {
     $output .= '<p class="directday-page-title">RECENT ARTICLES</p>';
     $output .= '<div class="directday-flex directday-row-flex directday-flex-wrap">';
 
-    $posts = wp_get_recent_posts(["numberposts" => 12, 'post_status' => 'publish']);
-    foreach($posts as $post) {
-        $image = get_the_post_thumbnail_url($post['ID']);
-        $output .= '<div class="directday-recent-article-card">';
-        $output .= '<img src="' . $image . '" />';
-        $output .= '<p class="date">Published on ' . $post['post_date'] . '</p>';
-        $output .= '<p class="title">' . $post['post_title'] . '</p>';
+    $args = array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'category_name' => 'blog',
+        'posts_per_page'   => 12,
+    );
 
-        $cats = get_the_category($post['ID']);
+    $query = new WP_Query( $args );
+    $posts = $query->posts;
+
+    foreach($posts as $post) {
+        $image = get_the_post_thumbnail_url($post->ID);
+        $output .= '<div class="directday-recent-article-card">';
+        $output .= '<div><img src="' . $image . '" />';
+        $output .= '<p class="date">Published on ' . $post->post_date . '</p>';
+        $output .= '<p class="title">' . $post->post_title . '</p></div>';
+
+        $cats = get_the_category($post->ID);
         
         if(count($cats) == 1)
             $output .= '<div class="tags directday-flex-center">'; 
         else if(count($cats) == 2)
-            $output .= '<div class="tags directday-flex-space-between">'; 
+            $output .= '<div class="tags directday-flex-space-between" style="gap: 10px">'; 
 
         foreach($cats as $cat)
             $output .= '<p class="tag">' . $cat->name . '</p>';

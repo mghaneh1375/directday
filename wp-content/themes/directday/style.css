@@ -460,7 +460,7 @@ template {
 }
 
 #masthead .site-logo-menu a::before {
-  background: url("http://math.echeck.ir/wp-content/uploads/2023/03/logo48-1@2x.png")
+  background: url("http://localhost/directday/wp-content/uploads/2023/03/logo48-1@2x.png")
     no-repeat center center !important;
   background-size: 100%;
   content: "" !important;
@@ -501,6 +501,55 @@ template {
 
 #primary-menu-list li:not(:first-child):not(.get-demo-menu) {
   margin-left: 40px;
+}
+
+.border-right-1px-silver {
+  border-right: 1px solid var(--global--color-black-with-huge-opacity);
+}
+
+.height400 {
+  height: 400px;
+}
+
+.directday-large-text {
+  font-size: var(--directday--font-size-lg);
+}
+
+.directday-bold-text {
+  font-weight: bold;
+}
+
+.directday-black {
+  color: var(--global--color-black-with-opacity);
+}
+
+.normal-text-box {
+  color: var(--global--color-black-with-low-opacity);
+  line-height: 1.38;
+}
+
+.margin-top-with-title {
+  margin-top: 32px !important;
+}
+
+.relative-position {
+  position: relative;
+}
+
+.padding-right-40 {
+  padding-right: 40px;
+}
+
+.align-semi-wide {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 914px !important;
+}
+
+.align-not-wide {
+  max-width: var(--responsive--aligndefault-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .directday-border-radius {
@@ -597,6 +646,17 @@ template {
   font-weight: 500;
 }
 
+.directday-transparent-button {
+  background-color: transparent;
+  padding: 13px 33px 12px;
+  border-radius: var(--global--border-radius);
+  cursor: pointer;
+  color: var(--direct-theme-blue);
+  border: 1px solid var(--direct-theme-blue);
+  font-size: var(--directday--font-size-md);
+  font-weight: 500;
+}
+
 .directday-button {
   background-color: var(--direct-theme-blue);
   padding: 13px 40px 12px;
@@ -610,6 +670,20 @@ template {
   margin-top: 64px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.our-story .wp-block-column:first-child figure figure {
+  position: absolute;
+}
+
+.our-story .wp-block-column:first-child figure figure:first-child {
+  left: 0;
+  top: 0;
+}
+
+.our-story .wp-block-column:first-child figure figure:nth-child(2) {
+  left: 140px;
+  top: 20px;
 }
 
 .directday-tag {
@@ -665,13 +739,41 @@ template {
   border-radius: var(--global--border-radius);
 }
 
+.directday-blue-transparent-box {
+  background-color: var(--directday-blue-very-low-opacity);
+  padding: 48px 88px;
+  border-radius: var(--global--border-radius);
+}
+
+.directday-dark-box {
+  box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.04);
+  padding: 48px 88px;
+  border-radius: var(--global--border-radius);
+  background-color: #303030;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.directday-dark-box .normal-text-box {
+  color: rgba(255, 255, 255, 0.66);
+}
+
 .directday-component-gap {
   margin-top: var(--global--spacing-components) !important;
+}
+
+.directday-component-plus-gap {
+  margin-top: calc(var(--global--spacing-components) + 60px) !important;
 }
 
 .directday-lg-font {
   font-size: var(--directday--font-size-lg);
   font-weight: bold;
+}
+
+.about-us video {
+  max-height: 100% !important;
+  width: auto !important;
+  height: 400px !important;
 }
 
 .black-color {
@@ -686,6 +788,19 @@ template {
   border-radius: 20px;
   box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.04);
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.directday-recent-article-card div:first-child {
+  width: 100%;
+}
+
+.directday-recent-article-card .author {
+  color: var(--global--color-black-with-very-opacity);
 }
 
 .directday-recent-article-card img {
@@ -698,7 +813,7 @@ template {
 
 .directday-recent-article-card .date {
   font-size: var(--directday--font-size-sm);
-  color: var(--direct-theme-silver);
+  color: var(--global--color-black-with-very-opacity);
   text-align: center;
   margin: 24px 0;
 }
@@ -952,8 +1067,6 @@ template {
   opacity: 0.66;
   z-index: 1;
   border-radius: 50%;
-  /* -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px); */
 }
 
 .EPOS .cards {
@@ -966,26 +1079,120 @@ template {
   z-index: 2;
 }
 
-.EPOS .card {
+.customer-card-section {
+  gap: 40px;
+}
+
+.customer-card-section .card > div:first-child,
+.others-card-section .card > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-card-section .card,
+.others-card-section .card {
+  height: 446px;
+  padding: 32px 70px 32px;
+  border-radius: 20px;
+  box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+}
+
+.others-card-section {
+  gap: 20px;
+}
+
+.others-card-section .card {
+  padding: 32px 20px 32px;
+}
+
+.others-card-section .card img {
+  height: unset !important;
+  width: unset !important;
+  max-width: unset !important;
+}
+
+.others-card-section .card:first-child img {
+  margin-top: -30px;
+}
+
+.customer-card-section .card img {
+  height: 171px !important;
+}
+
+.EPOS .card,
+.regular-card-section .card {
   height: 420px;
   width: 300px;
   padding: 12px 14px 32px 10px;
   border-radius: 20px;
   box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
 }
 
-.EPOS .card .title {
+.regular-card-section {
+  gap: 24px;
+}
+
+.regular-card-section .card {
+  background-color: white;
+  justify-content: space-between;
+  padding-bottom: 12px;
+}
+
+.regular-card-section .card .title,
+.customer-card-section .card .title,
+.others-card-section .card .title {
+  text-transform: uppercase;
+}
+
+.regular-card-section .directday-silver-button {
+  text-transform: uppercase;
+  max-width: 155px;
+  margin: 0 auto;
+}
+
+.EPOS .card .title,
+.regular-card-section .card .title,
+.customer-card-section .card .title,
+.others-card-section .card .title {
   font-weight: bold;
-  color: var(--global--color-black-with-opacity);
+  color: var(--global--color-black-with-low-opacity);
   padding-left: 10px;
   margin-top: 20px;
 }
 
-.EPOS .card .desc {
+.EPOS .card .desc,
+.regular-card-section .card .desc,
+.customer-card-section .card .desc,
+.others-card-section .card .desc {
   color: var(--global--color-black-with-opacity);
   font-size: var(--directday--font-size-sm);
   margin: 12px 37px 0 12px;
   line-height: 1.43;
+}
+
+.customer-card-section .card .title {
+  font-size: 20px;
+}
+
+.customer-card-section .card .desc,
+.others-card-section .card .desc {
+  text-align: center;
+}
+
+.others-card-section .card .desc {
+  margin-top: 24px;
+  line-height: 22px;
+  max-height: 60px;
+  overflow: hidden;
 }
 
 .EPOS .card .desc ul {
@@ -993,8 +1200,10 @@ template {
   padding-top: 10px;
 }
 
-.EPOS .card img {
+.EPOS .card img,
+.regular-card-section .card img {
   height: 184px !important;
+  max-width: none !important;
 }
 
 .EPOS .card:nth-child(2) {
@@ -1215,6 +1424,206 @@ template {
   right: 5px !important;
 }
 
+.payment-solution {
+  background-color: var(--directday-blue-very-low-opacity);
+  border-radius: var(--global--border-radius);
+  height: 420px;
+}
+
+.payment-solution h2 {
+  color: var(--global--color-black-with-low-opacity);
+  font-weight: bold;
+  font-size: var(--directday--font-size-lg);
+}
+
+.payment-solution p {
+  color: var(--global--color-black-with-opacity);
+  line-height: 22px;
+  margin-top: 10px;
+}
+
+.payment-solution .directday-button {
+  color: white;
+  margin-top: 40px;
+}
+
+.our-team-gallery img {
+  width: 130px !important;
+  height: 130px !important;
+  margin: 0 auto;
+}
+
+.our-team-gallery figcaption {
+  background: none !important;
+  color: var(--global--color-black-with-low-opacity) !important;
+  bottom: -80px !important;
+  height: 80px !important;
+  line-height: 22px !important;
+  max-height: unset !important;
+  font-size: var(--directday--font-size-sm) !important;
+}
+
+.our-values {
+  gap: 20px;
+}
+
+.our-values .card {
+  position: relative;
+  width: 236px;
+}
+
+.our-values .card div:first-child {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  left: calc(50% - 40px);
+  top: -40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.our-values .card > div:first-child img {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+.our-values .card > div:last-child {
+  width: 100%;
+  height: 256px;
+  background-color: white;
+  padding: 40px 24px 10px;
+  box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+}
+
+.our-values .card > div:last-child .title {
+  text-align: center;
+  color: var(--direct-theme-blue);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.our-values .card > div:last-child .desc {
+  font-size: 13px;
+  color: var(--global--color-black-with-low-opacity);
+  line-height: 22px;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.wp-block-separator {
+  width: 100% !important;
+  height: 1px !important;
+}
+
+.wpforms-field-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  max-height: 200px;
+  margin-bottom: 40px !important;
+}
+
+.wpforms-field-container input,
+.wpforms-field-container textarea {
+  padding: 9px 24px 9px 24px !important;
+  border-radius: 18px !important;
+  background-color: #f0f0f0 !important;
+  width: 340px !important;
+  height: 36px !important;
+  max-width: 340px !important;
+}
+
+.wpforms-field-container textarea {
+  width: 420px !important;
+  max-width: 420px !important;
+  height: 140px !important;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field {
+  padding: 8px 0 !important;
+  margin-right: 30px;
+}
+
+.contact-us-form {
+  margin-left: calc(50% - 395px) !important;
+  margin-top: 0 !important;
+  margin-bottom: 55px !important;
+}
+
+.contact-us-form button {
+  width: 340px !important;
+  text-align: center !important;
+  font-weight: 500 !important;
+  color: white !important;
+  background-color: var(--direct-theme-blue) !important;
+  border-radius: var(--global--border-radius) !important;
+  border-color: var(--direct-theme-blue) !important;
+  margin-left: 50% !important;
+  font-size: var(--directday--font-size-md) !important;
+}
+
+.wpforms-field-container textarea::placeholder {
+  color: var(--global--color-black-with-very-opacity) !important;
+  font-weight: 500 !important;
+  font-size: var(--directday--font-size-sm) !important;
+}
+
+.wpforms-field-container textarea:-moz-placeholder, /* Firefox 18- */
+.wpforms-field-container textarea::-moz-placeholder, /* Firefox 19+ */
+.wpforms-field-container textarea:-ms-input-placeholder, /* IE 10+ */
+.wpforms-field-container textarea::-webkit-input-placeholder, /* Webkit based */
+.wpforms-field-container textarea::placeholder {
+  /* Modern browsers */
+  color: var(--global--color-black-with-very-opacity) !important;
+  font-weight: 500 !important;
+  font-size: var(--directday--font-size-sm) !important;
+}
+
+.wpforms-field-container input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: var(--global--color-black-with-very-opacity) !important;
+  font-weight: 500 !important;
+  font-size: var(--directday--font-size-sm) !important;
+}
+.wpforms-field-container input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: var(--global--color-black-with-very-opacity) !important;
+  opacity: 1 !important;
+  font-weight: 500 !important;
+  font-size: var(--directday--font-size-sm) !important;
+}
+.wpforms-field-container input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: var(--global--color-black-with-very-opacity) !important;
+  opacity: 1 !important;
+  font-weight: 500 !important;
+  font-size: var(--directday--font-size-sm) !important;
+}
+.wpforms-field-container input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--global--color-black-with-very-opacity) !important;
+  font-weight: 500 !important;
+  font-size: var(--directday--font-size-sm) !important;
+}
+.wpforms-field-container input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--global--color-black-with-very-opacity) !important;
+  font-weight: 500 !important;
+  font-size: var(--directday--font-size-sm) !important;
+}
+
+.wpforms-field-container input::placeholder {
+  /* Most modern browsers support this now. */
+  color: var(--global--color-black-with-very-opacity) !important;
+  font-weight: 500 !important;
+  font-size: var(--directday--font-size-sm) !important;
+}
+
 /**
  * Add the correct display in IE 10.
  */
@@ -1372,7 +1781,6 @@ template {
  * - Set vertical padding and horizontal margins
  */
 .site-header,
-.site-main,
 .widget-area,
 .site-footer {
   padding-top: var(--global--spacing-vertical);
@@ -1433,6 +1841,14 @@ template {
   margin-right: auto;
   margin-bottom: var(--global--spacing-vertical);
   margin-left: auto;
+}
+
+.entry-content {
+  margin-top: 0 !important;
+}
+
+#primary > #main > .page > h1 {
+  display: none !important;
 }
 
 /*
@@ -2542,12 +2958,12 @@ input[type="reset"]:disabled,
   clear: both;
 }
 
-.wp-block-columns .wp-block-column > * {
+.wp-block-columns .wp-block-column > :not(.wp-block-spacer) {
   margin-top: calc(0.66 * var(--global--spacing-vertical));
   margin-bottom: calc(0.66 * var(--global--spacing-vertical));
 }
 @media only screen and (min-width: 482px) {
-  .wp-block-columns .wp-block-column > * {
+  .wp-block-columns .wp-block-column > :not(.wp-block-spacer) {
     margin-top: var(--global--spacing-vertical);
     margin-bottom: var(--global--spacing-vertical);
   }
@@ -6899,3 +7315,4 @@ footer {
 .is-IE .post-thumbnail .wp-post-image {
   min-width: auto;
 }
+

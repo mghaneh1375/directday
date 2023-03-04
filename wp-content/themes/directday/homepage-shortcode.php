@@ -306,6 +306,47 @@ function create_journey_section() {
 }
 
 
+function create_blogs_section() {
+  
+  $args = array(
+    'post_type' => 'post',
+    'post_status' => 'publish',
+    'orderby' => 'date',
+    'order' => 'DESC',
+    'category_name' => 'blog',
+    'posts_per_page'   => 4,
+  );
+
+  $query = new WP_Query( $args );
+  $posts = $query->posts;
+  
+  $output = '<div class="directday-flex directday-col-flex directday-flex-center alignwide">';
+  $output .= '<div style="margin-bottom: 64px;" class="directday-flex directday-row-flex">';
+
+  foreach($posts as $post) {
+      $image = get_the_post_thumbnail_url($post->ID);
+      $output .= '<div class="directday-recent-article-card">';
+      $output .= '<div><img src="' . $image . '" />';
+      
+      $cats = get_the_category($post->ID);
+
+      $output .= '<p style="font-weight: bold; color: var(--direct-theme-blue); text-transform: uppercase; text-align: center; padding: 24px">' . $cats[0]->name . '</p>';
+      $output .= '<p class="title">' . $post->post_title . '</p></div>';      
+      $output .= '<div class="tags directday-flex-center">'; 
+      $output .= '<p class="author">By Direct Day</p>';
+
+      $output .= '</div>';
+      $output .= '</div>';
+  }
+
+  $output .= '</div>';
+  $output .= '<a href="/blogs" style="text-decoration: none !important" class="directday-silver-button directday-blue-border">VISIT OUR BLOG</a>';
+  $output .= '</div>';
+
+  return $output;
+}
+
+add_shortcode('blogs', 'create_blogs_section');
 add_shortcode('journey', 'create_journey_section');
 add_shortcode('switch_business_epos_button', 'create_switch_business_epos_button');
 

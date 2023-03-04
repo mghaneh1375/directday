@@ -23,10 +23,17 @@
 define( 'DB_NAME', 'DirectDayDatabase' );
 
 /** Database username */
+<<<<<<< HEAD
 define( 'DB_USER', 'directday' );
 
 /** Database password */
 define( 'DB_PASSWORD', 'owi2891#@snqJkw' ); //Asd12#45_
+=======
+define( 'DB_USER', 'root' );
+
+/** Database password */
+define( 'DB_PASSWORD', 'Ghhy@110' ); //Asd12#45_
+>>>>>>> dfdaa478bda7c2c66cee90224f89224020a49131
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
