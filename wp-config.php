@@ -23,10 +23,10 @@
 define( 'DB_NAME', 'directday' );
 
 /** Database username */
-define( 'DB_USER', 'test' );
+define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', '123456' ); //Asd12#45_
+define( 'DB_PASSWORD', 'Ghhy@110' ); //Asd12#45_
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );

@@ -366,6 +366,7 @@ add_action( 'widgets_init', 'twenty_twenty_one_widgets_init' );
 include('homepage-shortcode.php');
 include('product-shortcode.php');
 include('articles-shortcode.php');
+include('company-shortcode.php');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
