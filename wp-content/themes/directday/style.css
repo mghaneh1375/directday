@@ -460,7 +460,7 @@ template {
 }
 
 #masthead .site-logo-menu a::before {
-  background: url("http://localhost/directday/wp-content/uploads/2023/03/logo48-1@2x.png")
+  background: url("http://math.echeck.ir/wp-content/uploads/2023/03/logo48-1@2x.png")
     no-repeat center center !important;
   background-size: 100%;
   content: "" !important;
@@ -1565,6 +1565,121 @@ div.wpforms-container-full .wpforms-form .wpforms-field {
   border-color: var(--direct-theme-blue) !important;
   margin-left: 50% !important;
   font-size: var(--directday--font-size-md) !important;
+}
+
+.kitchen-slider,
+.waiter-slider,
+.counter-slider {
+  height: 420px;
+  position: relative;
+  padding: 80px 110px 0 128px;
+}
+
+.kitchen-slider {
+  background: url("http://math.echeck.ir/wp-content/uploads/2023/03/Group-2592.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.waiter-slider {
+  background: url("http://math.echeck.ir/wp-content/uploads/2023/03/Group-2590.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.counter-slider {
+  background: url("http://math.echeck.ir/wp-content/uploads/2023/03/Group-2594.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.kitchen-slider img {
+  width: 354px !important;
+  height: 338px !important;
+  object-fit: contain;
+}
+
+.waiter-slider img {
+  width: 442.2px;
+  height: 419.7px;
+  object-fit: contain;
+}
+
+.counter-slider img {
+  width: 310px;
+  height: 334px;
+  object-fit: contain;
+}
+
+.kitchen-slider h2,
+.counter-slider h2,
+.waiter-slider h2 {
+  color: var(--direct-theme-blue);
+  font-weight: bold;
+  font-size: var(--global--font-size-semi-lg);
+  margin-bottom: 24px;
+}
+
+.kitchen-slider p,
+.counter-slider p,
+.waiter-slider p {
+  line-height: 1.38;
+  color: white;
+  margin-bottom: 48px !important;
+}
+
+.kitchen-slider .directday-button,
+.counter-slider .directday-button,
+.waiter-slider .directday-button {
+  width: 180px;
+  margin-top: 0 !important;
+}
+
+.kitchen-desc h2 {
+  font-size: var(--global--font-size-md-plus);
+  font-weight: bold;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  border-left: 4px solid var(--directday-blue-low-opacity);
+  padding-left: 15px;
+  margin-left: -15px;
+}
+
+.kitchen-desc h2:not(:first-child) {
+  margin-top: 48px !important;
+}
+
+.kitchet-benefits {
+  gap: 24px;
+}
+
+.kitchet-benefits .wp-block-group {
+  max-width: 200px;
+  min-width: 140px;
+}
+
+.kitchet-benefits .wp-block-group p {
+  line-height: 22px;
+  font-size: var(--directday--font-size-sm);
+  color: var(--global--color-black-with-low-opacity);
+  margin-top: 16px;
+  text-align: center;
+}
+
+.kitchen-directday-button,
+.waiter-directday-button {
+  width: 180px;
+}
+
+.kitchen-directday-button,
+.waiter-directday-last-p {
+  margin-top: 64px;
+}
+
+.waiter-directday-last-p {
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: var(--global--color-black-with-opacity);
 }
 
 .wpforms-field-container textarea::placeholder {
