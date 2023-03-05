@@ -364,6 +364,9 @@ function twenty_twenty_one_widgets_init() {
 add_action( 'widgets_init', 'twenty_twenty_one_widgets_init' );
 
 include('homepage-shortcode.php');
+include('kitchen-shortcode.php');
+include('counter-shortcode.php');
+include('waiter-shortcode.php');
 include('product-shortcode.php');
 include('articles-shortcode.php');
 include('company-shortcode.php');
