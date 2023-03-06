@@ -1682,6 +1682,74 @@ div.wpforms-container-full .wpforms-form .wpforms-field {
   color: var(--global--color-black-with-opacity);
 }
 
+.pricing {
+  gap: 24px;
+}
+
+.pricing .card {
+  background-color: white;
+  border-radius: var(--global--border-radius);
+  padding: 40px 20px 0;
+  width: 302px;
+  height: 540px;
+  position: relative;
+}
+
+.pricing .card h2 {
+  color: var(--global--color-black-with-very-opacity);
+  font-size: 20px !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.pricing .card hr {
+  border-color: var(--global--color-black-with-very-opacity);
+}
+
+.pricing .card .wp-block-columns {
+  width: 100% !important;
+  margin: 5px 0;
+}
+
+.pricing .card .wp-block-column ul {
+  padding-left: 20px !important;
+}
+
+.pricing .card .wp-block-column li {
+  font-size: var(--directday--font-size-sm);
+}
+
+.pricing .card .wp-block-column p {
+  font-size: var(--directday--font-size-sm);
+  font-weight: bold;
+  color: var(--global--color-black-with-opacity);
+}
+
+.pricing .card .wp-block-column:last-child p {
+  color: var(--direct-theme-blue);
+  text-align: right;
+}
+
+.pricing .card > .wp-block-group {
+  width: 100%;
+  position: absolute;
+  bottom: 64px;
+  left: 0;
+}
+
+.pricing .card .wp-block-group .directday-button {
+  margin-top: 42px;
+}
+
+.directday-center-text {
+  text-align: center !important;
+}
+
+.pricing .card .wp-block-group p {
+  text-align: center;
+}
+
 .wpforms-field-container textarea::placeholder {
   color: var(--global--color-black-with-very-opacity) !important;
   font-weight: 500 !important;
@@ -6349,8 +6417,8 @@ h1.page-title {
 }
 
 .primary-navigation a:hover {
-  text-decoration: underline;
-  text-decoration-style: dotted;
+  /* text-decoration: underline;
+  text-decoration-style: dotted; */
 }
 
 .primary-navigation a:focus {
@@ -6362,14 +6430,14 @@ h1.page-title {
 
 .primary-navigation .current-menu-item > a:first-child,
 .primary-navigation .current_page_item > a:first-child {
-  text-decoration: underline;
-  text-decoration-style: solid;
+  /* text-decoration: underline;
+  text-decoration-style: solid; */
 }
 
 .primary-navigation .current-menu-item > a:first-child:hover,
 .primary-navigation .current_page_item > a:first-child:hover {
-  text-decoration: underline;
-  text-decoration-style: dotted;
+  /* text-decoration: underline;
+  text-decoration-style: dotted; */
 }
 
 .primary-navigation .sub-menu {
