@@ -99,9 +99,127 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 .admin-bar {
   --global--admin-bar--height: 32px;
 }
+
+@media only screen and (max-width: 590px) {
+  .latest-blog-section > div,
+  .steps,
+  .price-card-container {
+    justify-content: flex-start !important;
+  }
+
+  .footer .directday-button {
+    padding: 13px 10px 12px !important;
+  }
+
+  .footer .directday-text-input {
+    max-width: calc(100% - 50px) !important;
+  }
+
+  .top-section > div:first-child {
+    order: 2;
+  }
+
+  .top-section > div:last-child {
+    order: 1;
+  }
+
+  .why-we-are-different {
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow-x: auto;
+  }
+
+  .steps {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  .pos-container {
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+  }
+
+  .choose_epos_plan * {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .steps .step {
+    min-width: 160px !important;
+  }
+
+  .latest-blog-section .directday-recent-article-card {
+    min-width: 295px !important;
+    width: 295px !important;
+  }
+
+  .why-we-are-different .card {
+    min-width: 295px !important;
+    width: 295px !important;
+    height: 361px !important;
+  }
+}
+
+@media only screen and (max-width: 481px) {
+  .EPOS .cards .card {
+    min-width: calc(100% - 20px) !important;
+    width: calc(100% - 20px) !important;
+  }
+}
+
 @media only screen and (max-width: 782px) {
   .admin-bar {
     --global--admin-bar--height: 46px;
+  }
+
+  .latest-blog-section > div {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  .price-card-container {
+    max-width: 100% !important;
+    overflow-x: auto;
+  }
+
+  .price-card-container .price-card {
+    min-width: 256px;
+    height: 460px !important;
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+  }
+
+  .EPOS {
+    width: 100% !important;
+    height: unset !important;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .EPOS .circle {
+    display: none;
+  }
+
+  .EPOS .cards {
+    position: relative !important;
+    top: unset !important;
+    width: unset !important;
+    left: unset !important;
+    height: 420px !important;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .EPOS .card,
+  .regular-card-section .card {
+    height: 420px !important;
+    background-color: white !important;
+    margin-top: unset !important;
+  }
+
+  .EPOS-container {
+    flex-direction: column;
   }
 }
 
@@ -460,7 +578,7 @@ template {
 }
 
 #masthead .site-logo-menu a::before {
-  background: url("http://localhost/directday/wp-content/uploads/2023/03/logo48-1@2x.png")
+  background: url("http://math.echeck.ir/wp-content/uploads/2023/03/logo48-1@2x.png")
     no-repeat center center !important;
   background-size: 100%;
   content: "" !important;
@@ -1565,6 +1683,189 @@ div.wpforms-container-full .wpforms-form .wpforms-field {
   border-color: var(--direct-theme-blue) !important;
   margin-left: 50% !important;
   font-size: var(--directday--font-size-md) !important;
+}
+
+.kitchen-slider,
+.waiter-slider,
+.counter-slider {
+  height: 420px;
+  position: relative;
+  padding: 80px 110px 0 128px;
+}
+
+.kitchen-slider {
+  background: url("http://math.echeck.ir/wp-content/uploads/2023/03/Group-2592.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.waiter-slider {
+  background: url("http://math.echeck.ir/wp-content/uploads/2023/03/Group-2590.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.counter-slider {
+  background: url("http://math.echeck.ir/wp-content/uploads/2023/03/Group-2594.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.kitchen-slider img {
+  width: 354px !important;
+  height: 338px !important;
+  object-fit: contain;
+}
+
+.waiter-slider img {
+  width: 442.2px;
+  height: 419.7px;
+  object-fit: contain;
+}
+
+.counter-slider img {
+  width: 310px;
+  height: 334px;
+  object-fit: contain;
+}
+
+.kitchen-slider h2,
+.counter-slider h2,
+.waiter-slider h2 {
+  color: var(--direct-theme-blue);
+  font-weight: bold;
+  font-size: var(--global--font-size-semi-lg);
+  margin-bottom: 24px;
+}
+
+.kitchen-slider p,
+.counter-slider p,
+.waiter-slider p {
+  line-height: 1.38;
+  color: white;
+  margin-bottom: 48px !important;
+}
+
+.kitchen-slider .directday-button,
+.counter-slider .directday-button,
+.waiter-slider .directday-button {
+  width: 180px;
+  margin-top: 0 !important;
+}
+
+.kitchen-desc h2 {
+  font-size: var(--global--font-size-md-plus);
+  font-weight: bold;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  border-left: 4px solid var(--directday-blue-low-opacity);
+  padding-left: 15px;
+  margin-left: -15px;
+}
+
+.kitchen-desc h2:not(:first-child) {
+  margin-top: 48px !important;
+}
+
+.kitchet-benefits {
+  gap: 24px;
+}
+
+.kitchet-benefits .wp-block-group {
+  max-width: 200px;
+  min-width: 140px;
+}
+
+.kitchet-benefits .wp-block-group p {
+  line-height: 22px;
+  font-size: var(--directday--font-size-sm);
+  color: var(--global--color-black-with-low-opacity);
+  margin-top: 16px;
+  text-align: center;
+}
+
+.kitchen-directday-button,
+.waiter-directday-button {
+  width: 180px;
+}
+
+.kitchen-directday-button,
+.waiter-directday-last-p {
+  margin-top: 64px;
+}
+
+.waiter-directday-last-p {
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: var(--global--color-black-with-opacity);
+}
+
+.pricing {
+  gap: 24px;
+}
+
+.pricing .card {
+  background-color: white;
+  border-radius: var(--global--border-radius);
+  padding: 40px 20px 0;
+  width: 302px;
+  height: 540px;
+  position: relative;
+}
+
+.pricing .card h2 {
+  color: var(--global--color-black-with-very-opacity);
+  font-size: 20px !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.pricing .card hr {
+  border-color: var(--global--color-black-with-very-opacity);
+}
+
+.pricing .card .wp-block-columns {
+  width: 100% !important;
+  margin: 5px 0;
+}
+
+.pricing .card .wp-block-column ul {
+  padding-left: 20px !important;
+}
+
+.pricing .card .wp-block-column li {
+  font-size: var(--directday--font-size-sm);
+}
+
+.pricing .card .wp-block-column p {
+  font-size: var(--directday--font-size-sm);
+  font-weight: bold;
+  color: var(--global--color-black-with-opacity);
+}
+
+.pricing .card .wp-block-column:last-child p {
+  color: var(--direct-theme-blue);
+  text-align: right;
+}
+
+.pricing .card > .wp-block-group {
+  width: 100%;
+  position: absolute;
+  bottom: 64px;
+  left: 0;
+}
+
+.pricing .card .wp-block-group .directday-button {
+  margin-top: 42px;
+}
+
+.directday-center-text {
+  text-align: center !important;
+}
+
+.pricing .card .wp-block-group p {
+  text-align: center;
 }
 
 .wpforms-field-container textarea::placeholder {
@@ -6234,8 +6535,8 @@ h1.page-title {
 }
 
 .primary-navigation a:hover {
-  text-decoration: underline;
-  text-decoration-style: dotted;
+  /* text-decoration: underline;
+  text-decoration-style: dotted; */
 }
 
 .primary-navigation a:focus {
@@ -6247,14 +6548,14 @@ h1.page-title {
 
 .primary-navigation .current-menu-item > a:first-child,
 .primary-navigation .current_page_item > a:first-child {
-  text-decoration: underline;
-  text-decoration-style: solid;
+  /* text-decoration: underline;
+  text-decoration-style: solid; */
 }
 
 .primary-navigation .current-menu-item > a:first-child:hover,
 .primary-navigation .current_page_item > a:first-child:hover {
-  text-decoration: underline;
-  text-decoration-style: dotted;
+  /* text-decoration: underline;
+  text-decoration-style: dotted; */
 }
 
 .primary-navigation .sub-menu {

@@ -11,6 +11,8 @@
   --directday--font-size-lg: 28px;
 
   --global--font-size-base: 14px;
+  --global--font-size-md-plus: 18px;
+  --global--font-size-semi-lg: 24px;
   --global--font-size-xs: 1rem;
   --global--font-size-sm: 1.125rem;
   --global--font-size-md: 1.25rem;
@@ -235,4 +237,12 @@
 
   /* Admin-bar height */
   --global--admin-bar--height: 0px;
+}
+
+@media only screen and (max-width: 590px) {
+  :root {
+    --global--font-size-base: 16px;
+    --directday--font-size-sm: 14px;
+    --global--spacing-components: 80px;
+  }
 }

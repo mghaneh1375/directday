@@ -320,7 +320,7 @@ function create_blogs_section() {
   $query = new WP_Query( $args );
   $posts = $query->posts;
   
-  $output = '<div class="directday-flex directday-col-flex directday-flex-center alignwide">';
+  $output = '<div class="latest-blog-section directday-flex directday-col-flex directday-flex-center alignwide">';
   $output .= '<div style="margin-bottom: 64px;" class="directday-flex directday-row-flex">';
 
   foreach($posts as $post) {
