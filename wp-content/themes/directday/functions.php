@@ -409,6 +409,14 @@ function twenty_twenty_one_scripts() {
 		wp_enqueue_style( 'twenty-twenty-one-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 	}
 
+	wp_enqueue_script(
+		'my-scripts',
+		get_template_directory_uri() . '/assets/js/my.js',
+		array(),
+		wp_get_theme()->get( 'Version' )
+	);
+
+
 	// RTL styles.
 	wp_style_add_data( 'twenty-twenty-one-style', 'rtl', 'replace' );
 
@@ -432,6 +440,7 @@ function twenty_twenty_one_scripts() {
 		wp_get_theme()->get( 'Version' ),
 		true
 	);
+
 
 	// Register the IE11 polyfill loader.
 	wp_register_script(

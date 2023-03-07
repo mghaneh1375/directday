@@ -100,11 +100,58 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
   --global--admin-bar--height: 32px;
 }
 
-@media only screen and (max-width: 590px) {
+@media only screen and (max-width: 782px) {
   .latest-blog-section > div,
   .steps,
   .price-card-container {
     justify-content: flex-start !important;
+  }
+
+  .price-card-container {
+    max-width: calc(100% - 120px) !important;
+    overflow-x: hidden;
+    gap: 20px !important;
+  }
+
+  .price-card-container .price-card {
+    height: 460px !important;
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+  }
+
+  .price-card-container::before,
+  .price-card-container::after {
+    display: inline-block !important;
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: 40px !important;
+    color: var(--direct-theme-blue);
+    position: absolute;
+  }
+
+  .price-card-container::before {
+    content: "\f104" !important;
+    left: 20px;
+  }
+
+  .price-card-container::after {
+    content: "\f105" !important;
+    right: 20px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 782px) {
+  .price-card-container .price-card {
+    min-width: calc(50% - 15px);
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .price-card-container {
+    gap: unset !important;
+  }
+
+  .price-card-container .price-card {
+    min-width: 100%;
   }
 
   .footer .directday-button {
@@ -176,18 +223,6 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
   .latest-blog-section > div {
     max-width: 100% !important;
     overflow-x: auto !important;
-  }
-
-  .price-card-container {
-    max-width: 100% !important;
-    overflow-x: auto;
-  }
-
-  .price-card-container .price-card {
-    min-width: 256px;
-    height: 460px !important;
-    padding-left: 48px !important;
-    padding-right: 48px !important;
   }
 
   .EPOS {
@@ -7616,4 +7651,3 @@ footer {
 .is-IE .post-thumbnail .wp-post-image {
   min-width: auto;
 }
-
