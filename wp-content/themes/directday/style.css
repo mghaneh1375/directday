@@ -99,9 +99,127 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 .admin-bar {
   --global--admin-bar--height: 32px;
 }
+
+@media only screen and (max-width: 590px) {
+  .latest-blog-section > div,
+  .steps,
+  .price-card-container {
+    justify-content: flex-start !important;
+  }
+
+  .footer .directday-button {
+    padding: 13px 10px 12px !important;
+  }
+
+  .footer .directday-text-input {
+    max-width: calc(100% - 50px) !important;
+  }
+
+  .top-section > div:first-child {
+    order: 2;
+  }
+
+  .top-section > div:last-child {
+    order: 1;
+  }
+
+  .why-we-are-different {
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow-x: auto;
+  }
+
+  .steps {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  .pos-container {
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+  }
+
+  .choose_epos_plan * {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .steps .step {
+    min-width: 160px !important;
+  }
+
+  .latest-blog-section .directday-recent-article-card {
+    min-width: 295px !important;
+    width: 295px !important;
+  }
+
+  .why-we-are-different .card {
+    min-width: 295px !important;
+    width: 295px !important;
+    height: 361px !important;
+  }
+}
+
+@media only screen and (max-width: 481px) {
+  .EPOS .cards .card {
+    min-width: calc(100% - 20px) !important;
+    width: calc(100% - 20px) !important;
+  }
+}
+
 @media only screen and (max-width: 782px) {
   .admin-bar {
     --global--admin-bar--height: 46px;
+  }
+
+  .latest-blog-section > div {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  .price-card-container {
+    max-width: 100% !important;
+    overflow-x: auto;
+  }
+
+  .price-card-container .price-card {
+    min-width: 256px;
+    height: 460px !important;
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+  }
+
+  .EPOS {
+    width: 100% !important;
+    height: unset !important;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .EPOS .circle {
+    display: none;
+  }
+
+  .EPOS .cards {
+    position: relative !important;
+    top: unset !important;
+    width: unset !important;
+    left: unset !important;
+    height: 420px !important;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .EPOS .card,
+  .regular-card-section .card {
+    height: 420px !important;
+    background-color: white !important;
+    margin-top: unset !important;
+  }
+
+  .EPOS-container {
+    flex-direction: column;
   }
 }
 
