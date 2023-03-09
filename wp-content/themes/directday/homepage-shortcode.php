@@ -292,7 +292,7 @@ function create_journey_section() {
   $query = new WP_Query( $args );
   $posts = $query->posts;
 
-  $output = "<div class='steps alignwide'>";
+  $output = "<div id='steps-container'><div class='steps alignwide'>";
   for($i = 1; $i <= count($posts); $i++) {
     $output .= '<div class="step">';
     $output .= '<p>' . $i . '</p>';
@@ -301,7 +301,7 @@ function create_journey_section() {
     $output .= '<div class="line"></div>';
     $output .= '</div>';
   }
-  $output .= "</div>";
+  $output .= "</div></div>";
   return $output;
 }
 

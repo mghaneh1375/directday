@@ -100,14 +100,72 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
   --global--admin-bar--height: 32px;
 }
 
+#steps-container + h2 {
+  color: var(--global--color-black-with-opacity);
+}
+
 @media only screen and (max-width: 782px) {
-  .latest-blog-section > div,
-  .steps,
-  .price-card-container {
-    justify-content: flex-start !important;
+  #steps-container + h2 {
+    text-align: center;
   }
 
-  .price-card-container {
+  #steps-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .EPOS,
+  .latest-blog-section {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .steps,
+  .price-card-container,
+  .why-we-are-different {
+    justify-content: flex-start !important;
+    align-items: center;
+  }
+
+  .steps > .step:not(.active-item) > p {
+    display: none;
+  }
+
+  .steps > .step > p:first-child {
+    display: block;
+  }
+
+  .steps {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .EPOS,
+  .latest-blog-section {
+    max-width: 100% !important;
+    min-width: 100% !important;
+    overflow: hidden;
+  }
+
+  .EPOS > .cards,
+  .latest-blog-section > div {
+    overflow-x: hidden !important;
+    gap: 20px !important;
+    position: relative !important;
+    top: unset !important;
+    width: unset !important;
+    min-width: calc(100% - 80px) !important;
+    max-width: calc(100% - 80px) !important;
+    left: unset !important;
+    height: 420px !important;
+  }
+
+  .latest-blog-section .directday-recent-article-card {
+    margin: unset !important;
+  }
+
+  .price-card-container,
+  .why-we-are-different {
     max-width: calc(100% - 120px) !important;
     overflow-x: hidden;
     gap: 20px !important;
@@ -119,8 +177,16 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
     padding-right: 48px !important;
   }
 
-  .price-card-container::before,
-  .price-card-container::after {
+  #steps-container:not(.hidden-left-arrow):before,
+  #steps-container:not(.hidden-right-arrow)::after,
+  .price-card-container:not(.hidden-left-arrow)::before,
+  .price-card-container:not(.hidden-right-arrow)::after,
+  .latest-blog-section:not(.hidden-left-arrow)::before,
+  .latest-blog-section:not(.hidden-right-arrow)::after,
+  .EPOS:not(.hidden-left-arrow)::before,
+  .EPOS:not(.hidden-right-arrow)::after,
+  .why-we-are-different:not(.hidden-left-arrow)::before,
+  .why-we-are-different:not(.hidden-right-arrow)::after {
     display: inline-block !important;
     font: normal normal normal 14px/1 FontAwesome !important;
     font-size: 40px !important;
@@ -128,14 +194,27 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
     position: absolute;
   }
 
-  .price-card-container::before {
+  #steps-container:not(.hidden-left-arrow):before,
+  .EPOS:not(.hidden-left-arrow)::before,
+  .why-we-are-different:not(.hidden-left-arrow)::before,
+  .latest-blog-section:not(.hidden-left-arrow)::before,
+  .price-card-container:not(.hidden-left-arrow)::before {
     content: "\f104" !important;
-    left: 20px;
+    left: 10px;
   }
 
-  .price-card-container::after {
+  #steps-container::before,
+  #steps-container::after {
+    bottom: 50px;
+  }
+
+  .price-card-container:not(.hidden-right-arrow)::after,
+  .EPOS:not(.hidden-right-arrow)::after,
+  .why-we-are-different:not(.hidden-right-arrow)::after,
+  .latest-blog-section:not(.hidden-right-arrow)::after,
+  #steps-container:not(.hidden-right-arrow)::after {
     content: "\f105" !important;
-    right: 20px;
+    right: 10px;
   }
 }
 
@@ -146,11 +225,17 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 }
 
 @media only screen and (max-width: 599px) {
-  .price-card-container {
+  .price-card-container,
+  .EPOS > .cards,
+  .latest-blog-section > div,
+  .why-we-are-different {
     gap: unset !important;
   }
 
-  .price-card-container .price-card {
+  .EPOS > .cards > .card,
+  .latest-blog-section .directday-recent-article-card,
+  .price-card-container .price-card,
+  .why-we-are-different .card {
     min-width: 100%;
   }
 
@@ -170,18 +255,6 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
     order: 1;
   }
 
-  .why-we-are-different {
-    max-width: 320px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    overflow-x: auto;
-  }
-
-  .steps {
-    max-width: 100% !important;
-    overflow-x: auto !important;
-  }
-
   .pos-container {
     padding-left: 35px !important;
     padding-right: 35px !important;
@@ -192,37 +265,18 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
     padding-right: 20px !important;
   }
 
-  .steps .step {
+  .steps > .step {
     min-width: 160px !important;
   }
 
-  .latest-blog-section .directday-recent-article-card {
-    min-width: 295px !important;
-    width: 295px !important;
-  }
-
   .why-we-are-different .card {
-    min-width: 295px !important;
-    width: 295px !important;
     height: 361px !important;
-  }
-}
-
-@media only screen and (max-width: 481px) {
-  .EPOS .cards .card {
-    min-width: calc(100% - 20px) !important;
-    width: calc(100% - 20px) !important;
   }
 }
 
 @media only screen and (max-width: 782px) {
   .admin-bar {
     --global--admin-bar--height: 46px;
-  }
-
-  .latest-blog-section > div {
-    max-width: 100% !important;
-    overflow-x: auto !important;
   }
 
   .EPOS {
@@ -234,16 +288,6 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 
   .EPOS .circle {
     display: none;
-  }
-
-  .EPOS .cards {
-    position: relative !important;
-    top: unset !important;
-    width: unset !important;
-    left: unset !important;
-    height: 420px !important;
-    max-width: 100%;
-    overflow-x: auto;
   }
 
   .EPOS .card,
@@ -1437,14 +1481,14 @@ template {
   align-items: flex-start;
 }
 
-.steps .step {
+.steps > .step {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 250px;
 }
 
-.steps .step .line {
+.steps > .step .line {
   position: absolute;
   top: 40px;
   height: 1px;
@@ -1453,11 +1497,11 @@ template {
   border-bottom: 2px dashed var(--direct-theme-blue);
 }
 
-.steps .step:last-child .line {
+.steps > .step:last-child .line {
   display: none;
 }
 
-.steps .step p:first-child {
+.steps > .step p:first-child {
   color: var(--direct-theme-blue);
   border: 2px dashed var(--direct-theme-blue);
   font-weight: bold;
@@ -1471,7 +1515,7 @@ template {
   justify-content: center;
 }
 
-.steps .step p:nth-child(2) {
+.steps > .step p:nth-child(2) {
   margin-top: 32px;
   color: black;
   opacity: 0.66;
@@ -1479,7 +1523,7 @@ template {
   margin-left: calc((100% - 80px) / 2 - 20px);
 }
 
-.steps .step p:nth-child(3) {
+.steps > .step p:nth-child(3) {
   margin-top: 12px;
   color: black;
   opacity: 0.66;
