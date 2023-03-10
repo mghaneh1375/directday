@@ -406,7 +406,8 @@ function twenty_twenty_one_scripts() {
 		wp_enqueue_style( 'twenty-twenty-one-style', get_template_directory_uri() . '/assets/css/ie.css', array(), wp_get_theme()->get( 'Version' ) );
 	} else {
 		// If not IE, use the standard stylesheet.
-		wp_enqueue_style( 'twenty-twenty-one-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'twenty-twenty-one-style', get_template_directory_uri() . '/style.css', array(), time() );
+		wp_enqueue_style( 'res-style', get_template_directory_uri() . '/res.css', array(), time() );
 	}
 
 	wp_enqueue_script(
@@ -420,7 +421,7 @@ function twenty_twenty_one_scripts() {
 	// RTL styles.
 	wp_style_add_data( 'twenty-twenty-one-style', 'rtl', 'replace' );
 
-	wp_enqueue_style( 'directday-variables-style', get_template_directory_uri() . '/assets/css/root.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'directday-variables-style', get_template_directory_uri() . '/assets/css/root.css', array(), time() );
 	wp_enqueue_style( 'directday-font-style', get_template_directory_uri() . '/assets/css/font-style.css', array(), wp_get_theme()->get( 'Version' ) );
 	wp_enqueue_style( 'directday-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), wp_get_theme()->get( 'Version' ) );
 

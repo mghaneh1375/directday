@@ -10,14 +10,18 @@
 ?>
 
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
+				<span class="site-logo-menu">
+					<a href="/" aria-current="page"></a>
+				</span>
+
 	<nav id="site-navigation" class="primary-navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'twentytwentyone' ); ?>">
 		<div class="menu-button-container">
 			<button id="primary-mobile-menu" class="button" aria-controls="primary-menu-list" aria-expanded="false">
-				<span class="dropdown-icon open"><?php esc_html_e( 'Menu', 'twentytwentyone' ); ?>
-					<?php echo twenty_twenty_one_get_icon_svg( 'ui', 'menu' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+				<span class="dropdown-icon open">
+					<?php echo twenty_twenty_one_get_icon_svg( 'ui', 'menu', 32 ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				</span>
-				<span class="dropdown-icon close"><?php esc_html_e( 'Close', 'twentytwentyone' ); ?>
-					<?php echo twenty_twenty_one_get_icon_svg( 'ui', 'close' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+				<span class="dropdown-icon close">
+					<?php echo twenty_twenty_one_get_icon_svg( 'ui', 'close', 32 ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				</span>
 			</button><!-- #primary-mobile-menu -->
 		</div><!-- .menu-button-container -->

@@ -104,203 +104,8 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
   color: var(--global--color-black-with-opacity);
 }
 
-@media only screen and (max-width: 782px) {
-  #steps-container + h2 {
-    text-align: center;
-  }
 
-  #steps-container {
-    position: relative;
-    width: 100%;
-  }
 
-  .EPOS,
-  .latest-blog-section {
-    justify-content: center !important;
-    align-items: center !important;
-  }
-
-  .steps,
-  .price-card-container,
-  .why-we-are-different {
-    justify-content: flex-start !important;
-    align-items: center;
-  }
-
-  .steps > .step:not(.active-item) > p {
-    display: none;
-  }
-
-  .steps > .step > p:first-child {
-    display: block;
-  }
-
-  .steps {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  .EPOS,
-  .latest-blog-section {
-    max-width: 100% !important;
-    min-width: 100% !important;
-    overflow: hidden;
-  }
-
-  .EPOS > .cards,
-  .latest-blog-section > div {
-    overflow-x: hidden !important;
-    gap: 20px !important;
-    position: relative !important;
-    top: unset !important;
-    width: unset !important;
-    min-width: calc(100% - 80px) !important;
-    max-width: calc(100% - 80px) !important;
-    left: unset !important;
-    height: 420px !important;
-  }
-
-  .latest-blog-section .directday-recent-article-card {
-    margin: unset !important;
-  }
-
-  .price-card-container,
-  .why-we-are-different {
-    max-width: calc(100% - 120px) !important;
-    overflow-x: hidden;
-    gap: 20px !important;
-  }
-
-  .price-card-container .price-card {
-    height: 460px !important;
-    padding-left: 48px !important;
-    padding-right: 48px !important;
-  }
-
-  #steps-container:not(.hidden-left-arrow):before,
-  #steps-container:not(.hidden-right-arrow)::after,
-  .price-card-container:not(.hidden-left-arrow)::before,
-  .price-card-container:not(.hidden-right-arrow)::after,
-  .latest-blog-section:not(.hidden-left-arrow)::before,
-  .latest-blog-section:not(.hidden-right-arrow)::after,
-  .EPOS:not(.hidden-left-arrow)::before,
-  .EPOS:not(.hidden-right-arrow)::after,
-  .why-we-are-different:not(.hidden-left-arrow)::before,
-  .why-we-are-different:not(.hidden-right-arrow)::after {
-    display: inline-block !important;
-    font: normal normal normal 14px/1 FontAwesome !important;
-    font-size: 40px !important;
-    color: var(--direct-theme-blue);
-    position: absolute;
-  }
-
-  #steps-container:not(.hidden-left-arrow):before,
-  .EPOS:not(.hidden-left-arrow)::before,
-  .why-we-are-different:not(.hidden-left-arrow)::before,
-  .latest-blog-section:not(.hidden-left-arrow)::before,
-  .price-card-container:not(.hidden-left-arrow)::before {
-    content: "\f104" !important;
-    left: 10px;
-  }
-
-  #steps-container::before,
-  #steps-container::after {
-    bottom: 50px;
-  }
-
-  .price-card-container:not(.hidden-right-arrow)::after,
-  .EPOS:not(.hidden-right-arrow)::after,
-  .why-we-are-different:not(.hidden-right-arrow)::after,
-  .latest-blog-section:not(.hidden-right-arrow)::after,
-  #steps-container:not(.hidden-right-arrow)::after {
-    content: "\f105" !important;
-    right: 10px;
-  }
-}
-
-@media only screen and (min-width: 600px) and (max-width: 782px) {
-  .price-card-container .price-card {
-    min-width: calc(50% - 15px);
-  }
-}
-
-@media only screen and (max-width: 599px) {
-  .price-card-container,
-  .EPOS > .cards,
-  .latest-blog-section > div,
-  .why-we-are-different {
-    gap: unset !important;
-  }
-
-  .EPOS > .cards > .card,
-  .latest-blog-section .directday-recent-article-card,
-  .price-card-container .price-card,
-  .why-we-are-different .card {
-    min-width: 100%;
-  }
-
-  .footer .directday-button {
-    padding: 13px 10px 12px !important;
-  }
-
-  .footer .directday-text-input {
-    max-width: calc(100% - 50px) !important;
-  }
-
-  .top-section > div:first-child {
-    order: 2;
-  }
-
-  .top-section > div:last-child {
-    order: 1;
-  }
-
-  .pos-container {
-    padding-left: 35px !important;
-    padding-right: 35px !important;
-  }
-
-  .choose_epos_plan * {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-
-  .steps > .step {
-    min-width: 160px !important;
-  }
-
-  .why-we-are-different .card {
-    height: 361px !important;
-  }
-}
-
-@media only screen and (max-width: 782px) {
-  .admin-bar {
-    --global--admin-bar--height: 46px;
-  }
-
-  .EPOS {
-    width: 100% !important;
-    height: unset !important;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .EPOS .circle {
-    display: none;
-  }
-
-  .EPOS .card,
-  .regular-card-section .card {
-    height: 420px !important;
-    background-color: white !important;
-    margin-top: unset !important;
-  }
-
-  .EPOS-container {
-    flex-direction: column;
-  }
-}
 
 @media only screen and (min-width: 652px) {
   :root {
@@ -863,6 +668,16 @@ template {
   font-weight: 500;
 }
 
+.directday-button-imp {
+  background-color: var(--direct-theme-blue) !important;
+  padding: 13px 40px 12px !important;
+  border-radius: var(--global--border-radius) !important;
+  cursor: pointer !important;
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+
 .directday-tag-container {
   margin-top: 64px;
   flex-wrap: wrap;
@@ -881,6 +696,66 @@ template {
 .our-story .wp-block-column:first-child figure figure:nth-child(2) {
   left: 140px;
   top: 20px;
+}
+
+.demo-top-banner {
+	height: 980px;
+	position: absolute;
+	top: -435px;
+	z-index: -1;
+	width: 100% !important;
+	background-color: var(--directday-blue-very-low-opacity);
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.demo-top-banner figure {
+	position: absolute;
+	bottom: -150px;
+	left: calc(50% - 533px / 2);
+}
+
+.demo-pane {
+	margin-top: calc(128px + 435px) !important;
+}
+
+.demo-pane + .directday-page-sub-title {
+	margin-bottom: 20px !important;
+}
+
+.margin-bottom-64 {
+	margin-bottom: 64px;
+}
+
+.signup-form .wpforms-field-container {
+	max-height: unset !important;
+	align-items: center;
+}
+
+.signup-form .wpforms-submit-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.signup-form .wpforms-submit-container button {
+	width: 340px;
+}
+
+.signup-form .wpforms-form .wpforms-field {
+	margin-right: unset !important;
+}
+
+.demo-apps {
+	gap: 32px;
+}
+
+.demo-apps .card {
+	height: 320px;
+}
+
+.demo-apps .card h2 {
+	color: var(--direct-theme-blue);
 }
 
 .directday-tag {
@@ -1741,6 +1616,13 @@ template {
   height: 140px !important;
 }
 
+.signup-form input {
+	background-color: white !important;
+	border-color: white !important;
+	
+}
+
+
 div.wpforms-container-full .wpforms-form .wpforms-field {
   padding: 8px 0 !important;
   margin-right: 30px;
@@ -2043,9 +1925,11 @@ div.wpforms-container-full .wpforms-form .wpforms-field {
       calc(100vw - 4 * var(--global--spacing-horizontal)),
       610px
     );
-    --responsive--alignwide-width: calc(
+/*    --responsive--alignwide-width: calc(
       100vw - 4 * var(--global--spacing-horizontal)
     );
+*/
+    --responsive--alignwide-width: calc(100vw - 40px);
     --responsive--alignright-margin: calc(
       0.5 * (100vw - var(--responsive--aligndefault-width))
     );
