@@ -513,8 +513,56 @@ template {
   height: 400px;
 }
 
+.footer a, .regular-card-section .card a {
+	text-decoration: none;
+}
+
+.directday-marginTop64 {
+	margin-top: 64px !important;
+}
+
+.directday-marginTop32 {
+	margin-top: 32px !important;
+}
+
+.directday-marginTop24 {
+	margin-top: 24px !important;
+}
+
+.signup-demo {
+	
+}
+
+.signup-demo h2 {
+	color: var(--direct-theme-blue);
+	font-size: var(--global--font-size-semi-lg);
+	font-weight: bold;
+}
+
+.wp-block-separator {
+	border-color: var(--global--color-black-with-very-huge-opacity) !important;
+}
+
+.directday-red-color {
+	color: var(--direct-theme-red);
+}
+
+.directday-mediumFont {
+	font-weight: 500;
+}
+
 .directday-large-text {
   font-size: var(--directday--font-size-lg);
+}
+
+.directday-button a {
+	text-decoration: none;
+	color: white;	
+}
+
+.directday-silver-button a {
+	text-decoration: none;
+	color: var(--direct-theme-blue);
 }
 
 .directday-bold-text {
@@ -752,10 +800,33 @@ template {
 
 .demo-apps .card {
 	height: 320px;
+	border-radius: var(--global--border-radius);
+	padding: 40px 44px 64px 45px;
 }
 
 .demo-apps .card h2 {
 	color: var(--direct-theme-blue);
+	font-size: var(--global--font-size-md-plus);
+	font-weight: bold;
+}
+
+.demo-apps .card figure {
+	margin-top: 50px;
+}
+
+.demo-apps .card ul {
+	margin-top: 50px;
+	list-style: none;
+	padding-left: 0;
+}
+
+.demo-apps .card ul li:before {
+	content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--direct-theme-blue); /* Change the color */
+  font-size: 20px;
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 20px;
 }
 
 .directday-tag {
@@ -1730,6 +1801,14 @@ div.wpforms-container-full .wpforms-form .wpforms-field {
 
 .kitchet-benefits {
   gap: 24px;
+}
+
+.kitchet-benefits .wp-block-group .wp-block-image {
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+	background-color: rgba(255, 255, 255, 0.33);
+	padding: 10px;
+	border-radius: 50%;
+	
 }
 
 .kitchet-benefits .wp-block-group {
@@ -2858,13 +2937,14 @@ a:hover {
   text-decoration-skip-ink: none;
 }
 
+/*
 .site a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
-  /* Only visible in Windows High Contrast mode */
   outline: 2px solid transparent;
   text-decoration: underline 1px dotted currentColor;
   text-decoration-skip-ink: none;
   background: rgba(255, 255, 255, 0.9);
 }
+*/
 
 .is-dark-theme
   .site
@@ -5323,7 +5403,7 @@ table.wp-calendar-table caption {
   }
 }
 
-@media only screen and (max-width: 481px) {
+@media only screen and (max-width: 600px) {
   .site-header.has-logo:not(.has-title-and-tagline).has-menu .site-logo {
     position: absolute;
     padding-top: calc(0.5 * var(--global--spacing-vertical));
@@ -5377,9 +5457,10 @@ table.wp-calendar-table caption {
     .menu-button-container {
     position: relative;
     padding-top: 0;
-    margin-top: calc(
+/*    margin-top: calc(
       0px - var(--button--padding-vertical) + 0.25 * var(--global--spacing-unit)
     );
+*/
   }
 
   body:not(.primary-navigation-open)
@@ -6060,7 +6141,7 @@ h1.page-title {
   padding-top: calc(0.5 * var(--global--spacing-vertical));
   padding-bottom: calc(0.25 * var(--global--spacing-vertical));
 }
-@media only screen and (max-width: 481px) {
+@media only screen and (max-width: 600px) {
   .menu-button-container {
     display: flex;
   }
@@ -6162,7 +6243,7 @@ h1.page-title {
     transition: all 0.15s ease-in-out;
   }
 }
-@media only screen and (max-width: 481px) {
+@media only screen and (max-width: 600px) {
   .primary-navigation > .primary-menu-container {
     height: 100vh;
     z-index: 499;

@@ -414,7 +414,7 @@ function twenty_twenty_one_scripts() {
 		'my-scripts',
 		get_template_directory_uri() . '/assets/js/my.js',
 		array(),
-		wp_get_theme()->get( 'Version' )
+		time()
 	);
 
 

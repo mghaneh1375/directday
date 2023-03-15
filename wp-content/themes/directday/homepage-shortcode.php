@@ -80,20 +80,8 @@ function create_pos_section() {
   return $output;
 }
 
-function create_testimonials_carousel() {
+function do_create_testimonials_carousel($posts) {
 
-  $args = array(
-    'post_type' => 'post',
-    'post_status' => 'publish',
-    'orderby' => 'date',
-    'order' => 'ASC',
-    'category_name' => 'testimonials',
-    'posts_per_page'   => -1,
-  );
-  
-  $query = new WP_Query( $args );
-  $posts = $query->posts;
-  
   $output = '<div id="testimonials_carousel" class="testimonials_carousel alignfull">';
 
   $middle = count($posts) / 2;
@@ -123,6 +111,9 @@ function create_testimonials_carousel() {
 
     <script>
 
+	let w = window.innerWidth;
+	if(w > 720) {
+
       document.addEventListener('DOMContentLoaded', fn, false);
       var curr_testimonials_carousel_idx = -1;
 
@@ -150,11 +141,30 @@ function create_testimonials_carousel() {
           }
 
       }
+}
       
     </script>
 
   <?php
   return $output;
+
+
+}
+
+function create_testimonials_carousel() {
+
+  $args = array(
+    'post_type' => 'post',
+    'post_status' => 'publish',
+    'orderby' => 'date',
+    'order' => 'ASC',
+    'category_name' => 'testimonials',
+    'posts_per_page'   => -1,
+  );
+  
+  $query = new WP_Query( $args );
+  $posts = $query->posts;
+	return do_create_testimonials_carousel($posts);
 }
 
 
@@ -305,21 +315,8 @@ function create_journey_section() {
   return $output;
 }
 
+function do_create_blog_section($posts) {
 
-function create_blogs_section() {
-  
-  $args = array(
-    'post_type' => 'post',
-    'post_status' => 'publish',
-    'orderby' => 'date',
-    'order' => 'DESC',
-    'category_name' => 'blog',
-    'posts_per_page'   => 4,
-  );
-
-  $query = new WP_Query( $args );
-  $posts = $query->posts;
-  
   $output = '<div class="latest-blog-section directday-flex directday-col-flex directday-flex-center alignwide">';
   $output .= '<div style="margin-bottom: 64px;" class="directday-flex directday-row-flex">';
 
@@ -344,6 +341,26 @@ function create_blogs_section() {
   $output .= '</div>';
 
   return $output;
+
+}
+
+
+function create_blogs_section() {
+  
+  $args = array(
+    'post_type' => 'post',
+    'post_status' => 'publish',
+    'orderby' => 'date',
+    'order' => 'DESC',
+    'category_name' => 'blog',
+    'posts_per_page'   => 4,
+  );
+
+  $query = new WP_Query( $args );
+  $posts = $query->posts;
+  
+
+  return do_create_blog_section($posts);
 }
 
 add_shortcode('blogs', 'create_blogs_section');

@@ -2,7 +2,7 @@
 	<?php the_custom_logo(); ?>
 	<span class="title">DIRECTDAY</span>
 	<div class="directday-text-input">
-		<input placeholder="Your Email Adress" type="text" /><span class="directday-button">Get a demo</span>
+		<input placeholder="Your Email Adress" type="text" /><a href="/demo" class="directday-button">Get a demo</a>
 	</div>
 	<div class="links">
 		<a>Product</a>

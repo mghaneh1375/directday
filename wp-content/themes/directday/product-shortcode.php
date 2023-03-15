@@ -21,7 +21,7 @@ function create_for_business() {
     $output .= get_the_post_thumbnail($post->ID);
     $output .= '<p class="title">' . $post->post_title . '</p>';
     $output .= '<div class="desc">' . $post->post_content . '</div>';
-    $output .= '</div><span class="directday-silver-button">START FREE</span></div>';
+    $output .= '</div><a href="/product/' . $post->post_name . '" class="directday-silver-button">START FREE</a></div>';
   }
 
   $output .= '</div>';
@@ -50,7 +50,7 @@ function create_for_customer() {
     $output .= get_the_post_thumbnail($post->ID);
     $output .= '<p class="title">' . $post->post_title . '</p>';
     $output .= '<div class="desc">' . $post->post_content . '</div>';
-    $output .= '</div><span class="directday-silver-button">Learn more</span></div>';
+    $output .= '</div><a class="directday-silver-button">Learn more</a></div>';
   }
 
   $output .= '</div>';
