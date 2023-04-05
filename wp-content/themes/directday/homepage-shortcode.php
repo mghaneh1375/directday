@@ -1,5 +1,27 @@
 <?php
 
+function send_mail() {
+
+	$parameter = $_SERVER['QUERY_STRING'];
+
+	if ($parameter && str_contains($parameter, 'mail=')) {
+
+		$mailAddr = str_replace("%40", "@", explode('mail=', $parameter)[1]);
+
+
+add_filter('wp_mail_content_type', function( $content_type ) {
+            return 'text/html';
+});
+
+$msg = "<p>Username: 01234567890</p>";
+$msg .= "<p>Password: 123456</p>";
+wp_mail( $mailAddr, "DirectDay, Get a demo Account", $msg );
+
+    		return '<p class="directday-mediumFont directday-marginTop24">' . str_replace("%40", "@", explode('mail=', $parameter)[1]) . '</p>';
+	}
+
+}
+
 
 function create_why_we_are_different_cards() {
     
@@ -55,7 +77,7 @@ function create_pos_section() {
 
     if(str_contains(strtolower($post->post_title), 'directday')) {
       $tmp = explode('directday', strtolower($post->post_title));
-      $output .= '<p class="directday-page-title"><span class="directday-blue">DIRECTDAY</span><span>' .  $tmp[1] . '</span></p>';
+      $output .= '<p class="directday-page-title"><span style="text-transform: none" class="directday-blue">DirectDay</span><span>' .  $tmp[1] . '</span></p>';
     }
     else
       $output .= '<p class="directday-page-title">' . $post->post_title . '</p>';
@@ -82,7 +104,7 @@ function create_pos_section() {
 
 function do_create_testimonials_carousel($posts) {
 
-  $output = '<div id="testimonials_carousel" class="testimonials_carousel alignfull">';
+  $output = '<div id="testimonials_carousel_container" style="position: relative; overflow-x: hidden; height: 280px" class="alignfull"><div id="testimonials_carousel" class="testimonials_carousel">';
 
   $middle = count($posts) / 2;
   $i = 0;
@@ -104,7 +126,7 @@ function do_create_testimonials_carousel($posts) {
     $i++;
   }
 
-  $output .= '</div>';
+  $output .= '</div></div>';
 
   ?>
     
@@ -115,13 +137,23 @@ function do_create_testimonials_carousel($posts) {
 	if(w > 720) {
 
       document.addEventListener('DOMContentLoaded', fn, false);
-      var curr_testimonials_carousel_idx = -1;
+
+
+	function sc_test(currIdx) {
+
+	      var elem = document.getElementById("testimonials_carousel");
+
+		let scroll = currIdx * 400;
+        	elem.style.left = (w / 2 - scroll - 200) + "px";
+
+	}
 
       function fn() {
-        let elem = document.getElementById("testimonials_carousel");
-        elem.scrollLeft = elem.offsetWidth / 2;
 
-         var el = document.querySelectorAll("#testimonials_carousel > .card");
+	var elem = document.getElementById("testimonials_carousel");
+        var el = document.querySelectorAll("#testimonials_carousel > .card");
+	sc_test(el.length / 2);
+
           for(var i =0; i < el.length; i++) {
             if(el[i].classList.contains('active-card'))
               curr_testimonials_carousel_idx = i;
@@ -135,8 +167,7 @@ function do_create_testimonials_carousel($posts) {
                 });
 
                 this.classList = ['card active-card'];
-                elem.scrollLeft += (this.getAttribute('data-idx') - curr_testimonials_carousel_idx) * 400;
-                curr_testimonials_carousel_idx = this.getAttribute('data-idx');
+		sc_test(this.getAttribute('data-idx'));
               };
           }
 
@@ -206,7 +237,7 @@ function create_business_epos() {
     'post_type' => 'post',
     'post_status' => 'publish',
     'orderby' => 'date',
-    'order' => 'ASC',
+    'order' => 'DESC',
     'category_name' => 'epos-business',
     'posts_per_page'   => -1,
   );
@@ -328,8 +359,8 @@ function do_create_blog_section($posts) {
       $cats = get_the_category($post->ID);
 
       $output .= '<p style="font-weight: bold; color: var(--direct-theme-blue); text-transform: uppercase; text-align: center; padding: 24px">' . $cats[0]->name . '</p>';
-      $output .= '<p class="title">' . $post->post_title . '</p></div>';      
-      $output .= '<div class="tags directday-flex-center">'; 
+      $output .= '<p class="title"><a target="_blank" href="' . get_permalink($post->ID) . '">' . $post->post_title . '</a></p></div>';
+      $output .= '<div class="tags directday-flex-center">';
       $output .= '<p class="author">By Direct Day</p>';
 
       $output .= '</div>';
@@ -370,6 +401,7 @@ add_shortcode('switch_business_epos_button', 'create_switch_business_epos_button
 add_shortcode('business_epos', 'create_business_epos');
 add_shortcode('customer_epos', 'create_customer_epos');
 
+add_shortcode('send_mail', 'send_mail');
 add_shortcode('why_we_are_different_cards', 'create_why_we_are_different_cards');
 add_shortcode('pos', 'create_pos_section');
 add_shortcode('testimonials_carousel', 'create_testimonials_carousel');

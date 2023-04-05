@@ -1,20 +1,28 @@
 <div class="footer directday-component-gap">
 	<?php the_custom_logo(); ?>
-	<span class="title">DIRECTDAY</span>
-	<div class="directday-text-input">
-		<input placeholder="Your Email Adress" type="text" /><a href="/demo" class="directday-button">Get a demo</a>
-	</div>
+	<span class="title">DirectDay</span>
+
+<!--	<div class="directday-text-input">	--!>
+		<!-- <input placeholder="Your Email Adress" type="text" /> --!>
+<!--	</div>	--!>
+
+	<a href="/pos-system-demo" class="directday-button">Get a demo</a>
+
 	<div class="links">
-		<a>Product</a>
+		<a href="/pos-system-products">Products</a>
 		<span>|</span>
-		<a>Pricing</a>
+		<a href="/pos-system-pricing">Pricing</a>
 		<span>|</span>
-		<a>Learn</a>
+		<a href="/learn">Learn</a>
 		<span>|</span>
-		<a>Company</a>
+		<a href="/company">About us</a>
 	</div>
 	<div class="socials">
-		<li class="fa fa-facebook"></li>
-		<li class="fa fa-instagram"></li>
+		<a target="_blank" href="https://www.facebook.com/DirectDaySystems">
+			<li class="fa fa-facebook"></li>
+		</a>
+		<a target="_blank" href="https://instagram.com/directdaysystems?igshid=ZDdkNTZiNTM=">
+			<li class="fa fa-instagram"></li>
+		</a>
 	</div>
 </div>

@@ -37,9 +37,9 @@
   position: relative;
 }
 .wppsac-post-slider.design-1 .wppsac-post-content-left {
-  position: absolute !important;
+/*  position: absolute !important;
   left: 0;
-  bottom: 0px;
+*/
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
   color: #fff;
@@ -72,8 +72,8 @@
   left: 0 !important;
 }
 .wppsac-post-slider.design-1 .slick-dots {
-  left: calc(50% - 50px) !important;
-  bottom: 25px !important;
+  left: calc(50% - 24px) !important;
+  bottom: 20px !important;
 }
 
 .wppsac-post-slider.design-1 a.wppsac-readmorebtn {
@@ -494,10 +494,9 @@
   .wppsac-post-slider.design-3 .wppsac-post-image-bg img {
     max-width: 600px !important;
   }
-  .wppsac-post-slider.design-1 .wppsac-post-content,
-  .wppsac-post-slider.design-2 .wppsac-post-content,
-  .wppsac-post-slider.design-3 .wppsac-post-content {
-    display: none;
+
+  .wppsac-post-slider.design-1 .slick-dots {
+	bottom: 40px !important;
   }
 }
 @media only screen and (min-width: 40.0625em) {

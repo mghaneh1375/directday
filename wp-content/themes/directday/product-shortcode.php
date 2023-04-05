@@ -21,7 +21,8 @@ function create_for_business() {
     $output .= get_the_post_thumbnail($post->ID);
     $output .= '<p class="title">' . $post->post_title . '</p>';
     $output .= '<div class="desc">' . $post->post_content . '</div>';
-    $output .= '</div><a href="/product/' . $post->post_name . '" class="directday-silver-button">START FREE</a></div>';
+    $link = get_permalink( $post->ID );
+    $output .= '</div><a href="' . $link . '" class="directday-silver-button">START FREE</a></div>';
   }
 
   $output .= '</div>';
@@ -74,11 +75,11 @@ function create_others_section() {
     $output = '<div class="others-card-section directday-flex directday-row-flex directday-flex-center alignwide">';
     
     foreach($posts as $post) {
-        $output .= '<div class="card"><div><div style="height: 150px">';
+        $output .= '<div class="card">';
+        $output .= '<p class="title">' . $post->post_title . '</p><figure>';
         $output .= get_the_post_thumbnail($post->ID);
-        $output .= '</div><p class="title">' . $post->post_title . '</p>';
-        $output .= '<div class="desc">' . $post->post_content . '</div>';
-        $output .= '</div><span class="directday-silver-button">Learn more</span></div>';
+        $output .= '</figure><div class="desc">' . $post->post_content . '</div>';
+        $output .= '<span class="directday-silver-button">Learn more</span></div>';
     }
 
     $output .= '</div>';

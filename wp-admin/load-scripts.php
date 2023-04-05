@@ -37,6 +37,7 @@ require ABSPATH . 'wp-admin/includes/noop.php';
 require ABSPATH . WPINC . '/script-loader.php';
 require ABSPATH . WPINC . '/version.php';
 
+
 $expires_offset = 31536000; // 1 year.
 $out            = '';
 
@@ -63,6 +64,5 @@ header( "Etag: $wp_version" );
 header( 'Content-Type: application/javascript; charset=UTF-8' );
 header( 'Expires: ' . gmdate( 'D, d M Y H:i:s', time() + $expires_offset ) . ' GMT' );
 header( "Cache-Control: public, max-age=$expires_offset" );
-
 echo $out;
 exit;

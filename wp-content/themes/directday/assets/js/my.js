@@ -9,7 +9,8 @@ function scrollContainer(
   scrollElem,
   elem,
   limit,
-  specialMode
+  specialMode,
+  offset
 ) {
   let scroll = 0;
   for (let i = 1; i <= childs.length; i++) {
@@ -19,8 +20,11 @@ function scrollContainer(
       if (i < currIdx) {
 	if(specialMode)
 		scroll += window.innerWidth;
-	else
-		scroll += childs[i - 1].offsetWidth + 0;
+	else {
+		scroll += childs[i - 1].offsetWidth;
+		if(offset !== undefined)
+			scroll += offset;
+	}
       }
 
       childs[i - 1].classList.remove("active-item");
@@ -55,14 +59,15 @@ function doMakeResponsive(
   currIdx,
   isFullWidth,
   bottom,
-  specialMode
+  specialMode,
+  offset
 ) {
   let rect = elem.getBoundingClientRect();
   let childs = scrollElem.children;
 
   if (childs.length === 1) childs = childs[0].childNodes;
 
-  scrollContainer(childs, currIdx, scrollElem, elem, limit, specialMode);
+  scrollContainer(childs, currIdx, scrollElem, elem, limit, specialMode, offset);
 
   elem.onclick = function (e) {
     let isClicked = false;
@@ -77,7 +82,7 @@ function doMakeResponsive(
 
         if (
           e.offsetY >= elem.offsetHeight - bottom - 40 &&
-          e.offsetY <= elem.offsetHeight - bottom
+          e.offsetY <= elem.offsetHeight - bottom + 20
         )
           isClicked = true;
 
@@ -99,12 +104,36 @@ function doMakeResponsive(
       else isClicked = false;
     }
     if (isClicked)
-      scrollContainer(childs, currIdx, scrollElem, elem, limit, specialMode);
+      scrollContainer(childs, currIdx, scrollElem, elem, limit, specialMode, offset);
   };
+}
+
+
+function sc(childs, currIdx) {
+
+  let scroll = 0;
+
+  for (let i = 0; i < childs.length; i++) {
+
+    if (i < currIdx)
+	scroll += childs[i].scrollWidth;
+    else break;
+
+  }
+
+  return scroll;
+
 }
 
 function makeResponsive() {
   let width = window.innerWidth;
+  let slider = document.querySelectorAll(".top-section > div:nth-child(2) img");
+for (i = 0; i < slider.length; i++) {
+  slider[i].addEventListener('click', function() {
+  	document.location.href = '/pos-system-demo';
+  });
+}
+
 
   if (width < 800) {
 
@@ -127,8 +156,10 @@ function makeResponsive() {
     	doMakeResponsive(el3[0], el3[0].children[0], 4, 1, true, -1, false);
 
     let el4 = document.getElementsByClassName("EPOS");
-    if(el4.length > 0)
+    if(el4.length > 0) {
     	doMakeResponsive(el4[0], el4[0].children[1], 3, 1, true, -1, false);
+    	doMakeResponsive(el4[1], el4[1].children[1], 2, 1, true, -1, false);
+    }
 
     let el7 = document.getElementsByClassName("regular-card-section");
     if(el7.length > 0)
@@ -139,8 +170,14 @@ function makeResponsive() {
     	doMakeResponsive(el8[0], el8[0], 2, 1, true, -1, false);
 
     let el9 = document.getElementsByClassName("others-card-section");
-    if(el9.length > 0)
+    if(el9.length > 0) {
+      if(el9.length > 1) {
+    	doMakeResponsive(el9[0], el9[0], 5, 1, true, -1, false);
+    	doMakeResponsive(el9[1], el9[1], 3, 1, true, -1, false);
+      }
+      else
     	doMakeResponsive(el9[0], el9[0], 4, 1, true, -1, false);
+    }
 
 
     let el5 = document.getElementById("steps-container");
@@ -150,13 +187,57 @@ function makeResponsive() {
       el5,
       document.getElementsByClassName("steps")[0],
       5,
-      3,
+      1,
       true,
       50,
-      false
+      false, 30
     );
 }
 
+
+    let el10 = document.getElementsByClassName("our-values");
+
+    if(el10.length > 0)
+	el10[0].scrollLeft = 394;
+
+    let el11 = document.getElementById("go-prev-team-member");
+
+
+    if(el11 !== undefined && el11 !== null) {
+
+	let el12 = document.getElementsByClassName("our-team-gallery")[0];
+	let currIdxForTeamMembers = 2;
+
+	el11.onclick = function (e) {
+		if(currIdxForTeamMembers == 0) return;
+		currIdxForTeamMembers--;
+		el12.scrollLeft = sc(el12.children, currIdxForTeamMembers) - window.innerWidth / 4;
+		if(currIdxForTeamMembers == 0)
+			el11.classList.add('hidden');
+		else
+			el13.classList.remove('hidden');
+
+
+
+	};
+
+	let el13 = document.getElementById("go-next-team-member");
+	el13.onclick = function (e) {
+		if(currIdxForTeamMembers == 4) return;
+		currIdxForTeamMembers++;
+		el12.scrollLeft = sc(el12.children, currIdxForTeamMembers) - window.innerWidth / 4;
+
+		if(currIdxForTeamMembers == 4)
+			el13.classList.add('hidden');
+		else
+			el11.classList.remove('hidden');
+
+
+	};
+
+
+	el12.scrollLeft = sc(el12.children, currIdxForTeamMembers) - window.innerWidth / 4;
+    }
 
 
   }

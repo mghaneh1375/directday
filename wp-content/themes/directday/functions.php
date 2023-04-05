@@ -582,6 +582,8 @@ function twentytwentyone_customize_preview_init() {
 }
 add_action( 'customize_preview_init', 'twentytwentyone_customize_preview_init' );
 
+
+
 /**
  * Enqueue scripts for the customizer.
  *

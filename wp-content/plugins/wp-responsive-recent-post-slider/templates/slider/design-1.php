@@ -23,12 +23,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 			<?php } ?>
 		</div>
-		<div class="wppsac-post-image-bg">
-			<a href="<?php the_permalink(); ?>">
-				<?php if( ! empty( $slider_orig_img ) ) { ?>
-				<img class="wppsac-post-image" <?php if( $lazyload ) { ?>data-lazy="<?php echo esc_url( $slider_orig_img ); ?>" <?php } ?> src="<?php echo esc_url( $feat_image ); ?>" alt="<?php the_title_attribute(); ?>" />
-				<?php } ?>
-			</a>
-		</div>
 	</div>
 </div>

@@ -39,6 +39,10 @@
 	position: relative;
 }
 
+.block-editor-block-list__block {
+        display: unset !important;
+}
+
 .columns-2 .inner-sidebar {
 	margin-right: auto;
 	width: 286px;
@@ -163,7 +167,7 @@
 	outline-offset: -2px;
 }
 
-.hidden,
+.hidden:not(.block-editor-block-list__block),
 .js .closed .inside,
 .js .hide-if-js,
 .no-js .hide-if-no-js,

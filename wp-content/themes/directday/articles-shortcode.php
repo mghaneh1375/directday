@@ -89,7 +89,7 @@ function recent_posts() {
         'orderby' => 'date',
         'order' => 'DESC',
         'category_name' => 'blog',
-        'posts_per_page'   => 12,
+        'posts_per_page'   => 4,
     );
 
     $query = new WP_Query( $args );

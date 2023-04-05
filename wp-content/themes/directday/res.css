@@ -106,6 +106,8 @@
   }
 
   .EPOS,
+  .our-team-gallery,
+  .our-values,
   .latest-blog-section {
     justify-content: center !important;
     align-items: center !important;
@@ -137,6 +139,72 @@
     min-width: min(calc(100% - 60px), 400px) !important;
     overflow: hidden;
     justify-content: flex-start !important;
+  }
+
+  #our-team-container {
+	position: relative;
+	max-width: 100%;
+	width: 100%;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+  }
+
+  #box-shadow-for-our-team {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 350px;
+	box-shadow: 80px 0 70px -4px #f0f0f073 inset, -80px 0 70px -4px #f0f0f073 inset;
+	z-index: 1;
+  }
+
+  .our-team-gallery {
+    max-width: 100% !important;
+    min-width: 100% !important;
+    overflow-x: hidden;
+    height: 340px;
+    gap: 0 !important;
+	
+  }
+
+  #our-team-container .fa {
+	position: absolute;
+	top: calc(50% - 24px);
+	font-size: 48px;
+	color: white;
+  }
+
+  #our-team-container .fa-angle-left {
+	left: 40px;
+  }
+
+  #our-team-container .fa-angle-right {
+	right: 40px;
+  }
+
+  .footer .links {
+	gap: 5px;
+  }
+
+
+  .our-values {
+    max-width: 100% !important;
+    min-width: 100% !important;
+    overflow-x: auto;
+    height: 340px;
+    justify-content: flex-start !important;
+  }
+
+  .our-team-gallery img {
+	width: calc(100vw / 2) !important;
+  }
+
+  .our-values .card {
+	height: 260px;
+	width: 236px !important;
+	min-width: 236px !important;
   }
 
   .EPOS,
@@ -172,9 +240,9 @@
   }
 
   .price-card-container .price-card {
-    height: 460px !important;
-    padding-left: 48px !important;
-    padding-right: 48px !important;
+    height: auto !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
   }
 
   #steps-container:not(.hidden-left-arrow)::before,
@@ -249,13 +317,215 @@
 
 @media only screen and (max-width: 599px) {
 
+.top-section {
+	margin-top: -32px;
+}
+
+#testimonials_carousel_container {
+	height: 350px !important;
+}
+
+
+div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
+        margin-left: 50% !important;
+}
+
+
+	.directday-page-sub-title {
+		text-align: left !important;
+	}
+
+	.our-story .wp-block-column:first-child figure figure:nth-child(2) {
+		left: 110px;
+	}
+
+	#stats .border-right-1px-silver {
+		border: none;
+	}
+
+	.kitchen-slider .directday-button, .counter-slider .directday-button, .waiter-slider .directday-button {
+		margin-top: 30px !important;
+	}
+
+	.showOnMobile {
+		display: unset !important;
+	}
+
+
+	.our-team-gallery {
+		flex-wrap: nowrap !important;
+		justify-content: flex-start !important;
+	}
+
+	.our-team-gallery figure {
+		min-width: calc(100vw / 2);
+	}
+
+	.wpforms-field-container input, .wpforms-field-container textarea {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	#contact-form-container {
+		margin-bottom: -80px;
+		padding: 48px 40px !important;
+		
+	}
+
+	div.wpforms-container-full .wpforms-form .wpforms-field {
+		margin-right: unset !important;
+	}
+
+	.contact-us-form {
+		margin: 0 0 30px 0 !important;
+		width: 100%;
+	}
+
+	.contact-us-form form {
+		margin-left: 0 !important;
+	}
+
+	.wpforms-field-container {
+		max-height: unset !important;		
+		height: auto !important;
+		max-width: 100%;
+	}
+
+	.contact-us-form button {
+		width: 100% !important;
+	}
+
+	.contact-us-form button {
+		margin-left: unset !important;
+	}
+
+	.marginTop0 {
+		margin-top: 0 !important;
+	}
+
+	.directday-blue-transparent-box {
+		max-width: 100% !important;
+		border-radius: unset !important;
+	}
+
+	.directday-ultra-large-text-in-phone {
+		font-size: 28px !important;
+	}
+
+	.our-story figure {
+		width: 70% !important;
+	}
+
+	.our-story .wp-block-column:nth-child(2) {
+		margin-top: 275px;
+	}
+
+	.about-us.height400 {
+		height: unset !important;
+	}
+
+	video {
+		max-width: 100% !important;
+		height: auto !important;
+		max-height: unset !important;
+		width: 100% !important;
+	}
+
+	.padding-right-40 {
+		padding-right: 10px;
+	}
+
+	.half-w-in-phone {
+		width: calc(50% - 30px);
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.hidden-in-phone {
+		display: none !important;
+	}
+
+	.flex-in-phone {
+		display: flex !important;
+	}
+
+	.flex-col-in-phone {
+		flex-direction : column;
+	}
+
+	.order1-in-phone {
+		order: 1 !important;
+	}
+
+	.order2-in-phone {
+		order: 2 !important;
+	}
+
+	.order3-in-phone {
+		order: 3 !important;
+	}
+
+	.order4-in-phone {
+		order: 4 !important;
+	}
+
+	.order5-in-phone {
+		order: 5 !important;
+	}
+
+	.order6-in-phone {
+		order: 6 !important;
+	}
+
+
+	.wppsac-wrap {
+		max-width: 100% !important;
+		width: 100% !important;
+		position: static;
+		margin-top: -48px !important;
+	}
+
+	.full-width-in-phone {
+		max-width: 100% !important;
+	}
+
+	.slider-padding-in-phone {
+		padding: 48px 28px 30px !important;
+	}
+
+	.reverse-order-in-phone > *:nth-child(2) {
+		order: 1;
+	}
+
+	.reverse-order-in-phone > *:nth-child(1) {
+		order: 2;
+	}
+
+	.no-border-radius-in-phone {
+		border-radius: unset !important;
+	}
+
 	.others-card-section .card .desc {
 		max-height: 180px !important;
 		margin-bottom: 24px;
 	}
 
 	.primary-navigation-open .primary-menu-container {
-		padding-top: 40px !important;
+		padding-top: 10px !important;
+	}
+
+	.primary-navigation-open .primary-menu-container > ul > li:first-child a:before {
+		background: url("http://math.echeck.ir/wp-content/uploads/2023/03/logo48-1@2x.png") no-repeat center center !important;
+		background-size: auto;
+		background-size: 100%;
+		content: "" !important;
+		display: block;
+		height: 23px;
+		width: 23px;
+		background-size: contain !important;
+		float: left;
+		margin-top: -5px;
+		margin-right: 10px;
 	}
 
 
@@ -270,9 +540,18 @@
 		background-color: transparent !important;
 	}
 
-	.primary-navigation-open #masthead .signIn-menu a,
-	.primary-navigation-open #masthead .get-demo-menu a {
+	.primary-navigation-open #masthead .signIn-menu:not(.current-menu-item) a,
+	.primary-navigation-open #masthead .get-demo-menu:not(.current-menu-item) a {
 		color: var(--global--color-black-with-opacity) !important;
+	}
+
+	.primary-navigation-open #masthead .signIn-menu.current-menu-item a,
+	.primary-navigation-open #masthead .get-demo-menu.current-menu-item a {
+		color: var(--direct-theme-blue) !important;
+	}
+
+	#site-navigation {
+		z-index: 10;
 	}
 
 	#content {
@@ -359,6 +638,7 @@
 
 	.testimonials_carousel {
 		margin-top: 0 !important;
+		position: unset !important;
 		height: 350px;
 	}
 
@@ -443,11 +723,31 @@
 
 	.kitchen-slider, .waiter-slider, .counter-slider {
 		margin: -60px 0 0 0 !important;
-		padding: 25px 25px 15px 25px;
+		padding: 25px 25px 0 25px;
 		max-width: 100% !important;
 		gap: 5px !important;
 		height: auto;
 		overflow-x: hidden;
+		background-size: cover !important;
+	}
+
+	.kitchen-slider .directday-button, .waiter-slider .directday-button, .counter-slider .directday-button {
+		text-align: center;
+	}
+
+	.kitchen-slider figure, .waiter-slider figure, .counter-slider figure {
+		max-height: 100%;
+		overflow: hidden;
+		margin-right: -25px;
+	}
+
+	.kitchen-slider figure {
+		margin-bottom: 15px !important;
+	}
+
+	.waiter-slider figure {
+		margin-bottom: 10px !important;
+		margin-right: -40px;
 	}
 
 	.kitchen-desc, .counter-desc, .waiter-desc {
@@ -491,10 +791,8 @@
 	}
 
 	.waiter-slider img {
-		margin-bottom: -140px;
-		margin-top: -130px;
-		margin-right: -200px;
-		width: 500px !important;
+		width: 180px !important;
+		height: auto !important;
 	}
 
 	.counter-slider img {
@@ -528,9 +826,11 @@
 	}
 
 	.demo-top-banner {
-	    height: 450px;
+	    height: 340px;
 	    top: -50px;
-	    border-radius: 14%;
+	    border-radius: 60px;
+	    border-top-right-radius: 0;
+    	    border-top-left-radius: 0;
 	}
 
 .demo-pane {
@@ -634,7 +934,12 @@
   }
 
   .steps > .step {
-    min-width: 160px !important;
+    min-width: 210px !important;
+  }
+
+  .steps > .step.active-item > p:nth-child(2), 
+  .steps > .step.active-item > p:nth-child(3) {
+	width: calc(100% + 50px);
   }
 
   .why-we-are-different .card {

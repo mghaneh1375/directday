@@ -428,6 +428,10 @@ template {
   display: none;
 }
 
+.paddingLeft20 {
+	padding-left: 20px !important;
+}
+
 .site-main {
   padding-top: 0 !important;
 }
@@ -452,10 +456,88 @@ template {
   left: calc((100% - var(--responsive--alignwide-width)) / 2);
 }
 
+.wpforms-confirmation-container-full {
+	background: none !important;
+	border: none !important;
+	color: rgba(255, 255, 255, 0.66);
+	font-weight: bold;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
+	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(248deg) brightness(103%) contrast(102%);
+	margin-left: 87% !important;
+	margin-top: 30px;
+}
+
+.top-section > div:nth-child(2) img {
+	border-radius: 20px;
+	cursor: pointer;
+
+}
+
+.top-section > div:nth-child(1) {
+	flex-grow: 2 !important;
+}
+
+.top-section > div:nth-child(2) {
+	flex-grow: 3 !important;
+}
+
+
 #masthead .site-logo-menu a {
   padding: 0 !important;
   color: white;
   /* top: 48px; */
+}
+
+.slider-text {
+	line-height: 1.4;
+	color: var(--global--color-black-with-opacity);
+}
+
+.showOnMobile {
+	display: none !important;
+}
+
+.alignLeft {
+	text-align: left !important;
+}
+
+.directday-h2 {
+	font-size: var(--global--font-size-semi-lg);
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.directday-h3 {
+	font-size: var(--global--font-size-md-plus);
+	margin-bottom: 24px;
+	margin-top: 64px !important;
+	font-weight: bold;
+}
+
+.directday-h4 {
+	font-size: var(--heading--font-size-h4);
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.my-ul {
+	margin-top: 20px;
+}
+
+.my-ul li {
+	margin-top: 16px !important;
+}
+
+.marginBottom0 {
+	margin-bottom: 0 !important;
+}
+
+#learn-more-container a {
+	text-decoration: none;
 }
 
 #masthead .site-logo-menu a::before {
@@ -467,6 +549,45 @@ template {
   height: 32px;
   width: 32px;
   background-size: contain !important;
+}
+
+.showMoreSliderDesc > p,
+.showLessSliderDesc > p {
+	max-width: 450px;
+}
+
+.product-container {
+	padding-bottom: 0 !important;
+}
+
+.product-container a,
+.pricing-container a,
+.showMoreSliderDesc a,
+.showLessSliderDesc a {
+	color: var(--direct-theme-blue);
+	margin-top: 20px;
+}
+
+.product-container-more a:after,
+.pricing-container-more a:after,
+.showMoreSliderDesc a:after {
+	display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+	content: "\f107";
+	margin-left: 3px;
+}
+
+.product-container-less a:after,
+.pricing-container-less a:after,
+.showLessSliderDesc a:after {
+	display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+	content: "\f106";
+	margin-left: 3px;
 }
 
 #masthead .signIn-menu {
@@ -485,7 +606,7 @@ template {
 }
 
 #masthead .get-demo-menu a {
-  color: white;
+  color: white !important;
 }
 
 #site-navigation {
@@ -510,9 +631,21 @@ template {
   height: 400px;
 }
 
+.footer .directday-button {
+	margin-top: 24px;
+}
+
 .footer a,
 .regular-card-section .card a {
   text-decoration: none;
+}
+
+#box-shadow-for-our-team {
+	display: none;
+}
+
+.directday-marginTop128 {
+  margin-top: 128px !important;
 }
 
 .directday-marginTop64 {
@@ -525,6 +658,55 @@ template {
 
 .directday-marginTop24 {
   margin-top: 24px !important;
+}
+
+.post > .post > img {
+	width: 100% !important;
+	height: auto !important;
+}
+
+.post > .post .entry-header {
+	margin-top: 32px !important;
+	padding-bottom: 0 !important;
+}
+
+.post > .post .entry-header > .title {
+	font-size: var(--directday--font-size-lg);
+	color: var(--global--color-black-with-opacity);
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.post > .post .content > .entry-content * {
+	max-width: 100% !important;
+	min-width: 100% !important;
+	width: 100% !important;
+}
+
+.post > .post .content > .date {
+	font-size: var(--directday--font-size-md);
+	color: var(--global--color-black-with-very-opacity);
+	margin-top: 24px;
+	font-weight: 500;
+}
+
+.post > .post .content > .tags {
+	margin-top: 24px;
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	padding-bottom: 24px;
+	border-bottom: 1px solid var(--global--color-black-with-huge-opacity);
+	margin-bottom: 24px;
+}
+
+.post > .post .content > .tags > .tag {
+	padding: 6px 16px;
+	border-radius: 14px;
+	background-color: #fff;
+	color: var(--direct-theme-blue);
+	font-weight: 500;
+	font-size: var(--directday--font-size-sm);
 }
 
 .signup-demo {
@@ -680,7 +862,12 @@ template {
 }
 
 .directday-blue-border {
-  border: 1px solid var(--direct-theme-blue);
+  border: 1px solid var(--direct-theme-blue) !important;
+  color: var(--direct-theme-blue) !important;
+}
+
+.directday-blue-border a {
+  color: var(--direct-theme-blue) !important;
 }
 
 .directday-silver-button {
@@ -825,6 +1012,10 @@ template {
   width: 20px;
 }
 
+.directday-normal-font-size {
+	font-size: var(--directday--font-size-md) !important;
+}
+
 .directday-tag {
   background-color: white;
   padding: 6px 6px 6px 24px;
@@ -920,9 +1111,9 @@ template {
 }
 
 .directday-recent-article-card {
-  width: 302px;
+  width: 290px;
   height: 420px;
-  margin: 32px 12px;
+  margin: 32px 10px;
   padding: 0 0 32px;
   border-radius: 20px;
   box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.04);
@@ -940,6 +1131,10 @@ template {
 
 .directday-recent-article-card .author {
   color: var(--global--color-black-with-very-opacity);
+}
+
+.directday-recent-article-card a {
+	text-decoration: none;
 }
 
 .directday-recent-article-card img {
@@ -1010,6 +1205,16 @@ template {
   opacity: 0.8 !important;
   font-size: var(--directday--font-size-md) !important;
 }
+
+
+.sp-easy-accordion .sp-ea-single .ea-body p {
+  font-family: var(--global--font-primary) !important;
+  opacity: 0.8 !important;
+  font-size: var(--directday--font-size-md) !important;
+  line-height: 1.5em !important;
+}
+
+
 
 .why-we-are-different {
   display: flex;
@@ -1091,10 +1296,12 @@ template {
 }
 
 .testimonials_carousel {
+  position: absolute;
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  overflow-x: auto;
   gap: 20px;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none;
@@ -1129,6 +1336,7 @@ template {
   position: absolute;
   top: 168px;
   left: 168px;
+  border-radius: 50%;
 }
 
 .testimonials_carousel .active-card {
@@ -1178,14 +1386,14 @@ template {
   min-width: 260px;
 }
 
-.EPOS-desc *:nth-child(1) {
+.EPOS-desc > *:nth-child(1) {
   color: var(--direct-theme-blue);
   font-size: var(--directday--font-size-md);
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.EPOS-desc *:nth-child(2) {
+.EPOS-desc > *:nth-child(2) {
   color: var(--global--color-black-with-opacity);
   font-size: var(--directday--font-size-md);
   line-height: 1.5;
@@ -1249,16 +1457,16 @@ template {
 
 .others-card-section .card {
   padding: 32px 20px 32px;
+  min-width: 240px;
 }
 
 .others-card-section .card img {
-  height: unset !important;
-  width: unset !important;
-  max-width: unset !important;
+  margin-top: 20px;
 }
 
-.others-card-section .card:first-child img {
-  margin-top: -30px;
+.others-card-section .card figure {
+	margin: 0 auto;
+	height: 155px;
 }
 
 .customer-card-section .card img {
@@ -1267,7 +1475,7 @@ template {
 
 .EPOS .card,
 .regular-card-section .card {
-  height: 420px;
+  height: 470px;
   width: 300px;
   padding: 12px 14px 32px 10px;
   border-radius: 20px;
@@ -1294,7 +1502,7 @@ template {
 
 .regular-card-section .directday-silver-button {
   text-transform: uppercase;
-  max-width: 155px;
+  max-width: 170px;
   margin: 0 auto;
 }
 
@@ -1308,6 +1516,17 @@ template {
   margin-top: 20px;
 }
 
+.others-card-section .card .title {
+	padding-left: unset;
+	margin: 0 auto;
+}
+
+.others-card-section .card .product-price {
+	margin: 24px auto 0 auto;
+	color: var(--direct-theme-blue);
+	font-weight: bold;
+}
+
 .EPOS .card .desc,
 .regular-card-section .card .desc,
 .customer-card-section .card .desc,
@@ -1316,6 +1535,10 @@ template {
   font-size: var(--directday--font-size-sm);
   margin: 12px 37px 0 12px;
   line-height: 1.43;
+}
+
+.others-card-section .card .desc {
+	margin: 40px auto 0 auto;
 }
 
 .customer-card-section .card .title {
@@ -1473,9 +1696,10 @@ template {
   line-height: 1.25;
 }
 
-.hidden {
+.hidden:not(.block-editor-block-list__block) {
   display: none !important;
 }
+
 
 .price-card-container {
   gap: 32px;
@@ -1484,7 +1708,7 @@ template {
 .price-card {
   padding: 32px 72px 20px 56px;
   width: 320px;
-  height: 437px;
+  min-height: 480px;
   box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.04);
   background-color: #fff;
   border-radius: 20px;
@@ -1516,6 +1740,7 @@ template {
   margin-top: 40px;
   padding: 0;
   margin-bottom: 20px;
+  min-height: 215px;
 }
 
 .price-card ul li {
@@ -1694,6 +1919,7 @@ template {
   color: unset !important;
 }
 
+/*
 .slick-slide {
   height: 400px !important;
 }
@@ -1701,6 +1927,7 @@ template {
 .wppsac-post-content {
   height: 340px !important;
 }
+*/
 
 .wppsac-post-slider .slick-arrow svg,
 .wppsac-post-carousel .slick-arrow svg {
@@ -1711,9 +1938,11 @@ template {
   color: var(--direct-theme-blue) !important;
 }
 
+/*
 .paddingTop0 {
   padding-top: 0 !important;
 }
+*/
 
 div.wpforms-container-full .wpforms-form .wpforms-field {
   padding: 8px 0 !important;
@@ -1721,10 +1950,14 @@ div.wpforms-container-full .wpforms-form .wpforms-field {
 }
 
 .contact-us-form {
-  margin-left: calc(50% - 395px) !important;
   margin-top: 0 !important;
   margin-bottom: 55px !important;
 }
+
+.contact-us-form form {
+  margin-left: calc(50% - 395px) !important;
+}
+
 
 .contact-us-form button {
   width: 340px !important;
@@ -1771,9 +2004,6 @@ div.wpforms-container-full .wpforms-form .wpforms-field {
 }
 
 .waiter-slider img {
-  width: 442.2px;
-  height: 419.7px;
-  object-fit: contain;
 }
 
 .counter-slider img {
@@ -1782,12 +2012,12 @@ div.wpforms-container-full .wpforms-form .wpforms-field {
   object-fit: contain;
 }
 
-.kitchen-slider h2,
-.counter-slider h2,
-.waiter-slider h2 {
+.kitchen-slider h1,
+.counter-slider h1,
+.waiter-slider h1 {
   color: var(--direct-theme-blue);
   font-weight: bold;
-  font-size: var(--global--font-size-semi-lg);
+  font-size: var(--directday--font-size-lg);
   margin-bottom: 24px;
 }
 
@@ -6088,6 +6318,10 @@ h1.page-title {
   flex-basis: 100%;
 }
 
+.unvisible {
+	visibility: hidden;
+}
+
 .comment-form .comment-notes {
   font-size: var(--global--font-size-sm);
 }
@@ -6614,6 +6848,7 @@ h1.page-title {
 .primary-navigation .current_page_item > a:first-child {
   /* text-decoration: underline;
   text-decoration-style: solid; */
+ color: var(--direct-theme-blue) !important;
 }
 
 .primary-navigation .current-menu-item > a:first-child:hover,
@@ -6743,6 +6978,10 @@ h1.page-title {
   flex-direction: row;
   gap: 20px;
   font-size: 22px;
+}
+
+.footer .socials li {
+	color: white;
 }
 
 footer {
