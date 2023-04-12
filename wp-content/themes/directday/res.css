@@ -188,6 +188,11 @@
 	gap: 5px;
   }
 
+  .footer .links a {
+	font-size: 14px;
+  }
+
+
 
   .our-values {
     max-width: 100% !important;
@@ -317,12 +322,16 @@
 
 @media only screen and (max-width: 599px) {
 
-.top-section {
-	margin-top: -32px;
+.EPOS .card .desc, .regular-card-section .card .desc, .customer-card-section .card .desc {
+	margin-right: 12px !important;
 }
 
-#testimonials_carousel_container {
-	height: 350px !important;
+.testimonials_carousel {
+	padding-top: 0 !important;
+}
+
+.top-section {
+	margin-top: -32px;
 }
 
 
@@ -515,7 +524,7 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 	}
 
 	.primary-navigation-open .primary-menu-container > ul > li:first-child a:before {
-		background: url("http://math.echeck.ir/wp-content/uploads/2023/03/logo48-1@2x.png") no-repeat center center !important;
+		background: url("https://directday.com/wp-content/uploads/2023/03/logo48-1@2x.png") no-repeat center center !important;
 		background-size: auto;
 		background-size: 100%;
 		content: "" !important;
@@ -556,17 +565,6 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 
 	#content {
 		position: relative;
-	}
-
-	
-
-	.signup-demo {
-		position: absolute;
-		top: -48px;
-		width: 100%;
-		max-width: 100% !important;
-		border-radius: unset;
-		height: calc(100% + 80px + 48px);
 	}
 
 	.payment-solution {
@@ -636,44 +634,50 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 		display: none !important;
 	}
 
+	#testimonials_carousel_container {
+		height: 340px !important;
+	}
+
 	.testimonials_carousel {
 		margin-top: 0 !important;
 		position: unset !important;
-		height: 350px;
+		height: 340px;
 	}
 
 	.testimonials_carousel .card {
 		padding-bottom: 40px;
-		height: 230px;
+		height: 250px;
 		margin-top: unset !important;
 	}
 
 	.testimonials_carousel .card p {
-		max-height: 155px;
+		max-height: 175px;
 		overflow: hidden;
 	}
 
 	.testimonials_carousel .card img {
 		display: block;
 		left: calc(50% - 32px);
-		top: 190px;
+		top: 210px;
 	}
 
 	.testimonials_carousel .card .info {
 		display: block;
-		top: 255px;
+		top: 275px;
 	}
 
 	#testimonials_carousel .card {
 		width: calc(100% - 80px);
 		margin-right: 40px;
 		margin-left: 40px;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 
 	#testimonials_carousel::before,
 	#testimonials_carousel::after
 	{
-		margin-top: 100px;
+		margin-top: 120px;
 	}
 
 	.testimonials_carousel .card {
@@ -833,6 +837,7 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
     	    border-top-left-radius: 0;
 	}
 
+
 .demo-pane {
     margin-top: calc(64px + 300px) !important;
 }
@@ -844,6 +849,22 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 .demo-apps::before, .demo-apps::after {
 	content: unset !important;
 }
+
+	.signup-demo {
+		position: absolute;
+		top: -48px;
+		width: 100%;
+		max-width: 100% !important;
+		border-radius: unset;
+		padding-top: 16px !important;
+		padding-bottom: 16px !important;
+		height: calc(100% + 80px + 48px);
+	}
+
+	.signup-demo figure {
+		display: none;
+	}
+
         .EPOS-desc {
                 border-left: unset !important;
                 border-top: 3px solid var(--direct-theme-blue);
@@ -946,6 +967,28 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
     height: 361px !important;
   }
 
+	.EPOS .card img, .regular-card-section .card img {
+		width: 100% !important;
+		height: auto !important;		
+	}
+
+	.customer_epos .EPOS .cards .card:nth-child(1) img {
+		width: 103px !important;
+	}
+
+	#colophon > p, .footer .links a {
+		font-size: var( --directday--font-size-sm);
+	}
+
+
+	.flex-direction-nav .flex-next {
+		right: -25px !important;
+	}
+
+	.flex-direction-nav .flex-prev {
+		left: -25px !important;
+	}
+
 	#masthead .site-logo-menu {
 		left: calc(50% - 16px) !important;
 	}
@@ -995,4 +1038,21 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
   .EPOS-container {
     flex-direction: column;
   }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 600px) {
+
+	.regular-card-section,
+	.others-card-section,
+	.customer-card-section {
+		margin-left: calc((100% - 400px) / 2);
+		margin-right: calc((100% - 400px) / 2);
+	}
+}
+
+
+@media only screen and (max-width: 400px) {
+
+
+
 }

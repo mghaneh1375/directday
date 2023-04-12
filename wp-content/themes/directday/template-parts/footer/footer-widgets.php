@@ -16,6 +16,10 @@
 		<a href="/learn">Learn</a>
 		<span>|</span>
 		<a href="/company">About us</a>
+		<span>|</span>
+		<a href="/privacy-policy">Privacy policy</a>
+
+
 	</div>
 	<div class="socials">
 		<a target="_blank" href="https://www.facebook.com/DirectDaySystems">

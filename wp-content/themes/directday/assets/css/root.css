@@ -249,3 +249,11 @@
     --global--spacing-components: 80px;
   }
 }
+
+@media only screen and (max-width: 375px) {
+  :root {
+    --global--font-size-base: 14px;
+    --directday--font-size-sm: 13px;
+    --directday--font-size-lg: 16px;
+  }
+}

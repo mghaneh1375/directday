@@ -51,7 +51,11 @@ function create_for_customer() {
     $output .= get_the_post_thumbnail($post->ID);
     $output .= '<p class="title">' . $post->post_title . '</p>';
     $output .= '<div class="desc">' . $post->post_content . '</div>';
-    $output .= '</div><a class="directday-silver-button">Learn more</a></div>';
+    if($post->post_title == 'website')
+	    $output .= '</div><a href="/company/#contact-form-container" class="directday-silver-button">Learn more</a></div>';
+    else
+	    $output .= '</div><a target="_blank" href="https://citymenu.app" class="directday-silver-button">Learn more</a></div>';
+
   }
 
   $output .= '</div>';
@@ -79,7 +83,7 @@ function create_others_section() {
         $output .= '<p class="title">' . $post->post_title . '</p><figure>';
         $output .= get_the_post_thumbnail($post->ID);
         $output .= '</figure><div class="desc">' . $post->post_content . '</div>';
-        $output .= '<span class="directday-silver-button">Learn more</span></div>';
+        $output .= '<a href="/company/#contact-form-container" class="directday-silver-button">Learn more</a></div>';
     }
 
     $output .= '</div>';

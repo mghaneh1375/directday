@@ -4,20 +4,50 @@ function send_mail() {
 
 	$parameter = $_SERVER['QUERY_STRING'];
 
-	if ($parameter && str_contains($parameter, 'mail=')) {
+	if ($parameter && str_contains($parameter, 'mail=') && str_contains($parameter, 'phone=')) {
 
-		$mailAddr = str_replace("%40", "@", explode('mail=', $parameter)[1]);
-
+		$param = explode("&", $parameter);
+		$mailAddr = str_replace("%40", "@", explode('mail=', $param[0])[1]);
+		$phone = explode("phone=", $param[1])[1];
 
 add_filter('wp_mail_content_type', function( $content_type ) {
             return 'text/html';
 });
 
-$msg = "<p>Username: 01234567890</p>";
+$msg = "<h3>Thank you for your interest in trying our apps.</h3>";
+$msg .= '<br/><br/>';
+$msg .= "<p>Please find your login details for the Demo account as below:</p>";
+$msg .= "<p>Username: 01234567890</p>";
 $msg .= "<p>Password: 123456</p>";
+$msg .= '<br/><br/>';
+$msg .= 'Yours faithfuly,';
+$msg .= 'DirectDay Marketing team';
+
+
 wp_mail( $mailAddr, "DirectDay, Get a demo Account", $msg );
 
-    		return '<p class="directday-mediumFont directday-marginTop24">' . str_replace("%40", "@", explode('mail=', $parameter)[1]) . '</p>';
+    		return '<p class="directday-mediumFont directday-marginTop24">' . $mailAddr . '</p>';
+	}
+
+}
+
+function contactus_mail() {
+
+	$parameter = $_SERVER['QUERY_STRING'];
+
+	if ($parameter && str_contains($parameter, 'mail=') && str_contains($parameter, 'phone=')) {
+
+		$param = explode("&", $parameter);
+		$mailAddr = str_replace("%40", "@", explode('mail=', $param[0])[1]);
+		$phone = explode("phone=", $param[1])[1];
+
+		$msg = "<h3>Thanks for contacting us. We've received contact details of:</h3>";
+		$msg .= '<br/><br/>';
+
+		$msg .= "<p>" .$mailAddr . "</p>";
+		$msg .= "<p>Mobile number: " .$phone . "</p>";
+
+    		return '<div class="directday-marginTop24"><p class="directday-mediumFont" style="text-align: center" >' . $mailAddr . '</p><p style="text-align: center; margin-top: 12px" class="directday-mediumFont">' .$phone  . '</p></div>';
 	}
 
 }
@@ -42,7 +72,7 @@ function create_why_we_are_different_cards() {
     $output .= '<div class="card">';
     
     $output .= get_the_post_thumbnail($post->ID);
-    $output .= '<p class="title">' . $post->post_name . '</p>';
+    $output .= '<p class="title">' . $post->post_title . '</p>';
     $output .= '<div class="desc">' . $post->post_content . '</div>';
     $output .= '</div>';
   }
@@ -104,7 +134,7 @@ function create_pos_section() {
 
 function do_create_testimonials_carousel($posts) {
 
-  $output = '<div id="testimonials_carousel_container" style="position: relative; overflow-x: hidden; height: 280px" class="alignfull"><div id="testimonials_carousel" class="testimonials_carousel">';
+  $output = '<div id="testimonials_carousel_container" style="position: relative; overflow-x: hidden; height: 320px" class="alignfull"><div id="testimonials_carousel" class="testimonials_carousel">';
 
   $middle = count($posts) / 2;
   $i = 0;
@@ -402,6 +432,7 @@ add_shortcode('business_epos', 'create_business_epos');
 add_shortcode('customer_epos', 'create_customer_epos');
 
 add_shortcode('send_mail', 'send_mail');
+add_shortcode('contactus_mail', 'contactus_mail');
 add_shortcode('why_we_are_different_cards', 'create_why_we_are_different_cards');
 add_shortcode('pos', 'create_pos_section');
 add_shortcode('testimonials_carousel', 'create_testimonials_carousel');

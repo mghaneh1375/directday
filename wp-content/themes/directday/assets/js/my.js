@@ -144,7 +144,7 @@ for (i = 0; i < slider.length; i++) {
     
     let el6 = document.getElementById("testimonials_carousel");
     if(el6 !== undefined && el6 !== null)
-    	doMakeResponsive(el6, el6, 4, 1, true, -1, true);
+    	doMakeResponsive(el6, el6, 2, 1, true, -1, true);
 
     
     let el2 = document.getElementsByClassName("why-we-are-different");
