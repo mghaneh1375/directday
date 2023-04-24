@@ -12,6 +12,22 @@
 $id = get_the_ID();
 $the_post = get_post($id);
 
+$cats = get_the_category($post->ID);
+$allow = false;
+
+foreach($cats as $cat) {
+
+	if($cat->name == "blog") {
+		$allow = true;
+		break;
+	}
+}
+
+if(!$allow) {
+	echo "404 not found";
+	die();
+}
+
 ?>
 
 <div class="post alignwide">
@@ -31,28 +47,37 @@ $the_post = get_post($id);
 
 	<div class="tags">
 	<?php
-	        $cats = get_the_category($post->ID);
 
-        	foreach($cats as $cat)
+        	foreach($cats as $cat) {
+			if($cat->name == "blog")
+				continue;
 	            echo '<p class="tag">' . $cat->name . '</p>';
+		}
 
 	?>
+
 	</div>
 
 	<div class="entry-content">
 		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
-				'after'    => '</nav>',
-				/* translators: %: Page number. */
-				'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
-			)
-		);
+			the_content();
 		?>
 	</div>
+
+	<div class="directday-flex share-article-container">
+
+	<?php
+		$next_link = get_next_post_link($format = '%link &raquo;', $link = '%title', $in_same_term = true, $excluded_terms = '', $taxonomy = 'category' );
+		$from = strpos($next_link, "href=") + 6;
+		$to = strpos($next_link, "rel=") - 2;
+
+		$next_link = substr($next_link, $from, $to - $from);
+	?>
+
+			<a class="directday-button white-button">Share</a>
+			<a href="<?php echo $next_link ?>" class="directday-button">Next Article <span class="fa fa-angle-right"></span></a>
+	</div>
+
 </div>
 
 
@@ -66,11 +91,11 @@ $the_post = get_post($id);
 	</div>
 </div>
 
-<?php echo recent_posts(); ?>
+<?php echo most_read_posts(); ?>
 
-	<?php if ( ! is_singular( 'attachment' ) ) : ?>
-		<?php get_template_part( 'template-parts/post/author-bio' ); ?>
-	<?php endif; ?>
+<div class="directday-marginTop64 alignwide directday-flex">
+	<a style="margin: 0 auto" href="/blogs" class="directday-silver-button directday-blue-border">VISIT OUR BLOG</a>
+</div>
 
 </article>
 </div>

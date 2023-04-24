@@ -38,7 +38,7 @@ function scrollContainer(
   }
 
 
-  scrollElem.scrollLeft = scroll;
+  scrollElem.scroll({left: scroll, behavior: "smooth"});
 
   if (currIdx == 1) {
     elem.classList.add("hidden-left-arrow");
@@ -128,15 +128,65 @@ function sc(childs, currIdx) {
 function makeResponsive() {
   let width = window.innerWidth;
   let slider = document.querySelectorAll(".top-section > div:nth-child(2) img");
+
+
 for (i = 0; i < slider.length; i++) {
-  slider[i].addEventListener('click', function() {
-  	document.location.href = '/pos-system-demo';
-  });
+
+	if(i == 0) {
+		slider[i].addEventListener('click', function() {
+	  		document.location.href = '/pos-system-products/counter-and-customer-display';
+		});
+	}
+	else if(i == 1) {
+		slider[i].addEventListener('click', function() {
+	  		document.location.href = '/pos-system-products';
+		});
+	}
+	else {
+		slider[i].addEventListener('click', function() {
+		  	document.location.href = '/pos-system-demo';
+		});
+	}
+
 }
 
+  let curr_featured_idx = 0;
+  let featured_posts = document.querySelectorAll(".featured-article-container > div .next-featured-article");
+  if(featured_posts !== undefined && featured_posts != null && featured_posts.length > 0) {
+	for(i = 0; i < featured_posts.length; i++) {
+		featured_posts[i].addEventListener("click", function() {
+
+			let curr_idx = parseInt(this.getAttribute('data-idx'));
+			const elements = document.querySelectorAll('.featured-article-container');
+
+			elements.forEach((element, index) => {
+				if(index == curr_idx + 1)
+					element.classList.remove('hidden');
+				else
+					element.classList.add('hidden');
+
+			});
+
+			
+			curr_featured_idx++;
+		});
+	}
+  }
+
+
+  let video_posts = document.querySelectorAll(".most-read-articles-container .directday-play");
+  if(video_posts !== undefined && video_posts != null && video_posts.length > 0) {
+	for(i = 0; i < video_posts.length; i++) {
+		video_posts[i].addEventListener("click", function() {
+			let curr_idx = parseInt(this.getAttribute('data-idx'));
+			const elem = document.getElementById("post_video_" + curr_idx);
+			elem.classList.remove('hidden');
+
+		});
+	}
+  }
 
   if (width < 800) {
-
 
     let el = document.getElementsByClassName("price-card-container");
     if(el.length > 0)

@@ -950,8 +950,10 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
   }
 
   .choose_epos_plan * {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    font-size: var( --directday--font-size-sm) !important;
+    width: 180px !important;
   }
 
   .steps > .step {
@@ -978,8 +980,18 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 
 	#colophon > p, .footer .links a {
 		font-size: var( --directday--font-size-sm);
+		min-width: 80px;
+		text-align: center;
 	}
 
+	#colophon > p, .footer .links {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	#colophon > p, .footer .links span:nth-child(8) {
+		display: none;
+	}
 
 	.flex-direction-nav .flex-next {
 		right: -25px !important;

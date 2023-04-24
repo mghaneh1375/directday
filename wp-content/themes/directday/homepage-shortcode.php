@@ -20,7 +20,7 @@ $msg .= "<p>Please find your login details for the Demo account as below:</p>";
 $msg .= "<p>Username: 01234567890</p>";
 $msg .= "<p>Password: 123456</p>";
 $msg .= '<br/><br/>';
-$msg .= 'Yours faithfuly,';
+$msg .= 'Yours faithfuly,<br/>';
 $msg .= 'DirectDay Marketing team';
 
 

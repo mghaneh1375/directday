@@ -363,6 +363,109 @@ function twenty_twenty_one_widgets_init() {
 }
 add_action( 'widgets_init', 'twenty_twenty_one_widgets_init' );
 
+
+function parseToArray($xpath, $class, $attr)
+{
+    $xpathquery="//" . $attr . "[@class='".$class."']";
+    $elements = $xpath->query($xpathquery);
+
+    if (!is_null($elements)) {
+        $resultarray=array();
+        foreach ($elements as $element) {
+            $nodes = $element->childNodes;
+            foreach ($nodes as $node) {
+              $resultarray[] = $node->nodeValue;
+            }
+        }
+	$output = [];
+	$ul = null;
+	foreach($resultarray as $itr) {
+		if(empty($itr) || strlen($itr) < 2)
+			continue;
+		if(is_array($itr)) {
+			foreach($itr as $tmp) {
+				if(empty($tmp) || strlen($itr) < 2)
+					continue;
+				array_push($output, $tmp);
+			}
+		}
+		else {
+			if($attr == 'div' && strlen($itr) < 50) {
+				if($ul == null)
+					$ul = $itr;
+				else
+					$ul .= '\n' . $itr;
+			}
+			else {
+				if($ul != null) {
+					array_push($output, $ul);
+					$ul = null;
+				}
+				array_push($output, $itr);
+			}
+		}
+	}
+
+	if($ul != null)
+		array_push($output, $ul);
+
+        return $output;
+    }
+}
+
+function hueman_add_meta_tags() {
+
+global $wp;
+$current_slug = add_query_arg( array(), $wp->request );
+$faq = null;
+
+
+if($current_slug == 'pos-system-products/counter-and-customer-display')
+	$faq = do_shortcode('[sp_easyaccordion id="574"]', true);
+else if($current_slug == 'pos-system-products/waiter-app')
+	$faq = do_shortcode('[sp_easyaccordion id="511"]', true);
+else if($current_slug == 'pos-system-products/kitchen-display')
+	$faq = do_shortcode('[sp_easyaccordion id="423"]', true);
+else if($current_slug == '')
+	$faq = do_shortcode('[sp_easyaccordion id="84"]', true);
+
+
+if($faq != null) {
+	$dom = new DomDocument();
+	$dom->loadHTML($faq);
+	$xpath = new DOMXpath($dom);
+	$questions = parseToArray($xpath, 'collapsed', 'a');
+	$answers = parseToArray($xpath, 'ea-body', 'div');
+
+	if(count($questions) == count($answers)) {
+		echo '<script type="application/ld+json">{';
+		echo '"@context": "https://schema.org",';
+		echo '"@type": "FAQPage",';
+		echo '"author": {';
+		echo '"@type":"Corporation",';
+		echo '"id": "https://directday.com/#corporation" },';
+		echo '"copyrightHolder": {';
+		echo '"@type":"Corporation",';
+		echo '"id": "https://directday.com/#corporation" },';
+		echo '"reviewedBy": {';
+		echo '"@type":"Corporation",';
+		echo '"id": "https://directday.com/#corporation" },';
+		echo '"mainEntity": [';
+		for($i = 0; $i < count($questions); $i++) {
+			if($i != count($questions) - 1)
+				echo '{"@type": "Question", "name": "' . $questions[$i] . '", "acceptedAnswer": {"type": "Answer", "text": "' . $answers[$i] . '"}}, ';
+			else
+				echo '{"@type": "Question", "name": "' . $questions[$i] . '", "acceptedAnswer": {"type": "Answer", "text": "' . $answers[$i] . '"}}';
+
+		}
+		echo ']}</script>';
+	}
+}
+
+}
+
+add_action( 'wp_head', 'hueman_add_meta_tags');
+
 include('homepage-shortcode.php');
 include('kitchen-shortcode.php');
 include('counter-shortcode.php');

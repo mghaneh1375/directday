@@ -18,6 +18,8 @@
 		<a href="/company">About us</a>
 		<span>|</span>
 		<a href="/privacy-policy">Privacy policy</a>
+		<span>|</span>
+		<a href="/terms-and-conditions">Terms & Conditions</a>
 
 
 	</div>

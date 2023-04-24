@@ -456,6 +456,41 @@ template {
   left: calc((100% - var(--responsive--alignwide-width)) / 2);
 }
 
+.directday-play {
+	margin: 0 auto;
+	width: 72px;
+        height: 72px;
+	position: relative;
+	cursor: pointer;
+}
+
+.directday-play > div:nth-child(1) {
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	padding: 25.5px 23px 24.5px 29.4px;
+  box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+	border-radius: 50%;
+}
+
+.directday-play > div:nth-child(2) {
+	position: absolute;
+	top: calc(50% - 12px);
+	left: calc(50% - 8px);
+	z-index: 2;
+}
+
+.most-read-articles-container .desc .directday-play {
+	margin-top: 32px;
+}
+
+.directday-play span {
+	font-size: 30px;
+	color: var(--direct-theme-blue);
+	cursor: pointer;
+}
+
 .signup-form .wpforms-submit-spinner {
 	display: none !important;
 	visibility: hidden !important;
@@ -503,6 +538,18 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 }
 
 
+.share-article-container {
+	gap: 16px;
+}
+
+.share-article-container a {
+	text-align: center;
+}
+
+.share-article-container a:nth-child(2) span {
+	margin-left: 20px;
+}
+
 #masthead .site-logo-menu a {
   padding: 0 !important;
   color: white;
@@ -512,6 +559,10 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 .slider-text {
 	line-height: 1.4;
 	color: var(--global--color-black-with-opacity);
+}
+
+.caps {
+	text-transform: uppercase;
 }
 
 .showOnMobile {
@@ -737,6 +788,133 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
   font-weight: bold;
 }
 
+a.directday-button {
+	text-decoration: none;
+}
+
+.most-read-articles-container {
+	gap: 20px;
+}
+
+.most-read-articles-container:not(.second-row) > div:nth-child(1) {
+	flex-grow: 3;
+	flex-basis: 0;
+	height: 316px;
+}
+
+.most-read-articles-container.second-row > div:nth-child(1),
+.most-read-articles-container.second-row > div:nth-child(2) {
+	flex-grow: 1;
+	flex-basis: 0;
+	height: 420px;
+	margin-top: -70px;
+}
+
+.most-read-articles-container:not(.second-row) > div:nth-child(2),
+.most-read-articles-container:not(.second-row) > div:nth-child(3) {
+	flex-grow: 1;
+	flex-basis: 0;
+	height: 420px;
+}
+
+.most-read-articles-container.second-row > div:nth-child(3) {
+	flex-grow: 2;
+	flex-basis: 0;
+	height: 316px;
+	margin-top: 30px;
+}
+
+.most-read-articles-container > div {
+	position: relative;
+	padding: 32px 40px;
+	border-radius: 20px;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+}
+
+
+.most-read-articles-container > div > .desc {
+	position: absolute;
+	z-index: 1;
+	top: 32px;
+	left: 40px;
+	right: 40px;
+}
+
+.most-read-articles-container > div > .desc > a {
+    display: block;
+    width: 180px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.most-read-articles-container > div > .desc > .title {
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.featured-article-container {
+	display: flex;
+}
+
+.featured-article-container > div:nth-child(1) {
+	flex-basis: 0;
+	flex-grow: 1;
+}
+
+.featured-article-container > div:nth-child(2) {
+	flex-basis: 0;
+	flex-grow: 1;
+	margin-left: 64px;
+}
+
+.featured-article-container > div:nth-child(2) .title {
+	font-size: var( --global--font-size-md-plus);
+	font-weight: bold;
+	color: var(--global--color-black-with-opacity);
+}
+
+.featured-article-container > div:nth-child(2) .date {
+    font-size: var(--directday--font-size-sm);
+    color: var(--global--color-black-with-very-opacity);
+    margin: 24px 0;
+}
+
+.most-read-articles-container > div > .desc > .date {
+    font-size: var(--directday--font-size-sm);
+    margin: 24px 0;
+    color: white;
+    opacity: 0.66;
+}
+
+
+.featured-article-container > div:nth-child(2) .desc {
+	margin-top: 24px;
+}
+
+.featured-article-container > div:nth-child(2) .featured-links {
+	display: flex;
+	margin-top: 24px;
+	flex-direction: row;
+	gap: 12px;
+}
+
+.featured-article-container > div:nth-child(2) .featured-links span {
+	font-size: 18px;
+    margin-left: 15px;
+    font-weight: bold;
+
+}
+
+/*
+.featured-article-container > div:nth-child(2) .directday-button {
+	display: block;
+	width: 180px; 
+	text-align: center;
+}
+*/
+
 .wp-block-separator {
   border-color: var(--global--color-black-with-very-huge-opacity) !important;
 }
@@ -923,6 +1101,11 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
   font-weight: 500;
 }
 
+.directday-button.white-button {
+	background-color: white;
+	color: var(--direct-theme-blue);
+}
+
 .directday-button-imp {
   background-color: var(--direct-theme-blue) !important;
   padding: 13px 40px 12px !important;
@@ -930,6 +1113,19 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
   cursor: pointer !important;
   color: white !important;
   font-weight: 500 !important;
+}
+
+.post_video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: var(--global--color-background);
+    display: flex;
+    align-content: center;
+    align-items: center;
 }
 
 .directday-tag-container {
@@ -1037,6 +1233,11 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 
 .directday-normal-font-size {
 	font-size: var(--directday--font-size-md) !important;
+}
+
+.article-tags .directday-tag {
+	font-weight: bold;
+	color: var(--global--color-black-with-opacity);
 }
 
 .directday-tag {
@@ -1192,8 +1393,8 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-left: 42px;
-  padding-right: 42px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .directday-recent-article-card .tags .tag {
@@ -1349,7 +1550,7 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
   text-align: center;
   flex-shrink: 0;
   position: relative;
-  cursor: pointer;
+  cursor: default;
 }
 
 .testimonials_carousel .card img {
@@ -1453,6 +1654,11 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
   gap: 40px;
 }
 
+.others-card-section {
+  flex-wrap: wrap;
+}
+
+
 .customer-card-section .card > div:first-child,
 .others-card-section .card > div:first-child {
   display: flex;
@@ -1480,7 +1686,8 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 
 .others-card-section .card {
   padding: 32px 20px 32px;
-  min-width: 240px;
+  min-width: 260px;
+  flex-basis: 0;
 }
 
 .others-card-section .card figure {
@@ -1519,7 +1726,6 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 }
 
 .regular-card-section .card .title,
-.customer-card-section .card .title,
 .others-card-section .card .title {
   text-transform: uppercase;
 }
@@ -1630,7 +1836,7 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 }
 
 .choose_epos_plan * {
-  width: 200px;
+  width: 220px;
   color: var(--direct-theme-blue);
   background-color: transparent;
   padding: 13px 27px 12px;

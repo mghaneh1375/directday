@@ -21,8 +21,8 @@ function create_for_business() {
     $output .= get_the_post_thumbnail($post->ID);
     $output .= '<p class="title">' . $post->post_title . '</p>';
     $output .= '<div class="desc">' . $post->post_content . '</div>';
-    $link = get_permalink( $post->ID );
-    $output .= '</div><a href="' . $link . '" class="directday-silver-button">START FREE</a></div>';
+    $link = str_replace("#new_tab", "", get_permalink( $post->ID ));
+    $output .= '</div><a style="text-transform: unset;" target="_self" href="' . $link . '" class="directday-silver-button">See More</a></div>';
   }
 
   $output .= '</div>';
@@ -51,7 +51,7 @@ function create_for_customer() {
     $output .= get_the_post_thumbnail($post->ID);
     $output .= '<p class="title">' . $post->post_title . '</p>';
     $output .= '<div class="desc">' . $post->post_content . '</div>';
-    if($post->post_title == 'website')
+    if(strtolower($post->post_title) == 'website')
 	    $output .= '</div><a href="/company/#contact-form-container" class="directday-silver-button">Learn more</a></div>';
     else
 	    $output .= '</div><a target="_blank" href="https://citymenu.app" class="directday-silver-button">Learn more</a></div>';
@@ -83,7 +83,11 @@ function create_others_section() {
         $output .= '<p class="title">' . $post->post_title . '</p><figure>';
         $output .= get_the_post_thumbnail($post->ID);
         $output .= '</figure><div class="desc">' . $post->post_content . '</div>';
-        $output .= '<a href="/company/#contact-form-container" class="directday-silver-button">Learn more</a></div>';
+
+	if($post->post_title == "printer")
+	        $output .= '<a href="/pos-system-pricing#main-products-container" class="directday-silver-button">Learn more</a></div>';
+	else
+	        $output .= '<a href="/pos-system-pricing#other-products-container" class="directday-silver-button">Learn more</a></div>';
     }
 
     $output .= '</div>';
