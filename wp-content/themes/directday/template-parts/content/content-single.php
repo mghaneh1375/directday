@@ -81,7 +81,7 @@ if(!$allow) {
 </div>
 
 
-<div class="directday-blue-box directday-component-gap alignwide directday-flex directday-flex-space-between">
+<div class="directday-blue-box directday-component-gap alignwide directday-flex directday-flex-space-between directday-subscription">
 	<div class="directday-flex directday-col-flex directday-gap10">
 		<p style="margin-top: -15px" class="directday-lg-font black-color">Subscribe to our newsletter</p>
 		<p>And be up to date</p>

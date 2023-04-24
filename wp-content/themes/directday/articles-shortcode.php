@@ -59,7 +59,7 @@ function create_articles_cats() {
 }
 
 function subscribe() {
-    $output = '<div class="directday-blue-box directday-component-gap alignwide directday-flex directday-flex-space-between">';
+    $output = '<div class="directday-blue-box directday-component-gap alignwide directday-flex directday-flex-space-between directday-subscription">';
     $output .= '<div class="directday-flex directday-col-flex directday-gap10"><p style="margin-top: -15px" class="directday-lg-font black-color caps">Subscribe to our newsletter</p><p style="margin-top: 12px;">And be up to date</p></div>';
     $output .= '<div style="height: 50px;" class="directday-text-input"><input placeholder="Your Email Adress" type="text" /><span class="directday-button">Subscribe</span></div>';
     $output .= '</div>';
@@ -103,7 +103,7 @@ function do_create_posts($posts) {
 
 function recent_posts() {
 
-    $output = '<div class="directday-component-gap alignwide">';
+    $output = '<div class="directday-component-gap recent-posts-container alignwide">';
     $output .= '<p class="directday-page-title">RECENT ARTICLES</p>';
     $output .= '<div class="directday-flex directday-row-flex directday-flex-wrap">';
 
@@ -131,7 +131,7 @@ function recent_posts() {
 
 function most_read_posts() {
 
-    $output = '<div class="directday-component-gap alignwide">';
+    $output = '<div class="directday-component-gap recent-posts-container alignwide">';
     $output .= '<p class="directday-page-title">Most read Articles</p>';
     $output .= '<div class="directday-flex directday-row-flex directday-flex-wrap">';
 
@@ -232,6 +232,7 @@ function most_read_articles() {
     $output = '<div class="directday-component-gap alignwide">';
     $output .= '<p class="directday-page-title">Most read Articles</p>';
 	$i = 0;
+    $output .= '<div id="all-most-read-posts">';
 
     foreach($posts as $post) {
 
@@ -287,6 +288,7 @@ function most_read_articles() {
 
 
 	$output .= '</div>';
+        $output .= '</div>';
 
     return $output;
 

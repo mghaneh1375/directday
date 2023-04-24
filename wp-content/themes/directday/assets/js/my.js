@@ -215,6 +215,10 @@ for (i = 0; i < slider.length; i++) {
     if(el7.length > 0)
     	doMakeResponsive(el7[0], el7[0], 3, 1, false, -1, false);
 
+    let el13 = document.getElementsByClassName("most-read-articles-container");
+    if(el13.length > 0)
+    	doMakeResponsive(el13[0], el13[0], 3, 1, false, -1, false);
+
     let el8 = document.getElementsByClassName("customer-card-section");
     if(el8.length > 0)
     	doMakeResponsive(el8[0], el8[0], 2, 1, true, -1, false);
