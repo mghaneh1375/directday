@@ -64,7 +64,7 @@ function create_why_we_are_different_cards() {
     'posts_per_page'   => -1,
   );
 
-  $output = '<div class="why-we-are-different alignwide">';
+  $output = '<div class="why-we-are-different alignwide responsive-alignwide">';
   $query = new WP_Query( $args );
   $posts = $query->posts;
 
@@ -363,7 +363,7 @@ function create_journey_section() {
   $query = new WP_Query( $args );
   $posts = $query->posts;
 
-  $output = "<div id='steps-container'><div class='steps alignwide'>";
+  $output = "<div id='steps-container'><div class='steps alignwide responsive-alignwide'>";
   for($i = 1; $i <= count($posts); $i++) {
     $output .= '<div class="step">';
     $output .= '<p>' . $i . '</p>';

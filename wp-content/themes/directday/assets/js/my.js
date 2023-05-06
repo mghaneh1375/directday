@@ -108,6 +108,103 @@ function doMakeResponsive(
   };
 }
 
+function scrollContainerBlogs(
+  childs,
+  currIdx,
+  node,
+  limit,
+  offset,
+  mainElem
+) {
+
+  let scroll = 0;
+  let tmp = currIdx;
+
+  for (let i = 1; i <= childs.length; i++) {
+
+    if (i != tmp) {
+
+      if (i < tmp) {
+		scroll += childs[i - 1].offsetWidth;
+		if(offset !== undefined)
+			scroll += offset;
+      }
+
+      childs[i - 1].classList.remove("active-item");
+    } else {
+      childs[i - 1].classList.add("active-item");
+    }
+  }
+
+  let elem = currIdx <= 3 ? node[0] : node[1];
+  let elseElem = currIdx <= 3 ? node[1] : node[0];
+
+  elem.scroll({left: scroll, behavior: "smooth"});
+
+  elseElem.classList.add("hidden");
+  elem.classList.remove("hidden");
+
+
+
+  if (currIdx == 1) {
+    mainElem.classList.add("hidden-left-arrow");
+    mainElem.classList.remove("hidden-right-arrow");
+  } else if (currIdx == limit) {
+    mainElem.classList.add("hidden-right-arrow");
+    mainElem.classList.remove("hidden-left-arrow");
+  } else {
+    mainElem.classList.remove("hidden-right-arrow");
+    mainElem.classList.remove("hidden-left-arrow");
+  }
+
+
+
+}
+
+
+
+function doMakeResponsiveBlogs(elem) {
+
+  let rect = elem.getBoundingClientRect();
+  let childs = elem.children;
+  let items = [];
+
+  for(let i = 0; i < childs.length; i++) {
+	let tmp = childs[i].children;
+	for(let j = 0; j < tmp.length; j++) {
+		items.push(tmp[j]);
+	}
+  }
+
+
+  let currIdx = 1;
+
+  scrollContainerBlogs(items, currIdx, childs, items.length, 0, elem);
+
+  elem.onclick = function (e) {
+    let isClicked = false;
+    let goNext = true;
+
+      if (e.offsetX > elem.offsetWidth) {
+        isClicked = true;
+      } else if (e.offsetX < rect.left) {
+        isClicked = true;
+        goNext = false;
+      }
+
+    if (isClicked) {
+      if (goNext && currIdx < 6) currIdx++;
+      else if (!goNext && currIdx > 1) currIdx--;
+      else isClicked = false;
+    }
+
+    if (isClicked)
+	scrollContainerBlogs(items, currIdx, childs, items.length, 0, elem);
+
+  };
+}
+
+
 
 function sc(childs, currIdx) {
 
@@ -186,17 +283,49 @@ for (i = 0; i < slider.length; i++) {
 	}
   }
 
+/*
+  if(width < 960) {
+
+    let el4 = document.getElementsByClassName("EPOS");
+    if(el4.length > 0) {
+    	doMakeResponsive(el4[0], el4[0].children[1], 3, 1, true, -1, false);
+    	doMakeResponsive(el4[1], el4[1].children[1], 2, 1, true, -1, false);
+    }
+
+  }
+*/
+
+  if(width < 900) {
+
+	let el5 = document.getElementById("steps-container");
+
+	if(el5 !== undefined && el5 !== null) {
+		doMakeResponsive(
+			el5,
+      			document.getElementsByClassName("steps")[0],
+      			5,
+      			1,
+      			true,
+      			50,
+      			false, 30
+    		);
+	}
+
+
+  }
+
+
   if (width < 800) {
 
-    let el = document.getElementsByClassName("price-card-container");
-    if(el.length > 0)
-    	doMakeResponsive(el[0], el[0], 3, 1, false, -1, false);
-    
     let el6 = document.getElementById("testimonials_carousel");
     if(el6 !== undefined && el6 !== null)
     	doMakeResponsive(el6, el6, 2, 1, true, -1, true);
 
-    
+    let blogs = document.getElementById("all-most-read-posts");
+    if(blogs !== undefined && blogs !== null)
+    	doMakeResponsiveBlogs(blogs);
+
+
     let el2 = document.getElementsByClassName("why-we-are-different");
     if(el2.length > 0)
     	doMakeResponsive(el2[0], el2[0], 3, 1, false, -1, false);
@@ -205,11 +334,6 @@ for (i = 0; i < slider.length; i++) {
     if(el3.length > 0)
     	doMakeResponsive(el3[0], el3[0].children[0], 4, 1, true, -1, false);
 
-    let el4 = document.getElementsByClassName("EPOS");
-    if(el4.length > 0) {
-    	doMakeResponsive(el4[0], el4[0].children[1], 3, 1, true, -1, false);
-    	doMakeResponsive(el4[1], el4[1].children[1], 2, 1, true, -1, false);
-    }
 
     let el7 = document.getElementsByClassName("regular-card-section");
     if(el7.length > 0)
@@ -218,10 +342,6 @@ for (i = 0; i < slider.length; i++) {
     let el13 = document.getElementsByClassName("most-read-articles-container");
     if(el13.length > 0)
     	doMakeResponsive(el13[0], el13[0], 3, 1, false, -1, false);
-
-    let el8 = document.getElementsByClassName("customer-card-section");
-    if(el8.length > 0)
-    	doMakeResponsive(el8[0], el8[0], 2, 1, true, -1, false);
 
     let el9 = document.getElementsByClassName("others-card-section");
     if(el9.length > 0) {
@@ -232,21 +352,6 @@ for (i = 0; i < slider.length; i++) {
       else
     	doMakeResponsive(el9[0], el9[0], 4, 1, true, -1, false);
     }
-
-
-    let el5 = document.getElementById("steps-container");
-
-	if(el5 !== undefined && el5 !== null) {
-    doMakeResponsive(
-      el5,
-      document.getElementsByClassName("steps")[0],
-      5,
-      1,
-      true,
-      50,
-      false, 30
-    );
-}
 
 
     let el10 = document.getElementsByClassName("our-values");

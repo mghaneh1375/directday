@@ -14,7 +14,7 @@ function create_for_business() {
   $query = new WP_Query( $args );
   $posts = $query->posts;
 
-  $output = '<div class="regular-card-section directday-flex directday-row-flex directday-flex-center alignwide">';
+  $output = '<div class="business-card-section directday-flex directday-row-flex directday-flex-center alignwide responsive-alignwide directday-flex-wrap">';
   
   foreach($posts as $post) {
     $output .= '<div class="card"><div>';
@@ -44,7 +44,7 @@ function create_for_customer() {
   $query = new WP_Query( $args );
   $posts = $query->posts;
 
-  $output = '<div class="customer-card-section directday-flex directday-row-flex directday-flex-center alignwide">';
+  $output = '<div class="customer-card-section directday-flex directday-row-flex directday-flex-center alignwide responsive-alignwide directday-flex-wrap">';
   
   foreach($posts as $post) {
     $output .= '<div class="card"><div>';
@@ -76,7 +76,7 @@ function create_others_section() {
     $posts = $query->posts;
     
     
-    $output = '<div class="others-card-section directday-flex directday-row-flex directday-flex-center alignwide">';
+    $output = '<div class="others-card-section directday-flex directday-row-flex directday-flex-center alignwide responsive-alignwide">';
     
     foreach($posts as $post) {
         $output .= '<div class="card">';

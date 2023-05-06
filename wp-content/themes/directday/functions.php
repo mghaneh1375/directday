@@ -413,12 +413,27 @@ function parseToArray($xpath, $class, $attr)
     }
 }
 
+function wp_disable_feeds() {
+wp_die( __('No feeds available!') );
+}
+
+
+remove_action( 'wp_head', 'feed_links_extra', 3 );
+remove_action( 'wp_head', 'feed_links', 2 );
+
+add_action('do_feed', 'wp_disable_feeds', 1);
+add_action('do_feed_rdf', 'wp_disable_feeds', 1);
+add_action('do_feed_rss', 'wp_disable_feeds', 1);
+add_action('do_feed_rss2', 'wp_disable_feeds', 1);
+add_action('do_feed_atom', 'wp_disable_feeds', 1);
+add_action('do_feed_rss2_comments', 'wp_disable_feeds', 1);
+add_action('do_feed_atom_comments', 'wp_disable_feeds', 1);
+
 function hueman_add_meta_tags() {
 
 global $wp;
 $current_slug = add_query_arg( array(), $wp->request );
 $faq = null;
-
 
 if($current_slug == 'pos-system-products/counter-and-customer-display')
 	$faq = do_shortcode('[sp_easyaccordion id="574"]', true);

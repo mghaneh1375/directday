@@ -59,7 +59,7 @@ function create_articles_cats() {
 }
 
 function subscribe() {
-    $output = '<div class="directday-blue-box directday-component-gap alignwide directday-flex directday-flex-space-between directday-subscription">';
+    $output = '<div class="directday-blue-box directday-component-gap alignwide directday-flex directday-flex-space-between directday-subscription responsive-alignwide">';
     $output .= '<div class="directday-flex directday-col-flex directday-gap10"><p style="margin-top: -15px" class="directday-lg-font black-color caps">Subscribe to our newsletter</p><p style="margin-top: 12px;">And be up to date</p></div>';
     $output .= '<div style="height: 50px;" class="directday-text-input"><input placeholder="Your Email Adress" type="text" /><span class="directday-button">Subscribe</span></div>';
     $output .= '</div>';
@@ -154,8 +154,6 @@ function most_read_posts() {
     $output .= '</div>';
     return $output;
 
-
-
 }
 
 function featured_post() {
@@ -229,7 +227,7 @@ function most_read_articles() {
 	if(count($posts) == 0) return "";
 
 
-    $output = '<div class="directday-component-gap alignwide">';
+    $output = '<div class="directday-component-gap alignwide responsive-alignwide">';
     $output .= '<p class="directday-page-title">Most read Articles</p>';
 	$i = 0;
     $output .= '<div id="all-most-read-posts">';
@@ -269,7 +267,23 @@ function most_read_articles() {
 	if($is_video)
 		$output .= '<div class="post_video hidden" id="post_video_' . $i . '">' . $post->post_content . '</div>';
 
+
+        $cats = get_the_category($post->ID);
+
+        if(count($cats) == 2 || count($cats) > 3)
+            $output .= '<div class="blog-tags directday-flex-center">';
+        else if(count($cats) == 3)
+            $output .= '<div class="blog-tags directday-flex-space-between" style="gap: 10px">';
+
+        foreach($cats as $cat) {
+		if($cat->name == 'blog')
+			continue;
+            $output .= '<p class="tag">' . $cat->name . '</p>';
+	}
+
 	$output .= '</div>';
+	$output .= '</div>';
+
 
 	if($i == 2)
 	        $output .= '</div>';

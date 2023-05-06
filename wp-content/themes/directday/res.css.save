@@ -1,0 +1,1343 @@
+@media only screen and (max-width: 1290px) {
+
+	.EPOS-desc {
+		width: calc(100% - 200px) !important;
+		margin: 0 auto 20px !important;
+	}
+
+	.EPOS .cards {
+		gap: 16px;
+	}
+}
+
+
+@media only screen and (max-width: 1250px) {
+
+	.kitchet-benefits {
+        	flex-wrap: wrap !important;
+	        justify-content: center;
+	}
+
+}
+
+
+@media only screen and (max-width: 1140px) {
+
+	.regular-card-section .card {
+		height: 450px;
+	}
+
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 600px) {
+
+	.price-card {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+
+}
+
+
+@media only screen and (max-width: 1040px) {
+
+	#primary-menu-list > li:not(:first-child):not(.get-demo-menu) {
+ 		margin-left: 20px;
+	}
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+	.kitchen-desc > div:nth-child(1) {
+		flex-grow: 2 !important;
+		order: 2;
+	}
+
+	.kitchen-desc > div:nth-child(2) {
+		flex-grow: 1 !important;
+		order: 1;
+	}
+
+}
+
+
+@media only screen and (max-width: 899px) and (min-width: 600px) {
+
+	.price-card-container {
+		flex-wrap: wrap !important;
+		gap: 24px;
+		justify-content: center !important;
+	}
+
+	.price-card {
+		min-width: 260px;
+		width: 260px;
+	}
+
+}
+
+@media only screen and (max-width: 960px) {
+
+	.regular-card-section .card {
+		height: 480px;
+	}
+
+	#site-navigation {
+		margin-left: -100px !important;
+	}
+
+	#site-navigation .primary-menu-container ul li:not(.first-child) {
+		margin-left: 10px;
+	}
+
+	#masthead .signIn-menu {
+		right: -150px;
+	}
+
+	#masthead .get-demo-menu {
+		right: -250px;
+	}
+
+	.waiter-slider {
+		padding: 40px 40px 0 40px;
+		gap: 0;
+	}
+
+	.waiter-slider > div:nth-child(1) {
+		margin-bottom: 0 !important;
+	}
+
+	.waiter-slider img {
+		width: 200px;
+	}
+
+	.waiter-slider > div:nth-child(2) {
+		flex-basis: 33% !imporant;
+	}	
+	
+	.EPOS {
+		justify-content: center !important;
+		align-items: center !important;
+		max-width: 100% !important;
+		min-width: 100% !important;
+		overflow: hidden;
+		width: 100% !important;
+		height: unset !important;
+		display: flex;
+		flex-direction: row;
+
+	}
+
+
+  .EPOS .circle {
+    display: none;
+  }
+
+  .EPOS-container {
+    flex-direction: column;
+  }
+
+	.EPOS > .cards {
+		overflow-x: hidden !important;
+		gap: 20px !important;
+		position: relative !important;
+		top: unset !important;
+		width: unset !important;
+		min-width: min(calc(100% - 80px), 360px) !important;
+		max-width: min(calc(100% - 80px), 360px) !important;
+		left: unset !important;
+		height: 420px !important;
+		background-color: white !important;
+		margin-top: unset !important;
+
+	}
+
+  .EPOS:not(.hidden-left-arrow)::before,
+  .EPOS:not(.hidden-right-arrow)::after {
+    display: inline-block !important;
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: 40px !important;
+    color: var(--direct-theme-blue);
+    position: absolute;
+  }
+
+  .EPOS:not(.hidden-left-arrow)::before {
+    content: "\f104" !important;
+    left: 10px;
+  }
+
+
+  .EPOS:not(.hidden-right-arrow)::after {
+    content: "\f105" !important;
+    right: 10px;
+  }
+
+	.EPOS .card .desc {
+        	margin-right: 12px !important;
+	}
+
+
+
+	.EPOS-desc {
+                border-left: unset !important;
+                border-top: 3px solid var(--direct-theme-blue);
+                width: 100% !important;
+                margin-right: unset !important;
+        }
+
+        .EPOS-desc *:nth-child(2) {
+                line-height: 24px !important;
+        }
+
+	.EPOS > .cards > .card {
+		min-width: min(100%, 360px);
+		height: 400px !important;
+	}
+
+	.EPOS .card img {
+                width: 100% !important;
+                height: auto !important;
+        }
+
+	 .customer_epos .EPOS .cards .card:nth-child(1) img {
+                width: 103px !important;
+        }
+
+
+}
+
+@media only screen and (max-width: 875px) {
+
+	#masthead .get-demo-menu {
+ 		right: -150px !important;
+	}
+	
+}
+
+@media only screen and (max-width: 700px) {
+
+	#site-navigation .primary-menu-container ul li:not(.first-child) {
+ 		margin-left: 0px;
+	}
+
+	#masthead .get-demo-menu {
+ 		right: -130px !important;
+	}
+
+
+	.primary-navigation > div > .menu-wrapper .sub-menu-toggle {
+		width: 30px;
+	}
+}
+
+@media only screen and (min-width: 824px) and (max-width: 1140px) {
+
+	.pricing {
+		flex-wrap: wrap !important;
+		padding-left: calc((100% - 860px) / 2);
+		padding-right: calc((100% - 860px) / 2);
+		max-width: calc(100% - 40px) !important;
+	}
+
+	.pricing .card {
+		width: 380px !important;
+	}
+
+	.pricing::before, .pricing::after {
+		content: unset !important;
+	}
+
+	.EPOS .card .desc, .regular-card-section .card .desc, .customer-card-section .card .desc, .others-card-section .card .desc {
+		margin: 12px 12px 0 12px !important;
+	}
+
+}
+
+
+@media only screen and (max-width: 824px) {
+
+	.pricing {
+		flex-wrap: wrap !important;
+		padding-left: calc((100% - 420px) / 2);
+		padding-right: calc((100% - 420px) / 2);
+	}
+
+	.pricing .card {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.pricing .card > .wp-block-columns {
+		flex-wrap: nowrap !important;
+	}
+
+	.pricing .card > .wp-block-columns .wp-block-column:not(:last-child) {
+		margin-bottom: unset !important;
+	}
+
+	.pricing .card > .wp-block-columns > div:first-child {
+		flex-basis: 55% !important;
+	}
+
+	.pricing .card > .wp-block-columns > div:last-child {
+		flex-basis: 45% !important;
+	}
+
+	.pricing .card > .wp-block-group {
+		bottom: 20px !important;
+	}
+
+
+}
+
+
+
+@media only screen and (max-width: 782px) {
+
+  #steps-container + h2 {
+    text-align: center;
+  }
+
+  #steps-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .our-team-gallery,
+  .our-values,
+  .latest-blog-section {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+	.steps {
+	    justify-content: flex-start !important;	
+	}
+
+  .why-we-are-different {
+    justify-content: flex-start !important;
+    align-items: center;
+  }
+
+  .steps > .step:not(.active-item) > p:not(:first-child) {
+    display: none;
+  }
+
+  .steps {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .regular-card-section,
+  .others-card-section,
+  #all-most-read-posts,
+  .customer-card-section {
+    max-width: min(calc(100% - 60px), 400px) !important;
+    min-width: min(calc(100% - 60px), 400px) !important;
+    overflow: hidden;
+    justify-content: flex-start !important;
+  }
+
+  #our-team-container {
+	position: relative;
+	max-width: 100%;
+	width: 100%;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+  }
+
+  #box-shadow-for-our-team {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 350px;
+	box-shadow: 80px 0 70px -4px #f0f0f073 inset, -80px 0 70px -4px #f0f0f073 inset;
+	z-index: 1;
+  }
+
+  .our-team-gallery {
+    max-width: 100% !important;
+    min-width: 100% !important;
+    overflow-x: hidden;
+    height: 340px;
+    gap: 0 !important;
+	
+  }
+
+  #our-team-container .fa {
+	position: absolute;
+	top: calc(50% - 24px);
+	font-size: 48px;
+	color: white;
+  }
+
+  #our-team-container .fa-angle-left {
+	left: 40px;
+  }
+
+  #our-team-container .fa-angle-right {
+	right: 40px;
+  }
+
+  .footer .links {
+	gap: 5px;
+  }
+
+  .footer .links a {
+	font-size: 14px;
+  }
+
+
+
+  .our-values {
+    max-width: 100% !important;
+    min-width: 100% !important;
+    overflow-x: auto;
+    height: 340px;
+    justify-content: flex-start !important;
+  }
+
+  .our-team-gallery img {
+	width: calc(100vw / 2) !important;
+  }
+
+  .our-values .card {
+	height: 260px;
+	width: 236px !important;
+	min-width: 236px !important;
+  }
+
+  #testimonials_carousel,
+  .latest-blog-section {
+    max-width: 100% !important;
+    min-width: 100% !important;
+    overflow: hidden;
+  }
+
+  .latest-blog-section > div {
+    overflow-x: hidden !important;
+    gap: 20px !important;
+    position: relative !important;
+    top: unset !important;
+    width: unset !important;
+    min-width: calc(100% - 80px) !important;
+    max-width: calc(100% - 80px) !important;
+    left: unset !important;
+    height: 420px !important;
+  }
+
+  .latest-blog-section .directday-recent-article-card {
+    margin: unset !important;
+  }
+
+  .why-we-are-different {
+    max-width: calc(100% - 120px) !important;
+    overflow-x: hidden;
+    gap: 20px !important;
+  }
+
+  .price-card-container .price-card {
+    height: auto !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  #steps-container:not(.hidden-left-arrow)::before,
+  #steps-container:not(.hidden-right-arrow)::after,
+  .latest-blog-section:not(.hidden-left-arrow)::before,
+  .latest-blog-section:not(.hidden-right-arrow)::after,
+  .regular-card-section:not(.hidden-left-arrow)::before,
+  .regular-card-section:not(.hidden-right-arrow)::after,
+  .customer-card-section:not(.hidden-left-arrow)::before,
+  .customer-card-section:not(.hidden-right-arrow)::after,
+  .others-card-section:not(.hidden-left-arrow)::before,
+  .others-card-section:not(.hidden-right-arrow)::after,
+  #testimonials_carousel:not(.hidden-left-arrow)::before,
+  #testimonials_carousel:not(.hidden-right-arrow)::after,
+  #all-most-read-posts:not(.hidden-left-arrow)::before,
+  #all-most-read-posts:not(.hidden-right-arrow)::after,
+  .why-we-are-different:not(.hidden-left-arrow)::before,
+  .why-we-are-different:not(.hidden-right-arrow)::after {
+    display: inline-block !important;
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: 40px !important;
+    color: var(--direct-theme-blue);
+    position: absolute;
+  }
+
+  #steps-container:not(.hidden-left-arrow)::before,
+  #testimonials_carousel:not(.hidden-left-arrow)::before,
+  #all-most-read-posts:not(.hidden-left-arrow)::before,
+  .regular-card-section:not(.hidden-left-arrow)::before,
+  .customer-card-section:not(.hidden-left-arrow)::before,
+  .others-card-section:not(.hidden-left-arrow)::before,
+  .why-we-are-different:not(.hidden-left-arrow)::before,
+  .latest-blog-section:not(.hidden-left-arrow)::before {
+    content: "\f104" !important;
+    left: 10px;
+  }
+
+  #steps-container::before,
+  #steps-container::after {
+    bottom: 50px;
+  }
+
+  #testimonials_carousel:not(.hidden-right-arrow)::after,
+  #all-most-read-posts:not(.hidden-right-arrow)::after,
+  .regular-card-section:not(.hidden-right-arrow)::after,
+  .customer-card-section:not(.hidden-right-arrow)::after,
+  .others-card-section:not(.hidden-right-arrow)::after,
+  .why-we-are-different:not(.hidden-right-arrow)::after,
+  .latest-blog-section:not(.hidden-right-arrow)::after,
+  #steps-container:not(.hidden-right-arrow)::after {
+    content: "\f105" !important;
+    right: 10px;
+  }
+
+
+
+}
+
+
+@media only screen and (max-width: 599px) {
+
+.most-read-articles-container > div > .desc > .title {
+	line-height: 1.39em;
+}
+
+.article-tags .directday-tag {
+	margin-right: 12px;
+}
+
+.directday-recent-article-card .tags {
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+.post > .post > img {
+	width: calc(100% - 30px) !important;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+#primary > #main > .post {
+	max-width: 100% !important;
+}
+
+.most-read-articles-container > div:not(.active-item) {
+	display: none !important;
+}
+
+.most-read-articles-container:not(.second-row) > div:nth-child(1),
+.most-read-articles-container.second-row > div:nth-child(3) {
+	height: 420px;
+}
+
+.post > .post .entry-header > .title {
+	line-height: 1.39em;
+}
+
+.directday-subscription p {
+	text-align: center;
+}
+
+
+.directday-subscription {
+	padding: 50px 24px 100px;
+	max-width: 100% !important;
+	flex-direction: column !important;
+	border-radius: unset !important;
+	gap: 30px;
+}
+
+.directday-subscription .directday-text-input {
+	height: 40px !important;
+	padding: 0px 4px 4px 0 !important;
+	width: 340px !important;
+	flex-direction: column;
+}
+
+.directday-subscription input {
+	width: calc(100% - 36px) !important;
+	margin-left: 18px;
+}
+
+.directday-subscription .directday-button,
+.share-article-container .directday-button {
+	padding: 12px 24px 12px;
+	margin-top: 24px;
+	text-align: center;
+}
+
+.most-read-articles-container {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 24px !important;
+	gap: 0 !important;
+}
+
+.most-read-articles-container.second-row > div {
+	margin-top: unset !important;
+}
+
+.most-read-articles-container > div {
+	flex-grow: unset !important;
+	flex-basis: unset !important;
+}
+
+.most-read-articles-container > div .desc {
+	position: unset;
+}
+
+.featured-article-container {
+	flex-direction: column;
+}
+
+.featured-article-container > div:nth-child(2) {
+	margin-left: unset;
+}
+
+.most-read-articles-container > div {
+	min-width: 100%;
+}
+
+.recent-posts-container > .directday-flex {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: calc(100% - 60px);
+}
+
+#all-most-read-posts {
+	display: flex;
+	flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+	align-items: center;
+}
+
+#all-most-read-posts > div {
+	flex-direction: row !important;
+	flex-wrap: nowrap;
+}
+
+.regular-card-section .card .desc, .customer-card-section .card .desc {
+	margin-right: 12px !important;
+}
+
+.testimonials_carousel {
+	padding-top: 0 !important;
+}
+
+.top-section {
+	margin-top: -32px;
+}
+
+
+div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
+        margin-left: 50% !important;
+}
+
+
+	.directday-page-sub-title {
+		text-align: left !important;
+	}
+
+	.our-story .wp-block-column:first-child figure figure:nth-child(2) {
+		left: 110px;
+	}
+
+	#stats .border-right-1px-silver {
+		border: none;
+	}
+
+	.kitchen-slider .directday-button, .counter-slider .directday-button, .waiter-slider .directday-button {
+		margin-top: 30px !important;
+	}
+
+	.showOnMobile {
+		display: unset !important;
+	}
+
+
+	.our-team-gallery {
+		flex-wrap: nowrap !important;
+		justify-content: flex-start !important;
+	}
+
+	.our-team-gallery figure {
+		min-width: calc(100vw / 2);
+	}
+
+	.wpforms-field-container input, .wpforms-field-container textarea {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	#contact-form-container {
+		margin-bottom: -80px;
+		padding: 48px 40px !important;
+		
+	}
+
+	div.wpforms-container-full .wpforms-form .wpforms-field {
+		margin-right: unset !important;
+	}
+
+	.contact-us-form {
+		margin: 0 0 30px 0 !important;
+		width: 100%;
+	}
+
+	.contact-us-form form {
+		margin-left: 0 !important;
+	}
+
+	.wpforms-field-container {
+		max-height: unset !important;		
+		height: auto !important;
+		max-width: 100%;
+	}
+
+	.contact-us-form button {
+		width: 100% !important;
+	}
+
+	.contact-us-form button {
+		margin-left: unset !important;
+	}
+
+	.marginTop0 {
+		margin-top: 0 !important;
+	}
+
+	.directday-blue-transparent-box {
+		max-width: 100% !important;
+		border-radius: unset !important;
+	}
+
+	.directday-ultra-large-text-in-phone {
+		font-size: 28px !important;
+	}
+
+	.our-story figure {
+		width: 70% !important;
+	}
+
+	.our-story .wp-block-column:nth-child(2) {
+		margin-top: 275px;
+	}
+
+	.about-us.height400 {
+		height: unset !important;
+	}
+
+	video {
+		max-width: 100% !important;
+		height: auto !important;
+		max-height: unset !important;
+		width: 100% !important;
+	}
+
+	.padding-right-40 {
+		padding-right: 10px;
+	}
+
+	.half-w-in-phone {
+		width: calc(50% - 30px);
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.hidden-in-phone {
+		display: none !important;
+	}
+
+	.flex-in-phone {
+		display: flex !important;
+	}
+
+	.flex-col-in-phone {
+		flex-direction : column;
+	}
+
+	.order1-in-phone {
+		order: 1 !important;
+	}
+
+	.order2-in-phone {
+		order: 2 !important;
+	}
+
+	.order3-in-phone {
+		order: 3 !important;
+	}
+
+	.order4-in-phone {
+		order: 4 !important;
+	}
+
+	.order5-in-phone {
+		order: 5 !important;
+	}
+
+	.order6-in-phone {
+		order: 6 !important;
+	}
+
+
+	.wppsac-wrap {
+		max-width: 100% !important;
+		width: 100% !important;
+		position: static;
+		margin-top: -48px !important;
+	}
+
+	.full-width-in-phone {
+		max-width: 100% !important;
+	}
+
+	.slider-padding-in-phone {
+		padding: 48px 28px 30px !important;
+	}
+
+	.reverse-order-in-phone > *:nth-child(2) {
+		order: 1;
+	}
+
+	.reverse-order-in-phone > *:nth-child(1) {
+		order: 2;
+	}
+
+	.no-border-radius-in-phone {
+		border-radius: unset !important;
+	}
+
+	.others-card-section .card .desc {
+		max-height: 180px !important;
+		margin-bottom: 24px;
+	}
+
+	.primary-navigation-open .primary-menu-container {
+		padding-top: 10px !important;
+	}
+
+	.primary-navigation-open .primary-menu-container > ul > li:first-child a:before {
+		background: url("https://directday.com/wp-content/uploads/2023/03/logo48-1@2x.png") no-repeat center center !important;
+		background-size: auto;
+		background-size: 100%;
+		content: "" !important;
+		display: block;
+		height: 23px;
+		width: 23px;
+		background-size: contain !important;
+		float: left;
+		margin-top: -5px;
+		margin-right: 10px;
+	}
+
+
+	.primary-navigation-open #masthead .signIn-menu,
+	.primary-navigation-open #masthead .get-demo-menu {
+		position: relative !important;
+		right: unset !important;
+		top: unset !important;
+	}
+
+	.primary-navigation-open #masthead .get-demo-menu {
+		background-color: transparent !important;
+	}
+
+	.primary-navigation-open #masthead .signIn-menu:not(.current-menu-item) a,
+	.primary-navigation-open #masthead .get-demo-menu:not(.current-menu-item) a {
+		color: var(--global--color-black-with-opacity) !important;
+	}
+
+	.primary-navigation-open #masthead .signIn-menu.current-menu-item a,
+	.primary-navigation-open #masthead .get-demo-menu.current-menu-item a {
+		color: var(--direct-theme-blue) !important;
+	}
+
+	#site-navigation {
+		z-index: 10;
+	}
+
+	#content {
+		position: relative;
+	}
+
+	.payment-solution {
+		height: auto !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		min-width: 100%;
+		border-radius: 0;
+	}
+
+	.payment-solution div:nth-child(1) > .wp-block-group {
+		padding: 0 40px 30px 40px !important;
+	}
+
+	.payment-solution div:nth-child(1) > .wp-block-group h2,
+	.payment-solution div:nth-child(1) > .wp-block-group .directday-button {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+
+	#site-navigation {
+		margin-left: unset !important;
+	}
+
+	.customer-card-section .card {
+		padding: 32px 24px 32px;
+	}	
+
+	.regular-card-section,
+	.others-card-section,
+	.customer-card-section {
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+
+
+	.regular-card-section .card a,
+	.others-card-section .card a,
+	.customer-card-section .card a {
+		margin-top: 32px;
+		margin-bottom: 24px;
+	}
+
+
+	.regular-card-section .card,
+	.others-card-section .card,
+	.customer-card-section .card {
+		width: 100% !important;
+		min-width: 100% !important;
+		height: auto !important;
+	}
+
+
+	.footer input {
+		width: calc(100% - 140px);
+		font-size: 12px !important;
+	}
+
+	.footer .directday-button {
+		max-width: 130px;
+	}
+
+
+	.kitchet-benefits {
+		display: none !important;
+	}
+
+	#testimonials_carousel_container {
+		height: 340px !important;
+	}
+
+	.testimonials_carousel {
+		margin-top: 0 !important;
+		position: unset !important;
+		height: 340px;
+	}
+
+	.testimonials_carousel .card {
+		padding-bottom: 40px;
+		height: 250px;
+		margin-top: unset !important;
+	}
+
+	.testimonials_carousel .card p {
+		max-height: 175px;
+		overflow: hidden;
+	}
+
+	.testimonials_carousel .card img {
+		display: block;
+		left: calc(50% - 32px);
+		top: 210px;
+	}
+
+	.testimonials_carousel .card .info {
+		display: block;
+		top: 275px;
+	}
+
+	#testimonials_carousel .card {
+		width: calc(100% - 80px);
+		margin-right: 40px;
+		margin-left: 40px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	#testimonials_carousel::before,
+	#testimonials_carousel::after
+	{
+		margin-top: 120px;
+	}
+
+	.testimonials_carousel .card {
+		opacity: 0.8;
+	}
+
+	.directday-component-plus-gap {
+		margin-top: var(--global--spacing-components) !important;
+	}
+
+	.directday-blue-transparent-box {
+		padding: 48px 40px !important;
+	}
+
+	.kitchen-desc figure:nth-child(2) {
+		display: none;
+	}
+
+	.waiter-slider {
+		overflow: hidden !important;
+		padding-bottom: 0 !important;
+		background-position: top !important;
+		background-size: auto !important;
+	}
+
+	.kitchen-directday-button,
+	.counter-directday-button,
+	.waiter-directday-button  {
+		width: 200px;
+	}
+
+	
+	.payment-solution > div:first-child,
+	.kitchen-desc > div:first-child,
+	.waiter-desc > div:first-child,
+	.counter-desc > div:first-child
+	{
+		order: 2;
+	}
+
+	.payment-solution > div:last-child,
+	.kitchen-desc > div:last-child,
+	.waiter-desc > div:last-child,
+	.counter-desc > div:last-child {
+		order: 1;
+	}
+
+	.kitchen-slider, .waiter-slider, .counter-slider {
+		margin: -60px 0 0 0 !important;
+		padding: 25px 25px 0 25px;
+		max-width: 100% !important;
+		gap: 5px !important;
+		height: auto;
+		overflow-x: hidden;
+		background-size: cover !important;
+	}
+
+	.kitchen-slider .directday-button, .waiter-slider .directday-button, .counter-slider .directday-button {
+		text-align: center;
+	}
+
+	.kitchen-slider figure, .waiter-slider figure, .counter-slider figure {
+		max-height: 100%;
+		overflow: hidden;
+		margin-right: -25px;
+	}
+
+	.kitchen-slider figure {
+		margin-bottom: 15px !important;
+	}
+
+	.waiter-slider figure {
+		margin-bottom: 10px !important;
+		margin-right: -40px;
+	}
+
+	.kitchen-desc, .counter-desc, .waiter-desc {
+		width: calc(100% - 60px);
+	}
+
+	.kitchen-slider div:first-child, 
+	.kitchen-slider .directday-button,
+	.waiter-slider div:first-child, 
+	.waiter-slider .directday-button,
+	.counter-slider div:first-child, 
+	.counter-slider .directday-button
+	{
+		margin-bottom: 0 !important;
+	}
+
+	.kitchen-slider div:last-child, 
+	.waiter-slider div:last-child,
+	.counter-slider div:last-child
+	{
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.kitchen-slider h2,
+	.waiter-slider h2,
+	.counter-slider h2
+	{
+		font-size: var(--directday--font-size-lg);
+	}
+
+	
+	.kitchen-slider img
+	{
+		width: 166px !important;
+		height: auto !important;
+	}
+
+	.counter-slider > div:nth-child(2) {
+		height: 300px;
+	}
+
+	.waiter-slider img {
+		width: 180px !important;
+		height: auto !important;
+	}
+
+	.counter-slider img {
+		margin-bottom: -140px;
+		margin-right: -100px;
+		width: 370px !important;
+	}
+
+	.kitchen-slider p,
+	.waiter-slider p,
+	.counter-slider p
+	{
+		margin-bottom : 15px !important;
+		font-size: var(--directday--font-size-sm);
+	}
+
+	.kitchen-slider .directday-button,
+	.counter-slider .directday-button,
+	.waiter-slider .directday-button {
+		width: 200px;
+	}
+
+	.align-semi-wide {
+		max-width: calc(100% - 40px) !important;
+	}
+
+	.demo-top-banner figure {
+	    width: 400px !important;
+	    bottom: -100px !important;
+	    left: calc(50% - 200px) !important;
+	}
+
+	.demo-top-banner {
+	    height: 340px;
+	    top: -50px;
+	    border-radius: 60px;
+	    border-top-right-radius: 0;
+    	    border-top-left-radius: 0;
+	}
+
+
+.demo-pane {
+    margin-top: calc(64px + 300px) !important;
+}
+
+.demo-apps {
+	flex-wrap: wrap !important;
+}
+
+.demo-apps::before, .demo-apps::after {
+	content: unset !important;
+}
+
+	.signup-demo {
+		position: absolute;
+		top: -48px;
+		width: 100%;
+		max-width: 100% !important;
+		border-radius: unset;
+		padding-top: 16px !important;
+		padding-bottom: 16px !important;
+		height: calc(100% + 80px + 48px);
+	}
+
+	.signup-demo figure {
+		display: none;
+	}
+
+	.choose_epos_plan {
+		margin-bottom: 48px !important;
+	}
+
+        .logos {
+                flex-wrap: wrap !important;
+                gap: 0 !important;
+        }
+
+        .logos figure {
+                width: 50%;
+                height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 1px solid var(--directday-dark-silver);
+        }
+
+        .logos figure img {
+                height: fit-content;
+        }
+
+        .logos figure:nth-child(even) {
+                border-left: 1px solid var(--directday-dark-silver);
+
+        }
+
+        .logos figure:last-child {
+                border-right: 1px solid var(--directday-dark-silver);
+                width: calc(50% + 1px);
+        }
+
+
+  #testimonials_carousel,
+  .EPOS > .cards,
+  .regular-card-section,
+  .product-card-section,
+  .customer-card-section,
+  .others-card-section,
+  .latest-blog-section > div,
+  .why-we-are-different {
+    gap: unset !important;
+  }
+
+  .latest-blog-section .directday-recent-article-card,
+  .why-we-are-different .card {
+    min-width: 100%;
+  }
+
+  .price-card-container {
+	flex-wrap: wrap !important;
+  }
+
+  .price-card-container .price-card {
+    min-width: 260px;
+  }
+
+  .footer .directday-button {
+    padding: 13px 10px 12px !important;
+  }
+
+  .footer .directday-text-input {
+    max-width: calc(100% - 50px) !important;
+  }
+
+  .top-section > div:first-child {
+    order: 2;
+  }
+
+  .top-section > div:last-child {
+    order: 1;
+  }
+
+  .pos-container {
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+  }
+
+  .choose_epos_plan * {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    font-size: var( --directday--font-size-sm) !important;
+    width: 180px !important;
+  }
+
+  .steps > .step {
+    min-width: 210px !important;
+  }
+
+  .steps > .step.active-item > p:nth-child(2), 
+  .steps > .step.active-item > p:nth-child(3) {
+	width: calc(100% + 50px);
+  }
+
+  .why-we-are-different .card {
+    height: 361px !important;
+  }
+
+	.regular-card-section .card img {
+		width: 100% !important;
+		height: auto !important;		
+	}
+
+	#colophon > p, .footer .links a {
+		font-size: var( --directday--font-size-sm);
+		min-width: 80px;
+		text-align: center;
+	}
+
+	#colophon > p, .footer .links {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	#colophon > p, .footer .links span:nth-child(8) {
+		display: none;
+	}
+
+	.flex-direction-nav .flex-next {
+		right: -25px !important;
+	}
+
+	.flex-direction-nav .flex-prev {
+		left: -25px !important;
+	}
+
+	#masthead .site-logo-menu {
+		left: calc(50% - 16px) !important;
+	}
+
+	#masthead {
+		justify-content: flex-start !important;
+	}
+
+	.menu-button-container, #site-navigation {
+		position: unset !important;
+	}
+
+	.menu-button-container #primary-mobile-menu[aria-expanded*="true"] .dropdown-icon.close {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		z-index: 999;
+	}
+
+}
+
+
+
+
+@media only screen and (max-width: 782px) {
+  .admin-bar {
+    --global--admin-bar--height: 46px;
+  }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 600px) {
+
+	.regular-card-section,
+	.others-card-section,
+	.customer-card-section {
+		margin-left: calc((100% - 400px) / 2);
+		margin-right: calc((100% - 400px) / 2);
+	}
+}
+
+
+@media only screen and (max-width: 400px) {
+
+
+
+}

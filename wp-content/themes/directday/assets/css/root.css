@@ -241,7 +241,7 @@
   --global--admin-bar--height: 0px;
 }
 
-@media only screen and (max-width: 590px) {
+@media only screen and (max-width: 700px) {
   :root {
     --global--font-size-base: 16px;
     --directday--font-size-sm: 14px;
