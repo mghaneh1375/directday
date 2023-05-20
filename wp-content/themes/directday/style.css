@@ -463,6 +463,10 @@ template {
   left: calc((100% - var(--responsive--alignwide-width)) / 2);
 }
 
+a.directday-recent-article-card {
+	text-decoration: none !important;
+}
+
 .directday-play {
 	margin: 0 auto;
 	width: 72px;
@@ -759,6 +763,49 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
   margin-top: 24px !important;
 }
 
+.directday-marginTop12 {
+  margin-top: 12px !important;
+}
+
+.num-text {
+	display: flex;
+	margin-bottom: 36px;
+}
+
+.num-text p {
+	margin-bottom: 0 !important;
+}
+
+.num-text .wp-block-group__inner-container {
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 12px;
+}
+
+.num-text figure:not(.third-num-text) {
+	margin-top: -40px !important;
+	width: 48px;
+	align-self: center;
+}
+
+.first-num-text > .wp-block-group__inner-container > figure {
+	margin-top: -50px !important;
+}
+
+.third-num-text {
+	margin-top: -40px !important;
+}
+
+.num-text:nth-child(3) p {
+	width: 100% !important;
+}
+
+.num-text figure img {
+	width: 48px !important;
+	max-width: 48px !important;
+}
+
+
 .post > .post > img {
 	width: auto !important;
 	height: auto !important;
@@ -817,6 +864,22 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 	max-width: 100% !important;
 	min-width: 100% !important;
 	width: 100% !important;
+}
+
+.post > .post .content > .entry-content > p {
+  color: var(--global--color-black-with-low-opacity);
+  line-height: 1.38;
+}
+
+.post > .post .content > .entry-content > p > a,
+.post > .post .content > .entry-content > p > strong > a {
+	color: #0000EE;
+}
+
+.post > .post .content > .entry-content > figure,
+.post > .post .content > .entry-content > .wp-block-image {
+	margin-top: 24px;
+	margin-bottom: 24px;
 }
 
 .post > .post  .entry-content > .sp-easy-accordion {
@@ -1278,10 +1341,21 @@ a.directday-button {
 }
 
 .demo-apps .card {
-  height: 320px;
+  height: 120px;
   border-radius: var(--global--border-radius);
-  padding: 40px 44px 64px 45px;
+  padding: 10px 25px !important;
 }
+
+
+.barcode-ul {
+	line-height: 50px;
+	font-size: var(--global--font-size-base);
+}
+
+.demo-join {
+  font-size: var(--global--font-size-md-plus);
+}
+
 
 .demo-apps .card h2 {
   color: var(--direct-theme-blue);
@@ -1290,7 +1364,11 @@ a.directday-button {
 }
 
 .demo-apps .card figure {
-  margin-top: 50px;
+  margin-top: 20px;
+}
+
+.demo-apps .card figure img {
+	width: 110px;
 }
 
 .demo-apps .card ul {
@@ -2028,6 +2106,13 @@ a.directday-button {
   display: none !important;
 }
 
+.top-section .directday-silver-button,
+.top-section .directday-button {
+	min-width: 135px;
+	text-align: center;
+	padding-left: 0;
+	padding-right: 0;
+}
 
 .price-card-container {
   gap: 32px;
@@ -2052,6 +2137,11 @@ a.directday-button {
 
 .price-card:nth-child(1) h2:nth-child(2) {
   color: white;
+}
+
+.price-card .directday-silver-button {
+	width: 155px;
+	text-align: center;
 }
 
 .price-card h2:nth-child(2) {
@@ -2115,11 +2205,11 @@ a.directday-button {
 }
 
 .flex-direction-nav .flex-prev {
-  left: 5px !important;
+  left: -25px !important;
 }
 
 .flex-direction-nav .flex-next {
-  right: 5px !important;
+  right: -25px !important;
 }
 
 .payment-solution {
@@ -2306,9 +2396,14 @@ div.wpforms-container-full .wpforms-form .wpforms-field {
 }
 
 .kitchen-slider,
-.waiter-slider,
-.counter-slider {
+.waiter-slider {
   height: 420px;
+  position: relative;
+  padding: 80px 110px 0 128px;
+}
+
+.counter-slider {
+  height: 450px;
   position: relative;
   padding: 80px 110px 0 128px;
 }

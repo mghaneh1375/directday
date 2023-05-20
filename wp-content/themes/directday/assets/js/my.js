@@ -294,6 +294,52 @@ for (i = 0; i < slider.length; i++) {
 
   }
 */
+	let joinBtn = document.getElementById("joinNewsLetterbtn");
+
+	if(joinBtn !== undefined && joinBtn !== null) {
+		joinBtn.onclick = function() {
+
+			const mailInput = document.getElementById("joinNewsLetterMail");
+			const mail = mailInput.value;
+
+			if(mail.length === 0) {
+				const elem = document.getElementById("joinErr1Msg");
+				elem.classList.remove('hidden');
+				setTimeout(function() {
+					elem.classList.add('hidden');
+				}, 2000);
+				return;
+			}
+
+			var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+			var isValid = String(mail).search(filter) != -1;
+			if(!isValid) {
+				const elem = document.getElementById("joinErr2Msg");
+				elem.classList.remove('hidden');
+				setTimeout(function() {
+					elem.classList.add('hidden');
+				}, 2000);
+				return;
+			}
+
+			const xhttp = new XMLHttpRequest();
+			xhttp.onload = function() {
+		    		console.log(this.responseText);
+			}
+
+			xhttp.open("GET", 'http://math.echeck.ir/wp-admin/admin-post.php?action=subscription&mail=' + mail);
+			xhttp.send();
+
+			const elem = document.getElementById("joinSuccessMsg");
+			elem.classList.remove('hidden');
+			setTimeout(function() {
+				mailInput.value = "";
+				elem.classList.add('hidden');
+			}, 3000);
+		}
+	}
+
+
 
   if(width < 900) {
 

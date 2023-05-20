@@ -33,8 +33,12 @@ if(!$allow) {
 <div class="post alignwide">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-<?php $url = wp_get_attachment_url( get_post_thumbnail_id($the_post->ID), 'thumbnail' ); ?>
-<img src="<?php echo $url ?>" />
+<?php
+$imageId = get_post_thumbnail_id($the_post->ID);
+$alt_text = get_post_meta($imageId , '_wp_attachment_image_alt', true);
+$url = wp_get_attachment_url( $imageId, 'thumbnail' );
+?>
+<img src="<?php echo $url ?>" alt="<?php echo $alt_text; ?>" />
 
 
 <div class="align-semi-wide content">
@@ -42,8 +46,10 @@ if(!$allow) {
 		<?php the_title( '<h1 class="title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-
-        <p class="date">Published on <?php echo explode(' ', $post->post_date)[0] ?> </p>
+	<?php
+		$post_date = get_the_date('d/m/Y', $post->ID);
+	?>
+        <p class="date">Published on <?php echo $post_date ?> </p>
 
 	<div class="tags">
 	<?php

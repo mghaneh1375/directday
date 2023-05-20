@@ -61,7 +61,19 @@ function create_articles_cats() {
 function subscribe() {
     $output = '<div class="directday-blue-box directday-component-gap alignwide directday-flex directday-flex-space-between directday-subscription responsive-alignwide">';
     $output .= '<div class="directday-flex directday-col-flex directday-gap10"><p style="margin-top: -15px" class="directday-lg-font black-color caps">Subscribe to our newsletter</p><p style="margin-top: 12px;">And be up to date</p></div>';
-    $output .= '<div style="height: 50px;" class="directday-text-input"><input placeholder="Your Email Adress" type="text" /><span class="directday-button">Subscribe</span></div>';
+
+    $output .= '<div class="directday-flex directday-col-flex directday-gap10">';
+
+    $output .= '<div style="height: 50px;" class="directday-text-input">';
+    $output .= '<input id="joinNewsLetterMail" placeholder="Your Email Adress" name="mail" type="text" />';
+    $output .= '<span id="joinNewsLetterbtn" class="directday-button">Subscribe</span>';
+    $output .= '</div>';
+
+    $output .= '<p class="hidden" id="joinSuccessMsg" style="text-align: center">You\'ve now been successfully added to our newsletter.</p>';
+    $output .= '<p class="hidden" id="joinErr1Msg" style="text-align: center">Please enter your email address.</p>';
+    $output .= '<p class="hidden" id="joinErr2Msg" style="text-align: center">Your email address is not valid.</p>';
+    $output .= '</div>';
+
     $output .= '</div>';
     return $output;
 
@@ -74,11 +86,12 @@ function do_create_posts($posts) {
     foreach($posts as $post) {
 
         $image = get_the_post_thumbnail_url($post->ID);
-        $output .= '<div class="directday-recent-article-card">';
-        $output .= '<div><img src="' . $image . '" />';
-        $output .= '<p class="date">Published on ' . $post->post_date . '</p>';
-        $output .= '<p class="title">' . $post->post_title . '</p></div>';
+	$post_date = get_the_date('d/m/Y', $post->ID);
 
+        $output .= '<a href="' . get_permalink($post->ID) . '" class="directday-recent-article-card">';
+        $output .= '<div><img src="' . $image . '" />';
+        $output .= '<p class="date">Published on ' . $post_date . '</p>';
+        $output .= '<p class="title">' . $post->post_title . '</p></div>';
 
         $cats = get_the_category($post->ID);
         
@@ -94,7 +107,7 @@ function do_create_posts($posts) {
 	}
 
         $output .= '</div>';
-        $output .= '</div>';
+        $output .= '</a>';
     }
 
 	return $output;
@@ -190,8 +203,10 @@ for($i = 0; $i < count($posts); $i++) {
         $output .= '<img src="' . $image . '" />';
 	$output .= '</div>';
 
+	$post_date = get_the_date('d/m/Y', $post->ID);
+
 	$output .= '<div>';
-        $output .= '<p class="date">Published on ' . $post->post_date . '</p>';
+        $output .= '<p class="date">Published on ' . $post_date . '</p>';
         $output .= '<p class="title">' . $post->post_title . '</p>';
         $output .= '<p class="desc normal-text-box">' . $post->post_excerpt . '</p>';
 	$output .= '<div class="featured-links">';
@@ -243,8 +258,10 @@ function most_read_articles() {
         $image = get_the_post_thumbnail_url($post->ID);
 	$output .= '<div style="background: linear-gradient(to bottom, #000000c4, rgba(0, 0, 0, 0)), url(\'' . $image . '\')">';
 
+	$post_date = get_the_date('d/m/Y', $post->ID);
+
 	$output .= '<div class="desc">';
-        $output .= '<p class="date">Published on ' . $post->post_date . '</p>';
+        $output .= '<p class="date">Published on ' . $post_date . '</p>';
         $output .= '<p class="title">' . $post->post_title . '</p>';
 
         $cats = get_the_tags($post->ID);

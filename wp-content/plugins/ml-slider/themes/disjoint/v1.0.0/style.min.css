@@ -24,7 +24,7 @@
   div.slider-wrapper
   .nivo-controlNav:not(.nivo-thumbs-enabled) {
   background: transparent;
-  bottom: 30px;
+  bottom: 15px;
   -webkit-box-pack: center;
   display: -webkit-box;
   display: -ms-flexbox;

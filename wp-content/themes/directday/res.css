@@ -886,6 +886,19 @@
 
 @media only screen and (max-width: 599px) {
 
+	.first-num-text {
+		margin-top: 64px !important;
+	}
+
+
+	.num-text figure:not(.third-num-text) {
+		margin-top: -100px !important;
+	}
+
+	.first-num-text > .wp-block-group__inner-container > figure {
+		margin-top: -90px !important;
+	}
+
 	.others-card-section {
 		gap: 0;
 		row-gap: 20px;
@@ -1333,7 +1346,7 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 	.counter-slider div:first-child, 
 	.counter-slider .directday-button
 	{
-		margin-bottom: 0 !important;
+		margin-bottom: 15px !important;
 	}
 
 	.kitchen-slider div:last-child, 
@@ -1496,7 +1509,8 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
   }
 
   .footer .directday-button {
-    padding: 13px 10px 12px !important;
+    padding: 13px 32px 12px !important;
+    max-width: 160px !important;
   }
 
   .footer .directday-text-input {

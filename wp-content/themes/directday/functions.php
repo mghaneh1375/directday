@@ -379,6 +379,7 @@ function parseToArray($xpath, $class, $attr)
         }
 	$output = [];
 	$ul = null;
+
 	foreach($resultarray as $itr) {
 		if(empty($itr) || strlen($itr) < 2)
 			continue;
@@ -390,7 +391,7 @@ function parseToArray($xpath, $class, $attr)
 			}
 		}
 		else {
-			if($attr == 'div' && strlen($itr) < 50) {
+			if($attr == 'div' && strlen($itr) < 80) {
 				if($ul == null)
 					$ul = $itr;
 				else
@@ -429,6 +430,17 @@ add_action('do_feed_atom', 'wp_disable_feeds', 1);
 add_action('do_feed_rss2_comments', 'wp_disable_feeds', 1);
 add_action('do_feed_atom_comments', 'wp_disable_feeds', 1);
 
+function subscription() {
+
+        if(isset($_GET["mail"])) {
+		wp_mail( 'info@directday.com', "DirectDay, Subscription in newsletter request", $_GET['mail'] );
+                return "ok";
+        }
+}
+
+add_action( 'admin_post_nopriv_subscription', 'subscription' );
+add_action( 'admin_post_subscription', 'subscription' );
+
 function hueman_add_meta_tags() {
 
 global $wp;
@@ -441,9 +453,20 @@ else if($current_slug == 'pos-system-products/waiter-app')
 	$faq = do_shortcode('[sp_easyaccordion id="511"]', true);
 else if($current_slug == 'pos-system-products/kitchen-display')
 	$faq = do_shortcode('[sp_easyaccordion id="423"]', true);
+else if($current_slug == '8-tips-to-build-and-increase-customer-loyalty-in-restaurants')
+	$faq = do_shortcode('[sp_easyaccordion id="1858"]', true);
+else if($current_slug == 'ways-to-manage-and-reduce-restaurant-food-waste')
+	$faq = do_shortcode('[sp_easyaccordion id="1768"]', true);
+else if($current_slug == 'the-popularity-of-food-trucks')
+	$faq = do_shortcode('[sp_easyaccordion id="1738"]', true);
+else if($current_slug == 'tips-for-waiters-or-waitresses-to-make-their-work-expertly')
+	$faq = do_shortcode('[sp_easyaccordion id="1674"]', true);
+else if($current_slug == '7-trends-in-restaurant-technologies-that-improves-your-work')
+	$faq = do_shortcode('[sp_easyaccordion id="1892"]', true);
+else if($current_slug == '9-innovate-steps-for-increase-restaurant-sales')
+	$faq = do_shortcode('[sp_easyaccordion id="1905"]', true);
 else if($current_slug == '')
 	$faq = do_shortcode('[sp_easyaccordion id="84"]', true);
-
 
 if($faq != null) {
 	$dom = new DomDocument();
