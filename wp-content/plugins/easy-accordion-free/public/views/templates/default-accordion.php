@@ -68,7 +68,7 @@ foreach ( $content_sources as $key => $content_source ) {
 	}
 	echo '<div class="ea-card ' . esc_attr( $expand_class . ' ' . $accordion_item_class ) . '">';
 		echo sprintf(
-			'<h3 class="ea-header"><a class="collapsed" data-sptoggle="spcollapse" %1$s href="javascript:void(0)" %5$s aria-expanded="%4$s">%2$s %3$s</a></h3>',
+			'<h4 class="ea-header"><a class="collapsed" data-sptoggle="spcollapse" %1$s href="javascript:void(0)" %5$s aria-expanded="%4$s">%2$s %3$s</a></h4>',
 			esc_attr( $data_sptarget ),
 			wp_kses_post( $eap_icon_markup ),
 			wp_kses_post( $content_title ),

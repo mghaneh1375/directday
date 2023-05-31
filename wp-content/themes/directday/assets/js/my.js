@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", makeResponsive, false);
 
+
 const PADDING = 48;
 const A = 40;
 

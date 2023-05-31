@@ -51,6 +51,35 @@
 		gap: 48px;
 	}		
 
+.most-read-articles-container > div {
+    padding: 24px 16px;
+}
+
+.most-read-articles-container > div > .desc {
+    left: 20px;
+    right: 20px;
+}
+
+.most-read-articles-container > div > .desc > a {
+	width: 140px;
+}
+
+.most-read-articles-container > div > .desc > .title {
+	font-size: 14px;
+}
+
+.most-read-articles-container {
+	gap: 10px;
+}
+
+.blog-tags {
+	left: 5px;
+}
+
+.blog-tags .tag {
+	padding: 5px 15px;
+}
+
 }
 
 @media only screen and (min-width: 824px) and (max-width: 1140px) {

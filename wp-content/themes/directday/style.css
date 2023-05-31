@@ -524,6 +524,22 @@ a.directday-recent-article-card {
 	cursor: pointer;
 }
 
+.ez-toc-section {
+  scroll-margin-top: 100px;
+}
+
+.ez-toc-title-toggle > a > label > span {
+	justify-content: left !important;
+	padding-left: 10px;
+}
+
+.ez-toc-title-toggle > a > label svg:nth-child(2) {
+	width: unset !important;
+	max-width: unset !important;
+	min-width: unset !important;
+	display: none !important;
+}
+
 .signup-form .wpforms-submit-spinner {
 	display: none !important;
 	visibility: hidden !important;
@@ -860,7 +876,7 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 	font-weight: bold;
 }
 
-.post > .post .content > .entry-content *:not(.sp-easy-accordion *, img, figure) {
+.post > .post .content > .entry-content *:not(.sp-easy-accordion *, img, figure, svg) {
 	max-width: 100% !important;
 	min-width: 100% !important;
 	width: 100% !important;
@@ -872,7 +888,8 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-spinner {
 }
 
 .post > .post .content > .entry-content > p > a,
-.post > .post .content > .entry-content > p > strong > a {
+.post > .post .content > .entry-content > p > strong > a,
+.post > .post .content > .entry-content > p > mark > a {
 	color: #0000EE;
 }
 
@@ -1548,8 +1565,8 @@ a.directday-button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 18px;
+  padding-right: 18px;
 }
 
 .directday-recent-article-card .tags .tag {

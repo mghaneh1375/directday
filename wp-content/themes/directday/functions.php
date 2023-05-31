@@ -453,18 +453,24 @@ else if($current_slug == 'pos-system-products/waiter-app')
 	$faq = do_shortcode('[sp_easyaccordion id="511"]', true);
 else if($current_slug == 'pos-system-products/kitchen-display')
 	$faq = do_shortcode('[sp_easyaccordion id="423"]', true);
-else if($current_slug == '8-tips-to-build-and-increase-customer-loyalty-in-restaurants')
+else if($current_slug == 'blogs/tips-to-build-and-increase-customer-loyalty-in-restaurants')
 	$faq = do_shortcode('[sp_easyaccordion id="1858"]', true);
-else if($current_slug == 'ways-to-manage-and-reduce-restaurant-food-waste')
+else if($current_slug == 'blogs/ways-to-manage-and-reduce-restaurant-food-waste')
 	$faq = do_shortcode('[sp_easyaccordion id="1768"]', true);
-else if($current_slug == 'the-popularity-of-food-trucks')
+else if($current_slug == 'blogs/the-popularity-of-food-trucks')
 	$faq = do_shortcode('[sp_easyaccordion id="1738"]', true);
-else if($current_slug == 'tips-for-waiters-or-waitresses-to-make-their-work-expertly')
+else if($current_slug == 'blogs/tips-for-waiters-or-waitresses-to-make-their-work-expertly')
 	$faq = do_shortcode('[sp_easyaccordion id="1674"]', true);
-else if($current_slug == '7-trends-in-restaurant-technologies-that-improves-your-work')
+else if($current_slug == 'blogs/trends-in-restaurant-technologies-that-improves-your-work')
 	$faq = do_shortcode('[sp_easyaccordion id="1892"]', true);
-else if($current_slug == '9-innovate-steps-for-increase-restaurant-sales')
+else if($current_slug == 'blogs/innovate-steps-for-increase-restaurant-sales')
 	$faq = do_shortcode('[sp_easyaccordion id="1905"]', true);
+else if($current_slug == 'blogs/digital-menus-and-7-incredible-benefits-for-restaurants')
+	$faq = do_shortcode('[sp_easyaccordion id="1946"]', true);
+else if($current_slug == 'blogs/prime-and-easy-steps-to-start-a-small-restaurant')
+	$faq = do_shortcode('[sp_easyaccordion id="1937"]', true);
+else if($current_slug == 'blogs/restaurant-equipment-the-most-complete-list')
+	$faq = do_shortcode('[sp_easyaccordion id="1967"]', true);
 else if($current_slug == '')
 	$faq = do_shortcode('[sp_easyaccordion id="84"]', true);
 
