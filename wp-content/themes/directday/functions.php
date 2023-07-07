@@ -374,21 +374,38 @@ function parseToArray($xpath, $class, $attr)
         foreach ($elements as $element) {
             $nodes = $element->childNodes;
             foreach ($nodes as $node) {
-              $resultarray[] = $node->nodeValue;
+		if($attr == 'div' && $node->tagName == "ul") {
+	              $resultarray[] = explode(PHP_EOL, $node->nodeValue);
+		}
+		else {
+			if(!empty($node->nodeValue) && strlen($node->nodeValue) > 2)
+		              $resultarray[] = $node->nodeValue;
+		}
             }
         }
+
 	$output = [];
 	$ul = null;
+	$i = -1;
 
 	foreach($resultarray as $itr) {
-		if(empty($itr) || strlen($itr) < 2)
+
+		$i++;
+
+		if(empty($itr) || (!is_array($itr) && strlen($itr) < 2))
 			continue;
+
 		if(is_array($itr)) {
+
 			foreach($itr as $tmp) {
-				if(empty($tmp) || strlen($itr) < 2)
+				if(empty($tmp) || strlen($tmp) < 2)
 					continue;
-				array_push($output, $tmp);
+				$ul .= '\n' . $tmp;
 			}
+
+			array_push($output, $ul);
+			$ul = null;
+
 		}
 		else {
 			if($attr == 'div' && strlen($itr) < 80) {
@@ -398,11 +415,15 @@ function parseToArray($xpath, $class, $attr)
 					$ul .= '\n' . $itr;
 			}
 			else {
-				if($ul != null) {
-					array_push($output, $ul);
-					$ul = null;
+				if($i < count($resultarray) - 1 &&  is_array($resultarray[$i + 1]))
+					$ul = $itr;
+				else {
+					if($ul != null) {
+						array_push($output, $ul);
+						$ul = null;
+					}
+					array_push($output, $itr);
 				}
-				array_push($output, $itr);
 			}
 		}
 	}
@@ -471,6 +492,10 @@ else if($current_slug == 'blogs/prime-and-easy-steps-to-start-a-small-restaurant
 	$faq = do_shortcode('[sp_easyaccordion id="1937"]', true);
 else if($current_slug == 'blogs/restaurant-equipment-the-most-complete-list')
 	$faq = do_shortcode('[sp_easyaccordion id="1967"]', true);
+else if($current_slug == 'blogs/a-complete-guide-for-improve-fine-dining-service')
+	$faq = do_shortcode('[sp_easyaccordion id="1999"]', true);
+else if($current_slug == 'blogs/pay-at-table-technology-for-restaurants')
+	$faq = do_shortcode('[sp_easyaccordion id="2004"]', true);
 else if($current_slug == '')
 	$faq = do_shortcode('[sp_easyaccordion id="84"]', true);
 
